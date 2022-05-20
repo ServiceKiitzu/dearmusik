@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "nanoid": "^3.3.4",
     "next": "12.1.6",
+    "next-i18next": "^11.0.0",
+    "npm-force-resolutions": "^0.0.10",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "sass": "^1.51.0"
   },
   "devDependencies": {
     "eslint": "8.15.0",
