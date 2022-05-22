@@ -24,43 +24,46 @@ export default function Home() {
     const locale = e.target.value;
     router.push("/", "/", { locale });
   };
+
   return (
-    <div className={styles.container}>
-      <Swiper
-        modules={[Autoplay, Navigation, EffectFade]}
-        loop={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        effect={"fade"}
-        navigation={{
-          nextEl: ".next-img",
-          prevEl: ".prev-img",
-        }}
-      >
-        <div className={`${styles.p} prev-img`}>
-          <Image src={LArrow}></Image>
-        </div>
-        <div className={`${styles.n} next-img`}>
-          <Image src={RArrow}></Image>
-        </div>
-        <SwiperSlide>
-          <div>
-            <Image src={I1}></Image>
+    <>
+      <div className={styles.container}>
+        <Swiper
+          modules={[Autoplay, Navigation, EffectFade]}
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          effect={"fade"}
+          navigation={{
+            nextEl: ".next-img",
+            prevEl: ".prev-img",
+          }}
+        >
+          <div className={`${styles.p} prev-img`}>
+            <Image src={LArrow}></Image>
           </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div>
-            <Image src={I2}></Image>
+          <div className={`${styles.n} next-img`}>
+            <Image src={RArrow}></Image>
           </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div>
-            <Image src={I3}></Image>
-          </div>
-        </SwiperSlide>
-      </Swiper>
-    </div>
+          <SwiperSlide>
+            <div>
+              <Image src={I1}></Image>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={I2}></Image>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={I3}></Image>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+    </>
   );
 }

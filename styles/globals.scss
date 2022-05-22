@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
 
 $NSTC: "Noto Sans TC", sans-serif;
+$RS: "Roboto Slab", sans-serif;
 
 html {
   -webkit-box-sizing: border-box;
@@ -111,6 +112,52 @@ nav {
         &.active img {
           filter: invert(41%) sepia(71%) saturate(373%) hue-rotate(53deg)
             brightness(98%) contrast(87%);
+        }
+      }
+    }
+  }
+}
+
+.ReactCollapse--collapse {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #414141;
+  z-index: 2;
+  transition: height 1000ms;
+
+  .ReactCollapse--content {
+    div {
+      border-radius: 17px 17px 0 0;
+      box-shadow: 6px 6px 12px 0 rgba(0, 0, 0, 0.16);
+      padding: 17px 35px;
+      display: flex;
+      width: 1006px;
+      height: 77px;
+      p {
+        width: 781px;
+        height: 41px;
+        font-family: $RS;
+        font-size: 12px;
+        line-height: 2;
+        letter-spacing: 1.44px;
+        margin: 0;
+      }
+      button {
+        cursor: pointer;
+        font-family: $NSTC;
+        width: 136px;
+        height: 43px;
+        margin: 0 0 0 19px;
+        padding: 9px 27px 8px;
+        border: none;
+        opacity: 0.5;
+        border-radius: 21px;
+        // background: rgba(223, 244, 214, 0.1);
+        &:hover {
+          background: rgba(223, 244, 214, 1);
         }
       }
     }
