@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <g id="Group_273" data-name="Group 273" transform="translate(-1230 -36)">
+    <g id="Group_108" data-name="Group 108" transform="translate(1239 46.662)">
+      <path id="Path_51" data-name="Path 51" class="cls-1" d="M4.7,6H18.323a1.708,1.708,0,0,1,1.7,1.7V17.918a1.708,1.708,0,0,1-1.7,1.7H4.7a1.708,1.708,0,0,1-1.7-1.7V7.7A1.708,1.708,0,0,1,4.7,6Z" transform="translate(-3 -6)"/>
+      <path id="Path_52" data-name="Path 52" class="cls-1" d="M20.026,9l-8.513,5.959L3,9" transform="translate(-3 -7.297)"/>
+    </g>
+    <rect id="Rectangle_166" data-name="Rectangle 166" class="cls-2" width="35" height="35" transform="translate(1230 36)"/>
+  </g>
+</svg>
