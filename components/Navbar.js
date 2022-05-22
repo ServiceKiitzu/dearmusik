@@ -32,12 +32,21 @@ const Navbar = () => {
   return (
     <nav>
       <div className="navLeft">
-        <div style={{ marginRight: "18px" }}>
-          <Image src={Icon}></Image>
-        </div>
-        <div>
-          <Image src={IconName}></Image>
-        </div>
+        <Link href="/">
+          <a>
+            <div style={{ marginRight: "18px" }}>
+              <Image src={Icon}></Image>
+            </div>
+          </a>
+        </Link>
+        <Link href={"/"}>
+          <a>
+            <div>
+              <Image src={IconName}></Image>
+            </div>
+          </a>
+        </Link>
+
         <div className="media">
           <a href="">
             <Image src={IMusic}></Image>
@@ -62,7 +71,7 @@ const Navbar = () => {
           <Link href={""}>
             <a>{t.news}</a>
           </Link>
-          <Link href={""}>
+          <Link href={"/about"}>
             <a>{t.about}</a>
           </Link>
           <Link href={""}>

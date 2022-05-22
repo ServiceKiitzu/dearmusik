@@ -1,0 +1,48 @@
+.container {
+  width: 1280px;
+  height: 750px;
+  padding: 30px 105px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+
+  .story {
+    width: 747px;
+    height: 371px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.61;
+    letter-spacing: 1.86px;
+    text-align: left;
+    color: #414141;
+    margin-left: 46px;
+  }
+
+  .imgText {
+    position: absolute;
+    right: 49px;
+    bottom: 146px;
+    opacity: 0;
+  }
+  .img {
+    cursor: pointer;
+    position: absolute;
+    right: 53px;
+    bottom: 47px;
+
+    &:hover + .imgText {
+      animation: show 6.5s infinite;
+    }
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  23% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

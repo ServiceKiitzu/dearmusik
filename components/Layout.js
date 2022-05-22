@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Navbar></Navbar>
-      {children}
+      <div className="content">{children}</div>
       <Cookie></Cookie>
       <Footer></Footer>
     </div>
