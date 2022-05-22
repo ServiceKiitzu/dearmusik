@@ -1,0 +1,23 @@
+.container {
+  height: 735px;
+  width: 1280px;
+  padding: 0 22px;
+  position: relative;
+  margin: 0 auto;
+
+  .img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 205px;
+    z-index: 2;
+  }
+  .block {
+    width: 1236px;
+    height: 288px;
+    position: absolute;
+    bottom: 0;
+    background-color: #bdead0;
+    opacity: 0.51;
+  }
+}
