@@ -17,6 +17,8 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
+body {
+}
 
 nav {
   width: 1280px;
@@ -132,6 +134,7 @@ nav {
   color: #414141;
   z-index: 2;
   transition: height 1000ms;
+  border-radius: 17px 17px 0 0;
 
   .ReactCollapse--content {
     div {
@@ -170,10 +173,10 @@ nav {
 }
 
 footer {
-  position: fixed;
-  left: 50%;
+  display: block;
+  width: 100%;
   bottom: 0;
-  transform: translateX(-50%);
+  // transform: translateX(-50%);
   font-family: "Roboto Slab", serif;
   color: #a5a5a5;
   text-align: center;

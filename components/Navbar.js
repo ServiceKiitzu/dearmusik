@@ -88,7 +88,7 @@ const Navbar = () => {
           <a href="">
             <Image src={Store}></Image>
           </a>
-          <Link style={{ marginLeft: "7px" }} className="email" href="">
+          <Link style={{ marginLeft: "7px" }} className="email" href="/email">
             <a>
               <Image src={Email}></Image>
             </a>

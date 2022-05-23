@@ -1,0 +1,49 @@
+.container {
+  height: 735px;
+  width: 1280px;
+  position: relative;
+  margin: 0 auto;
+
+  .imgText {
+    position: absolute;
+    top: 60px;
+    left: 285px;
+    opacity: 0;
+  }
+  .img {
+    position: absolute;
+    top: 90px;
+    left: 285px;
+    cursor: pointer;
+    &:hover + .imgText {
+      animation: show 6.5s infinite;
+    }
+  }
+  .contact {
+    letter-spacing: 1.86px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 348px;
+    height: 72px;
+    border-left: 1px solid #414141;
+    border-right: 1px solid #414141;
+    text-align: center;
+    color: #414141;
+    margin: 290px auto;
+    padding-top: 8px;
+    .email {
+      margin-top: 20px;
+    }
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  23% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
