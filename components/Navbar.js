@@ -9,7 +9,7 @@ import IconName from "../assets/navbar/icon-name.svg";
 import Email from "../assets/navbar/email.svg";
 import Store from "../assets/navbar/store.svg";
 import IMusic from "../assets/navbar/imusic.svg";
-import Kkbox from "../assets/navbar/Kkbox.svg";
+import Kkbox from "../assets/navbar/kkbox.svg";
 import Facebook from "../assets/navbar/facebook.svg";
 import Instagram from "../assets/navbar/instagram.svg";
 import Spotify from "../assets/navbar/spotify.svg";
