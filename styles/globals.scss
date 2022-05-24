@@ -63,7 +63,7 @@ nav {
       margin-right: 45px;
       .active {
         color: #468b26;
-        font-weight: 500;
+        font-weight: bold;
       }
       a {
         // display: inline-block;
@@ -175,9 +175,10 @@ nav {
 footer {
   display: block;
   width: 100%;
+  position: absolute;
   bottom: 0;
   // transform: translateX(-50%);
-  font-family: "Roboto Slab", serif;
+  font-family: $RS;
   color: #a5a5a5;
   text-align: center;
   font-weight: 300;
