@@ -25,7 +25,12 @@ const Navbar = () => {
       e.currentTarget.classList.toggle("active");
     }
   }
-
+  const rmActive = () => {
+    let link = document.querySelectorAll("div.navRight a");
+    link.forEach((tab) => {
+      tab.classList.remove("active");
+    });
+  };
   const router = useRouter();
   const { locale } = router;
   const t = locale === "zh" ? zh : en;
@@ -33,14 +38,14 @@ const Navbar = () => {
     <nav>
       <div className="navLeft">
         <Link href="/">
-          <a>
+          <a onClick={rmActive}>
             <div style={{ marginRight: "18px" }}>
               <Image src={Icon}></Image>
             </div>
           </a>
         </Link>
         <Link href={"/"}>
-          <a>
+          <a onClick={rmActive}>
             <div>
               <Image src={IconName}></Image>
             </div>
@@ -74,7 +79,7 @@ const Navbar = () => {
           <Link href={"/about"}>
             <a>{t.about}</a>
           </Link>
-          <Link href={""}>
+          <Link href={"/works/music"}>
             <a>{t.work}</a>
           </Link>
           <Link href={""}>
