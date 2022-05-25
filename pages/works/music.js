@@ -10,7 +10,6 @@ import AU from "../../assets/works/music/arrow-up.svg";
 import AUA from "../../assets/works/music/arrow-up-active.svg";
 import AD from "../../assets/works/music/arrow-down.svg";
 import ADA from "../../assets/works/music/arrow-down-active.svg";
-import B1 from "../../assets/works/music/B1.png";
 import S1 from "../../assets/works/music/S1.png";
 import S2 from "../../assets/works/music/S2.png";
 import S3 from "../../assets/works/music/S3.png";
