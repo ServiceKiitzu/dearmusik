@@ -5,8 +5,11 @@
   display: flex;
   color: #414141;
   margin-top: 40px;
+  .topic {
+    letter-spacing: 1.98px;
+  }
   .links {
-    width: 180px;
+    width: 176px;
     margin-left: 30px;
     display: flex;
     flex-direction: column;

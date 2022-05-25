@@ -17,7 +17,8 @@ const WorksNav = () => {
   }, []);
   return (
     <div className={styles.box}>
-      <div>作品</div>
+      <div className={styles.linkBox}></div>
+      <div className={styles.topic}>作品</div>
       <div className={styles.links} id="links">
         <Link href={"/works/music"}>
           <a>音樂</a>
