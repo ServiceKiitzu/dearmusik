@@ -53,19 +53,19 @@ const Navbar = () => {
         </Link>
 
         <div className="media">
-          <a href="">
+          <a href="https://music.apple.com/tw/artist/%E9%BB%83%E7%8E%A0/656689595">
             <Image src={IMusic}></Image>
           </a>
-          <a href="">
+          <a href="https://open.spotify.com/artist/3C8yUWotyLh2Kjkood3xYN?si=8mwMR0tuQGuufpNdrxSlbA">
             <Image src={Spotify}></Image>
           </a>
-          <a href="">
+          <a href="https://www.kkbox.com/tw/tc/artist/WsM__mTku7eU3VH0u1">
             <Image src={Kkbox}></Image>
           </a>
-          <a href="">
+          <a href="https://www.facebook.com/dadado.huang">
             <Image src={Facebook}></Image>
           </a>
-          <a href="">
+          <a href="https://www.instagram.com/dadadohuang/">
             <Image src={Instagram}></Image>
           </a>
         </div>
@@ -82,7 +82,7 @@ const Navbar = () => {
           <Link href={"/works/music"}>
             <a>{t.work}</a>
           </Link>
-          <Link href={""}>
+          <Link href={"/"}>
             <a>{t.special}</a>
           </Link>
           <Link href={"/dddParty"}>
