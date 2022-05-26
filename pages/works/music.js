@@ -1,7 +1,7 @@
 import WorksNav from "../../components/WorksNav";
-import Imusic from "../../assets/navbar/imusic.svg";
-import Spotify from "../../assets/navbar/spotify.svg";
-import Kkbox from "../../assets/navbar/kkbox.svg";
+import Imusic from "../../assets/works/music/imusic.svg";
+import Spotify from "../../assets/works/music/spotify.svg";
+import Kkbox from "../../assets/works/music/kkbox.svg";
 import ImgText from "../../assets/works/music/img-text.svg";
 import Img from "../../assets/works/music/img.svg";
 import Image from "next/image";
@@ -100,7 +100,7 @@ const Music = () => {
     {
       id: 10,
       year: "2019",
-      title1: "安卓雅--",
+      title1: "安卓雅—",
       title2: "像月亮的人",
       feat: "feat.黃玠",
       sImg: S10,
@@ -108,7 +108,7 @@ const Music = () => {
     {
       id: 11,
       year: "2021",
-      title1: "PUZZLEMAN--",
+      title1: "PUZZLEMAN—",
       title2: "打打多多",
       feat: "feat.黃玠",
       sImg: S11,

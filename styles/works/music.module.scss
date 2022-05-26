@@ -48,8 +48,12 @@
       }
       .media {
         position: absolute;
-        top: 210px;
+        top: 220px;
+
         display: flex;
+        div {
+          margin-right: 22px;
+        }
       }
       .list {
         position: absolute;
@@ -91,6 +95,7 @@
           font-size: 12px;
           font-weight: 300;
           letter-spacing: 0.72px;
+          margin-top: 4.5px;
         }
         .title {
           font-size: 13px;
