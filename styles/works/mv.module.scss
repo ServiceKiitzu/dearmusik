@@ -1,0 +1,101 @@
+.container {
+  width: 1280px;
+  height: 650px;
+  padding: 30px 0 0 105px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  .img {
+    position: absolute;
+    top: 583px;
+    left: 180px;
+    cursor: pointer;
+    &:hover + .imgText {
+      animation: show 6.5s infinite;
+    }
+  }
+  .arrowBox {
+    margin-top: 450px;
+    margin-left: 3px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    div {
+      cursor: pointer;
+    }
+  }
+  .imgText {
+    position: absolute;
+    top: 541px;
+    left: 180px;
+    opacity: 0;
+  }
+  .close {
+    width: 62px;
+    margin-left: 950px;
+    margin-bottom: 45px;
+    cursor: pointer;
+  }
+  .rightBlock {
+    width: 762px;
+    height: 522px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 46px;
+
+    .musicBox {
+      width: 244px;
+      height: 162px;
+      margin: 0 10px 12px 0;
+      padding-top: 14px;
+      background-color: #000;
+      position: relative;
+      cursor: pointer;
+      .title {
+        position: absolute;
+        left: 6px;
+        top: 5px;
+        color: #fff;
+        line-height: 1.42;
+        letter-spacing: 0.72px;
+        font-size: 12px;
+      }
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.75;
+        cursor: pointer;
+        fill: #fff;
+        &:hover {
+          fill: #468b26;
+          path {
+            stroke: #468b26;
+          }
+        }
+        path {
+          stroke-width: 8;
+          stroke: white;
+          stroke-linejoin: round;
+          stroke-linecap: round;
+          &:hover {
+            stroke: #468b26;
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  23% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
