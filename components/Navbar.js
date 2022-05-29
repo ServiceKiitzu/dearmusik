@@ -82,7 +82,7 @@ const Navbar = () => {
           <Link href={"/works/music"}>
             <a>{t.work}</a>
           </Link>
-          <Link href={"/"}>
+          <Link href={"/special"}>
             <a>{t.special}</a>
           </Link>
           <Link href={"/dddParty"}>

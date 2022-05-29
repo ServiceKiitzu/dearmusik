@@ -5,7 +5,7 @@ import Kkbox from "../../assets/works/music/kkbox.svg";
 import ImgText from "../../assets/works/music/img-text.svg";
 import Img from "../../assets/works/music/img.svg";
 import Image from "next/image";
-import styles from "../../styles/works/music.module.scss";
+import styles from "../../styles/works/Music.module.scss";
 import AU from "../../assets/works/music/arrow-up.svg";
 import AUA from "../../assets/works/music/arrow-up-active.svg";
 import AD from "../../assets/works/music/arrow-down.svg";

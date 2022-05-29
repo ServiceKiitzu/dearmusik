@@ -1,5 +1,5 @@
 import WorksNav from "../../components/WorksNav";
-import styles from "../../styles/works/mv.module.scss";
+import styles from "../../styles/works/Mv.module.scss";
 import Image from "next/image";
 import Close from "../../assets/works/mv/close.png";
 import Modal from "react-modal/lib/components/Modal";
