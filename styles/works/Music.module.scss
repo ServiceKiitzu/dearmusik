@@ -10,6 +10,8 @@
     width: 541px;
     color: #414141;
     .sImg {
+      width: 245px;
+      height: 245px;
       box-shadow: 9px 9px 15px 0 rgba(0, 0, 0, 0.16);
       position: relative;
 
@@ -63,6 +65,16 @@
         letter-spacing: 0.93px;
         font-size: 15px;
         font-weight: 500;
+        div {
+          display: flex;
+
+          .number {
+            margin-bottom: 1px;
+            width: 15px;
+            text-align: left;
+            margin-right: 6px;
+          }
+        }
       }
     }
   }
@@ -80,6 +92,8 @@
       position: relative;
 
       .previewImg {
+        width: 122px;
+        height: 122px;
         &:hover {
           box-shadow: 5px 5px 7px 0 rgba(0, 0, 0, 0.16);
         }

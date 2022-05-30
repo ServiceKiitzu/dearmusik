@@ -182,7 +182,38 @@ const Music = () => {
               </a>
             </div>
           </div>
-          <div className={styles.list}>1&nbsp;&nbsp;| 相片蒐集簿</div>
+          <div className={styles.list}>
+            <div>
+              <div className={styles.number}>1</div>| 相片蒐集簿
+            </div>
+            <div>
+              <div className={styles.number}>2</div>| 在一片黑暗
+            </div>
+            <div>
+              <div className={styles.number}>3</div>| 關於那些記得
+            </div>
+            <div>
+              <div className={styles.number}>4</div>| 你
+            </div>
+            <div>
+              <div className={styles.number}>5</div>| 相片蒐集簿
+            </div>
+            <div>
+              <div className={styles.number}>6</div>| 相片蒐集簿
+            </div>
+            <div>
+              <div className={styles.number}>7</div>| 相片蒐集簿
+            </div>
+            <div>
+              <div className={styles.number}>8</div>| 脆弱
+            </div>
+            <div>
+              <div className={styles.number}>9</div>| 我
+            </div>
+            <div>
+              <div className={styles.number}>10</div>| 相片蒐集簿
+            </div>
+          </div>
         </div>
       </div>
       <div className={styles.rightBlock}>
