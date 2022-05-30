@@ -200,7 +200,9 @@ const Music = () => {
                     console.log(data[0]);
                   }}
                 >
-                  <Image src={music.sImg}></Image>
+                  <div className={styles.previewImg}>
+                    <Image src={music.sImg}></Image>
+                  </div>
                   {music.id == musics.length && (
                     <div className={styles.new}>NEW</div>
                   )}

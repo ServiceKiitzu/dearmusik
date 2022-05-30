@@ -12,6 +12,7 @@
     .sImg {
       box-shadow: 9px 9px 15px 0 rgba(0, 0, 0, 0.16);
       position: relative;
+
       .new {
         position: absolute;
         width: 28px;
@@ -77,6 +78,12 @@
       margin-right: 32px;
       cursor: pointer;
       position: relative;
+
+      .previewImg {
+        &:hover {
+          box-shadow: 5px 5px 7px 0 rgba(0, 0, 0, 0.16);
+        }
+      }
       .new {
         margin-right: 0;
         position: absolute;
