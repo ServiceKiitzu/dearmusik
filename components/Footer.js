@@ -2,7 +2,8 @@ const Footer = () => {
   return (
     <footer id="footer">
       <p>
-        copyright © 2022 dearmusik | terms of use | &nbsp;
+        © 2022 Dear Musik All Rights Reserved.
+        非官方授權，不得使用本網站的所有信息資料 |&nbsp;
         <a href="" className="privacy">
           privacy & cookies
         </a>
