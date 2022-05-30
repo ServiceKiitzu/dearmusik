@@ -67,12 +67,12 @@
           margin-bottom: 2.5px;
           padding-bottom: 0.5px;
         }
-        a {
+        .aBox {
           display: flex;
           color: #a5a5a5;
           cursor: pointer;
           flex-wrap: nowrap;
-          &.active {
+          &.act {
             font-weight: bold !important;
             color: #414141;
           }

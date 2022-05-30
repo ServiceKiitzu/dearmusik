@@ -21,15 +21,15 @@ const Special = () => {
     function activeItem(e) {
       e.preventDefault();
       listItems.forEach((item) => {
-        item.classList.remove(styles.active);
+        item.classList.remove(styles.act);
       });
-      e.currentTarget.classList.toggle(styles.active);
+      e.currentTarget.classList.toggle(styles.act);
     }
   }
   useEffect(() => {
     const listItems = document.querySelectorAll("div.item a");
     const lastItem = listItems[0];
-    lastItem.classList.add(styles.active);
+    lastItem.classList.add(styles.act);
   }, []);
   return (
     <div className={styles.container}>
@@ -51,7 +51,7 @@ const Special = () => {
             sessions.map((item) => {
               return (
                 <div className={`${styles.item} item`} key={item.id}>
-                  <a>
+                  <a className={styles.aBox}>
                     <div className={styles.fc}>‧{item.year}</div>
                     <div className={styles.sc}>{item.title}</div>
                     {item.id == sessions.length && (
