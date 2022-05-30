@@ -13,9 +13,8 @@ const Special = () => {
     { id: 4, year: "2024", title: "今年，28歲" },
   ];
   sessions = sessions.reverse();
-  if (typeof window !== "undefined" && sessions) {
+  if (typeof window !== "undefined") {
     const listItems = document.querySelectorAll("div.item a");
-    console.log(listItems);
     listItems.forEach((item) => {
       item.addEventListener("click", activeItem);
     });

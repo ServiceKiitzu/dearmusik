@@ -3,7 +3,10 @@ const Footer = () => {
     <footer>
       <p>
         copyright © 2022 dearmusik | terms of use |
-        <a href=""> privacy & cookies</a>
+        <a href="" className="privacy">
+          {" "}
+          privacy & cookies
+        </a>
       </p>
     </footer>
   );
