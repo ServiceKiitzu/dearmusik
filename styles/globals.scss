@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500&family=Roboto+Slab:wght@300;500&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500&family=Roboto+Slab:wght@300;500&display=swap");
 
 html {
   -webkit-box-sizing: border-box;
@@ -16,7 +16,13 @@ html {
 body {
   font-family: "Roboto Slab", "Noto Sans TC";
 }
-
+.pageContainer {
+  position: relative;
+  min-height: 100vh;
+}
+.content {
+  padding-bottom: 50px;
+}
 nav {
   width: 1280px;
   height: 104px;
@@ -117,9 +123,6 @@ nav {
   }
 }
 
-.content {
-}
-
 .ReactCollapse--collapse {
   position: fixed;
   bottom: 0;
@@ -165,21 +168,28 @@ nav {
   }
 }
 
-footer {
-  display: block;
+#footer {
   width: 100%;
+  position: absolute;
   bottom: 0;
   color: #a5a5a5;
   text-align: center;
   font-size: 12px;
   letter-spacing: 1.44px;
   font-weight: 500;
-  .privacy {
-    color: inherit;
-    text-decoration: none;
-    font-weight: inherit;
-    &:hover {
-      font-weight: bold;
+  p {
+    margin: 17px 0 17px 0;
+    a.privacy {
+      width: 147px;
+      color: inherit;
+      text-decoration: none;
+      font-weight: inherit;
+      letter-spacing: 1.44px;
+      &:hover {
+        color: inherit;
+        text-decoration: none;
+        font-weight: 700;
+      }
     }
   }
 }

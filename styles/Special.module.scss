@@ -16,12 +16,13 @@
       border-radius: 50%;
       background-color: #f5ff03;
       font-size: 12px;
-      font-weight: 500;
       letter-spacing: 1.08px;
-      padding: 8px 3px 0 0;
+      padding: 6px 3px 0 0;
       color: #000000;
-      margin-left: 4px;
       div {
+        text-align: left;
+        font-weight: 500;
+        margin-left: -1px;
         transform: scale(0.75);
         -webkit-transform: scale(0.75);
       }
@@ -98,10 +99,11 @@
             font-size: 12px;
             font-weight: 500;
             letter-spacing: 1.08px;
-            padding: 8px 3px 0 0;
+            padding: 6px 3px 0 0;
             color: #000000;
             margin-left: 4px;
             div {
+              margin-left: -1px;
               -webkit-transform: scale(0.75);
               transform: scale(0.75);
             }

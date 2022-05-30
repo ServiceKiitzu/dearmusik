@@ -4,7 +4,7 @@ import Cookie from "./Cookie";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="pageContainer">
       <Navbar></Navbar>
       <div className="content">{children}</div>
       <Cookie></Cookie>
