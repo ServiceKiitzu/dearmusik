@@ -13,8 +13,10 @@ const Special = () => {
     { id: 4, year: "2024", title: "今年，28歲" },
   ];
   sessions = sessions.reverse();
-  if (typeof window !== "undefined") {
+  useEffect(() => {
     const listItems = document.querySelectorAll("div.item a");
+    const lastItem = listItems[0];
+    lastItem.classList.add(styles.act);
     listItems.forEach((item) => {
       item.addEventListener("click", activeItem);
     });
@@ -25,11 +27,6 @@ const Special = () => {
       });
       e.currentTarget.classList.toggle(styles.act);
     }
-  }
-  useEffect(() => {
-    const listItems = document.querySelectorAll("div.item a");
-    const lastItem = listItems[0];
-    lastItem.classList.add(styles.act);
   }, []);
   return (
     <div className={styles.container}>
