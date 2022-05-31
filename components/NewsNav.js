@@ -2,6 +2,7 @@ import Triangle from "../assets/news/Triangle.png";
 import styles from "../styles/news/NewsNav.module.scss";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const NewsNave = () => {
   const [type, setType] = useState("");
@@ -17,7 +18,6 @@ const NewsNave = () => {
     }
   }
   const handleItemSwitch = () => {
-    console.log("我在點");
     const typeItem = document.getElementById("typeItem");
 
     if (itemSwitch == 1) {
@@ -32,10 +32,6 @@ const NewsNave = () => {
     sessionStorage.getItem("type")
       ? setType(sessionStorage.getItem("type"))
       : setType("全部");
-    if (sessionStorage.getItem("type")) {
-      return;
-    }
-    console.log(sessionStorage.getItem("type"));
   }, []);
 
   return (
@@ -49,18 +45,26 @@ const NewsNave = () => {
         </div>
       </a>
       <div className={styles.typeItem} id="typeItem">
-        <a>
-          <div>全部</div>
-        </a>
-        <a>
-          <div>報導</div>
-        </a>
-        <a>
-          <div>演出</div>
-        </a>
-        <a>
-          <div>作品</div>
-        </a>
+        <Link href={"/news"}>
+          <a>
+            <div>全部</div>
+          </a>
+        </Link>
+        <Link href={"/news"}>
+          <a>
+            <div>報導</div>
+          </a>
+        </Link>
+        <Link href={"/news"}>
+          <a>
+            <div>演出</div>
+          </a>
+        </Link>
+        <Link href={"/news"}>
+          <a>
+            <div>作品</div>
+          </a>
+        </Link>
       </div>
     </div>
   );

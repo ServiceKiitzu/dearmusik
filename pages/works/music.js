@@ -228,7 +228,6 @@ const Music = () => {
                     });
                     setMusicData(data[0]);
                     setItemIndex(music.id);
-                    console.log(data[0]);
                   }}
                 >
                   <div className={styles.previewImg}>
