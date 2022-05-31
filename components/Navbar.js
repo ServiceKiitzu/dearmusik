@@ -73,7 +73,7 @@ const Navbar = () => {
 
       <div className="navRight">
         <div className="link">
-          <Link href={""}>
+          <Link href={"/news"}>
             <a>{t.news}</a>
           </Link>
           <Link href={"/about"}>
