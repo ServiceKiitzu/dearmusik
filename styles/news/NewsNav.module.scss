@@ -1,0 +1,52 @@
+.type {
+  width: 157px;
+  padding-left: 6px;
+  margin-right: 141px;
+  .all {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1.98px;
+    color: #414141;
+    border-bottom: 2px solid #707070;
+    padding-left: 6px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    // &.highlight {
+    //   font-size: 16px;
+    //   font-weight: bold;
+    //   letter-spacing: 1.98px;
+    //   color: #414141;
+    // }
+    .triangle {
+      width: 20px;
+      transform: rotate(180deg);
+      margin-bottom: -3px;
+      margin-right: -5px;
+    }
+  }
+  .typeItem {
+    display: block;
+    padding-top: 17px;
+    height: 190px;
+    box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.16);
+    a {
+      text-decoration: none;
+      div {
+        padding-left: 6px;
+        margin-bottom: 17px;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 1.98px;
+        color: #414141;
+        cursor: pointer;
+        &:hover {
+          font-size: 16px;
+          font-weight: bold;
+          letter-spacing: 1.98px;
+          color: #414141;
+        }
+      }
+    }
+  }
+}

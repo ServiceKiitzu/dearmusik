@@ -3,6 +3,7 @@ import "../styles/globals.scss";
 import Layout from "../components/Layout";
 import "@fontsource/roboto-slab";
 import "@fontsource/noto-sans-tc";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
   return (

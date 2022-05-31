@@ -53,19 +53,39 @@ const Navbar = () => {
         </Link>
 
         <div className="media">
-          <a href="https://music.apple.com/tw/artist/%E9%BB%83%E7%8E%A0/656689595">
+          <a
+            href="https://music.apple.com/tw/artist/%E9%BB%83%E7%8E%A0/656689595"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image src={IMusic}></Image>
           </a>
-          <a href="https://open.spotify.com/artist/3C8yUWotyLh2Kjkood3xYN?si=8mwMR0tuQGuufpNdrxSlbA">
+          <a
+            href="https://open.spotify.com/artist/3C8yUWotyLh2Kjkood3xYN?si=8mwMR0tuQGuufpNdrxSlbA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image src={Spotify}></Image>
           </a>
-          <a href="https://www.kkbox.com/tw/tc/artist/WsM__mTku7eU3VH0u1">
+          <a
+            href="https://www.kkbox.com/tw/tc/artist/WsM__mTku7eU3VH0u1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image src={Kkbox}></Image>
           </a>
-          <a href="https://www.facebook.com/dadado.huang">
+          <a
+            href="https://www.facebook.com/dadado.huang"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image src={Facebook}></Image>
           </a>
-          <a href="https://www.instagram.com/dadadohuang/">
+          <a
+            href="https://www.instagram.com/dadadohuang/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image src={Instagram}></Image>
           </a>
         </div>
