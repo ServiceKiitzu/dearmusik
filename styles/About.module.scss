@@ -1,3 +1,52 @@
+@media screen and (max-width: 1280px) {
+  .container {
+    width: 100vw !important;
+    height: 1200px !important;
+    flex-direction: column;
+    padding: 7px 34px 0px !important;
+    align-items: center !important;
+    background-color: #000;
+    .title {
+      color: #e6e6e6 !important;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 1.48px;
+      text-align: center;
+    }
+    .avatar {
+      display: none !important;
+    }
+    .avatarM {
+      width: 292px;
+      height: 174px;
+      margin: 21px 0 25px;
+    }
+    .story {
+      margin-left: 0 !important;
+      width: 300px !important;
+      height: 769px !important;
+      text-align: start !important;
+      color: #e6e6e6 !important;
+    }
+    .img {
+      display: none !important;
+    }
+    .imgText {
+      display: none !important;
+    }
+    .imgM {
+      position: absolute;
+      top: 1065px;
+      left: 0;
+    }
+    .imgTextM {
+      position: absolute;
+      top: 1065px;
+      left: 126px;
+    }
+  }
+}
+
 .container {
   width: 1280px;
   height: 750px;
@@ -6,6 +55,10 @@
   display: flex;
   position: relative;
 
+  .avatar {
+    width: 245px;
+    height: 245px;
+  }
   .story {
     width: 747px;
     height: 371px;
