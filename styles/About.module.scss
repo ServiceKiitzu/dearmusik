@@ -7,6 +7,7 @@
     align-items: center !important;
     background-color: #000;
     .title {
+      display: block !important;
       color: #e6e6e6 !important;
       font-size: 18px;
       font-weight: 500;
@@ -17,6 +18,7 @@
       display: none !important;
     }
     .avatarM {
+      display: block !important;
       width: 292px;
       height: 174px;
       margin: 21px 0 25px;
@@ -55,6 +57,12 @@
   display: flex;
   position: relative;
 
+  .title {
+    display: none;
+  }
+  .avatarM {
+    display: none;
+  }
   .avatar {
     width: 245px;
     height: 245px;

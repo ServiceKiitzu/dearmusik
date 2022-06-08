@@ -13,6 +13,7 @@
       display: none !important;
     }
     .imgM {
+      display: block !important;
       width: 280px;
       height: 217px;
       position: absolute;
@@ -35,6 +36,9 @@
     transform: translateX(-50%);
     bottom: 205px;
     z-index: 2;
+  }
+  .imgM {
+    display: none;
   }
   .block {
     width: 1236px;
