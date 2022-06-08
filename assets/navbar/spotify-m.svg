@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34.041" height="34.044" viewBox="0 0 34.041 34.044">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #5eac3a;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_64" data-name="Rectangle 64" class="cls-1" width="34.041" height="34.041"/>
+    </clipPath>
+  </defs>
+  <g id="Group_131" data-name="Group 131" transform="translate(0 0)">
+    <g id="Group_127" data-name="Group 127" transform="translate(0 0)">
+      <g id="Group_126" data-name="Group 126" class="cls-2" transform="translate(0 0)">
+        <path id="Path_112" data-name="Path 112" class="cls-1" d="M17.02,0a17.02,17.02,0,1,0,17.02,17.02A17.021,17.021,0,0,0,17.02,0" transform="translate(0 0)"/>
+      </g>
+    </g>
+    <g id="Group_121" data-name="Group 121" transform="translate(0 0.003)">
+      <path id="Icon_simple-spotify" data-name="Icon simple-spotify" class="cls-3" d="M17.02,0a17.02,17.02,0,1,0,17.02,17.02A17.07,17.07,0,0,0,17.02,0Zm7.831,24.594a1.014,1.014,0,0,1-1.448.34c-4-2.468-9.021-2.98-14.979-1.618a1.052,1.052,0,1,1-.509-2.041c6.468-1.448,12.084-.851,16.51,1.872a1.022,1.022,0,0,1,.427,1.447Zm2.042-4.681a1.285,1.285,0,0,1-1.79.426A22.056,22.056,0,0,0,8.17,18.382,1.293,1.293,0,0,1,7.4,15.913a24.908,24.908,0,0,1,19.148,2.3,1.2,1.2,0,0,1,.342,1.7Zm.17-4.766c-5.448-3.234-14.554-3.574-19.745-1.956a1.562,1.562,0,0,1-.936-2.981c6.042-1.787,16-1.447,22.3,2.3a1.646,1.646,0,0,1,.594,2.213,1.781,1.781,0,0,1-2.211.426Z"/>
+    </g>
+  </g>
+</svg>

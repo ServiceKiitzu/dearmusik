@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35.879" height="36.358" viewBox="0 0 35.879 36.358">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #5eac3a;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_64" data-name="Rectangle 64" class="cls-1" width="35.879" height="35.879"/>
+    </clipPath>
+  </defs>
+  <g id="Group_178" data-name="Group 178" transform="translate(0 0)">
+    <g id="Group_127" data-name="Group 127" transform="translate(0 0.479)">
+      <g id="Group_126" data-name="Group 126" class="cls-2" transform="translate(0 0)">
+        <path id="Path_112" data-name="Path 112" class="cls-1" d="M17.94,0a17.94,17.94,0,1,0,17.94,17.94A17.94,17.94,0,0,0,17.94,0" transform="translate(0 0)"/>
+      </g>
+    </g>
+    <g id="Group_171" data-name="Group 171" transform="translate(0.054 0)">
+      <path id="Icon_awesome-facebook" data-name="Icon awesome-facebook" class="cls-3" d="M36.388,18.852A18.1,18.1,0,0,0,18.475.562,18.1,18.1,0,0,0,.563,18.852,18.184,18.184,0,0,0,15.676,36.921V24.139h-4.55V18.852h4.55v-4.03c0-4.583,2.672-7.115,6.766-7.115a27.016,27.016,0,0,1,4.01.357v4.5H24.193a2.617,2.617,0,0,0-2.919,2.856v3.433h4.968l-.795,5.287H21.274V36.921A18.184,18.184,0,0,0,36.388,18.852Z" transform="translate(-0.563 -0.562)"/>
+    </g>
+  </g>
+</svg>
