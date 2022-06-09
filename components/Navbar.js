@@ -186,7 +186,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href={"/works"}>
+            <Link href={"/works/music"}>
               <a>作品</a>
             </Link>
           </li>

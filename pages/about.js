@@ -9,11 +9,29 @@ import styles from "../styles/About.module.scss";
 import { useRouter } from "next/router";
 import zh from "../locales/about/zh";
 import en from "../locales/about/en";
+import { useEffect } from "react";
 
 const About = () => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === "zh" ? zh : en;
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const square = entry.target;
+        if (entry.isIntersecting) {
+          square.classList.add(styles.animation);
+          return; // if we added the class, exit the function
+        }
+        // We're not intersecting, so remove the class!
+        square.classList.remove(styles.animation);
+      });
+    });
+    const imgTextM = document.querySelector("#imgTextM");
+    if (imgTextM) {
+      observer.observe(document.querySelector("#imgTextM"));
+    }
+  }, []);
   return (
     <div className={styles.container}>
       <div className={styles.title}>關於</div>
@@ -30,7 +48,7 @@ const About = () => {
       <div className={styles.imgM}>
         <Image src={FishM}></Image>
       </div>
-      <div className={styles.imgTextM}>
+      <div className={styles.imgTextM} id="imgTextM">
         <Image src={TextM}></Image>
       </div>
       <div className={styles.img}>

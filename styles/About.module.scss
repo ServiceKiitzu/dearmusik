@@ -45,6 +45,10 @@
       position: absolute;
       top: 1065px;
       left: 126px;
+      opacity: 0;
+      &.animation {
+        animation: show 6.5s infinite;
+      }
     }
   }
 }

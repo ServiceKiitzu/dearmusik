@@ -55,6 +55,8 @@ body {
     // filter: blur(2.2px);
     opacity: 0.8;
     padding-top: 76px;
+    -webkit-backdrop-filter: blur(2.2px);
+    backdrop-filter: blur(2.2px);
     .cross {
       position: absolute;
       top: 22px;
@@ -94,7 +96,7 @@ body {
     }
   }
   .pageContainer {
-    min-height: 100% !important;
+    height: 100% !important;
     // height: calc(100vh - 67px) !important;
   }
   .content {
@@ -348,4 +350,20 @@ body {
 .ReactModal__Content {
   top: 78px !important;
   left: 50% !important;
+}
+
+// 插圖文字閃爍動畫
+.animation {
+  animation: show 6.5s infinite;
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  23% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
