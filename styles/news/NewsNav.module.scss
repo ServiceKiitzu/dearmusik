@@ -1,3 +1,8 @@
+@font-face {
+  font-family: NotoSansCJKtc-DemiLight;
+  src: url("../../assets/font/NotoSansCJKtc-DemiLight.otf") format("opentype");
+}
+
 @media screen and (max-width: 1280px) {
   .type {
     width: 292px !important;
@@ -69,6 +74,7 @@
     a {
       text-decoration: none;
       div {
+        font-family: "NotoSansCJKtc-DemiLight";
         padding-left: 6px;
         margin-bottom: 17px;
         font-size: 16px;
