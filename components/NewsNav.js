@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const NewsNave = () => {
   const [type, setType] = useState("");
-  const [itemSwitch, setItemSwitch] = useState(1);
+  const [itemSwitch, setItemSwitch] = useState(0);
   if (typeof window !== "undefined") {
     const navItem = document.querySelectorAll("div#typeItem a");
     navItem.forEach((item) => {
