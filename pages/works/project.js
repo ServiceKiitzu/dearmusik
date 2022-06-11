@@ -1,6 +1,6 @@
 import styles from "../../styles/works/Project.module.scss";
 import Image from "next/image";
-import Avatar from "../../assets/works/project/avatar.svg";
+import Avatar from "../../assets/works/project/project-avatar.jpg";
 import { useRouter } from "next/router";
 import zh from "../../locales/project/zh";
 import en from "../../locales/project/en";

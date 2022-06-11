@@ -3,7 +3,7 @@ import styles from "../../styles/works/Mv.module.scss";
 import Image from "next/image";
 import Close from "../../assets/works/mv/cross.svg";
 import Modal from "react-modal/lib/components/Modal";
-import Avatar from "../../assets/works/mv/avatar.png";
+import Avatar from "../../assets/works/mv/mv-avatar.jpg";
 import Img from "../../assets/works/mv/img.svg";
 import ImgText from "../../assets/works/mv/img-text.svg";
 import AU from "../../assets/works/music/arrow-up.svg";
