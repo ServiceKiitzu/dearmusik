@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Avatar from "../assets/about/about-avatar.jpg";
-import AvatarM from "../assets/about/avatar-m.png";
+import AvatarM from "../assets/about/about-avatar-m.png";
 import Fish from "../assets/about/fish.svg";
 import Text from "../assets/about/text.svg";
 import FishM from "../assets/about/fish-m.svg";
