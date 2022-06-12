@@ -3,13 +3,31 @@ import styles from "../../styles/news/Details.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import Previous from "../../assets/news/previous.svg";
+
 import Img from "../../assets/news/img.svg";
 import ImgText from "../../assets/news/img-text.svg";
+import { useEffect } from "react";
+import { useRouter } from "next/dist/client/router";
+import { useState } from "react";
 
 const Details = () => {
+  const router = useRouter();
+  useEffect(() => {
+    const nav = document.getElementById("type");
+    let widthNow = window.innerWidth;
+    // function handleResize() {
+    //   setWidth(widthNow);
+    // }
+    // window.addEventListener("resize", handleResize);
+    // console.log(widthNow);
+    if (widthNow <= 1280) {
+      nav.style.display = "none";
+    }
+  }, []);
   return (
     <div className={styles.container}>
       <NewsNave></NewsNave>
+      <div className={styles.topic}>最新消息</div>
       <div className={styles.rightBlock}>
         <Link href={"/news"}>
           <div className={styles.previous}>
@@ -17,7 +35,15 @@ const Details = () => {
           </div>
         </Link>
 
-        <div className={styles.date}>20220530</div>
+        <div className={styles.date}>
+          <div
+            className={styles.previousM}
+            onClick={() => {
+              router.back();
+            }}
+          ></div>
+          20220530
+        </div>
         <div className={styles.title}>
           歡迎加入黃玠國! <br /> 黃玠國裡，都是喜歡自由跟充滿愛的國人
         </div>
