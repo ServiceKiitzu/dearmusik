@@ -1,35 +1,96 @@
-.container {
-  // height: 650px;
-  width: 1280px;
-  padding: 30px 137px 0 105px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  .avatarBox {
-    height: 245px;
-  }
-  .text {
-    width: 747px;
-    height: 246px;
-    margin-left: 46px;
-    line-height: 1.61;
-    letter-spacing: 1.86px;
-    color: #414141;
-    font-size: 15px;
-    font-weight: 500;
-  }
-  .imgBox {
-    width: 796px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 37px;
-    div {
-      width: 122px;
-      text-align: center;
-      color: #414141;
-      line-height: 1.29;
-      letter-spacing: 1.01px;
+@media screen and (max-width: 1280px) {
+  .container {
+    padding: 7px 34px 230px;
+    .topic {
+      width: 40px;
+      font-size: 18px;
       font-weight: 500;
+      letter-spacing: 1.48px;
+      color: #e6e6e6;
+      margin: 0 auto;
+    }
+    .avatarBox {
+      display: none;
+    }
+    .text {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.61;
+      letter-spacing: 1.86px;
+      color: #e6e6e6;
+      text-align: justify;
+      margin: 30px 0 19px;
+    }
+    .imgBox {
+      display: none;
+    }
+    .imgBoxM {
+      display: flex;
+      flex-wrap: wrap;
+      div {
+        margin-bottom: 17px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: 50%;
+        height: 195px;
+        color: #5eac3a;
+        // line-height: 1;
+        letter-spacing: 2.4px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+    .imgM {
+      position: absolute;
+      bottom: 76px;
+      right: 142px;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    // height: 650px;
+    width: 1280px;
+    padding: 30px 137px 0 105px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    .avatarBox {
+      height: 245px;
+    }
+    .topic {
+      display: none;
+    }
+    .text {
+      width: 747px;
+      height: 246px;
+      margin-left: 46px;
+      line-height: 1.61;
+      letter-spacing: 1.86px;
+      color: #414141;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .imgBox {
+      width: 796px;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 37px;
+      div {
+        width: 122px;
+        text-align: center;
+        color: #414141;
+        line-height: 1.29;
+        letter-spacing: 1.01px;
+        font-weight: 500;
+      }
+    }
+    .imgBoxM {
+      display: none;
     }
   }
 }
