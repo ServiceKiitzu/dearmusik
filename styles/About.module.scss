@@ -37,11 +37,13 @@
       display: none !important;
     }
     .imgM {
+      display: block !important;
       position: absolute;
       top: 1065px;
-      left: 0;
+      left: -8px;
     }
     .imgTextM {
+      display: block !important;
       position: absolute;
       top: 1065px;
       left: 126px;
@@ -98,6 +100,12 @@
     &:hover + .imgText {
       animation: show 6.5s infinite;
     }
+  }
+  .imgM {
+    display: none;
+  }
+  .imgTextM {
+    display: none;
   }
 }
 @keyframes show {
