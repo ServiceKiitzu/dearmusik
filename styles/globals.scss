@@ -165,6 +165,20 @@ body {
     z-index: 2;
     opacity: 0.9;
   }
+  // .swiper {
+  //   height: 100%;
+  // }
+  .slideBox {
+    width: 100%;
+    min-height: calc(100vh - 67px) !important;
+    height: auto !important;
+    span {
+      width: 100% !important;
+      min-height: calc(100vh - 67px) !important;
+      height: auto !important;
+      // aspect-ratio: 360/640;
+    }
+  }
 }
 .pageContainer {
   position: relative;
