@@ -60,7 +60,7 @@ const Navbar = () => {
   return (
     <Fragment>
       <nav className="nav1">
-        <div className="iconBox">
+        <div className="iconBox" id="iconBox">
           <div>
             <Link href={"/"}>
               <a>

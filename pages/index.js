@@ -20,10 +20,12 @@ import M2 from "../assets/index/swipe-m-2.jpg";
 import M3 from "../assets/index/swipe-m-3.jpg";
 import M4 from "../assets/index/swipe-m-4.jpg";
 import M5 from "../assets/index/swipe-m-5.jpg";
+import Mask from "../assets/index/mask.png";
 import StoreM from "../assets/index/store-m.svg";
 import LArrow from "../assets/index/left_arrow.svg";
 import RArrow from "../assets/index/right_arrow.svg";
 import { CarouselItem } from "react-bootstrap";
+import { useEffect } from "react";
 
 export default function Home() {
   const router = useRouter();
@@ -35,6 +37,11 @@ export default function Home() {
   };
   const carousel = [I1, I2, I3, I4, I5];
   const carouselM = [M1, M2, M3, M4, M5];
+  useEffect(() => {
+    const iconBox = document.getElementById("iconBox");
+    iconBox.style.backgroundColor = "transparent";
+    return () => (iconBox.style.backgroundColor = "#000");
+  }, []);
   return (
     <>
       <div className={styles.mask}></div>
@@ -62,7 +69,7 @@ export default function Home() {
             carouselM.map((item, i) => {
               return (
                 <SwiperSlide key={i}>
-                  <div>
+                  <div className="slideBox">
                     <Image src={item}></Image>
                   </div>
                 </SwiperSlide>
