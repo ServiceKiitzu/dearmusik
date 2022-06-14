@@ -1,171 +1,189 @@
-.container {
-  width: 1280px;
-  height: 650px;
-  margin: 0 auto;
-  padding: 30px 0 0 105px;
-  display: flex;
-  position: relative;
-  .leftBlock {
-    display: flex;
-    width: 541px;
-    color: #414141;
-    .sImg {
-      width: 245px;
-      height: 245px;
-      box-shadow: 9px 9px 15px 0 rgba(0, 0, 0, 0.16);
-      position: relative;
-
-      .new {
-        position: absolute;
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        background-color: #f5ff03;
-        font-size: 9px;
-        line-height: 28px;
-        letter-spacing: 1.08px;
-        right: 0px;
-        top: -14px;
-      }
+@media screen and (max-width: 1280px) {
+  .container {
+    width: 100%;
+    padding: 7px 34px 230px;
+    .topic {
+      color: #e6e6e6;
+      width: 40px;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 1.48px;
+      margin: 0 auto;
     }
-    .info {
-      position: relative;
-      margin-left: 46px;
-      width: 250px;
-      .year {
-        font-size: 12px;
-        font-weight: 500;
-        margin-bottom: 1px;
-        letter-spacing: 1.44px;
-      }
-      .title {
-        font-size: 30px;
-        font-weight: bold;
-        letter-spacing: 3px;
-      }
-      .feat {
-        margin-top: 21px;
-        font-size: 12px;
-        font-weight: 500;
-        letter-spacing: 1.44px;
-      }
-      .media {
-        position: absolute;
-        top: 220px;
+  }
+}
 
-        display: flex;
-        div {
-          margin-right: 22px;
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1280px;
+    height: 650px;
+    margin: 0 auto;
+    padding: 30px 0 0 105px;
+    display: flex;
+    position: relative;
+    .leftBlock {
+      display: flex;
+      width: 541px;
+      color: #414141;
+      .sImg {
+        width: 245px;
+        height: 245px;
+        box-shadow: 9px 9px 15px 0 rgba(0, 0, 0, 0.16);
+        position: relative;
+
+        .new {
+          position: absolute;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          background-color: #f5ff03;
+          font-size: 9px;
+          line-height: 28px;
+          letter-spacing: 1.08px;
+          right: 0px;
+          top: -14px;
         }
       }
-      .list {
-        position: absolute;
-        top: 286px;
-        line-height: 1.61;
-        letter-spacing: 0.93px;
-        font-size: 15px;
-        font-weight: 500;
-        div {
-          display: flex;
+      .info {
+        position: relative;
+        margin-left: 46px;
+        width: 250px;
+        .year {
+          font-size: 12px;
+          font-weight: 500;
+          margin-bottom: 1px;
+          letter-spacing: 1.44px;
+        }
+        .title {
+          font-size: 30px;
+          font-weight: bold;
+          letter-spacing: 3px;
+        }
+        .feat {
+          margin-top: 21px;
+          font-size: 12px;
+          font-weight: 500;
+          letter-spacing: 1.44px;
+        }
+        .media {
+          position: absolute;
+          top: 220px;
 
-          .number {
-            margin-bottom: 1px;
-            width: 15px;
-            text-align: left;
-            margin-right: 6px;
+          display: flex;
+          div {
+            margin-right: 22px;
+          }
+        }
+        .list {
+          position: absolute;
+          top: 286px;
+          line-height: 1.61;
+          letter-spacing: 0.93px;
+          font-size: 15px;
+          font-weight: 500;
+          div {
+            display: flex;
+
+            .number {
+              margin-bottom: 1px;
+              width: 15px;
+              text-align: left;
+              margin-right: 6px;
+            }
           }
         }
       }
     }
-  }
-  .rightBlock {
-    display: flex;
-    width: 462px;
-    flex-wrap: wrap;
-    margin-left: 37px;
-    color: #414141;
-    position: relative;
-    div {
-      width: 122px;
-      margin-right: 32px;
-      cursor: pointer;
+    .rightBlock {
+      display: flex;
+      width: 462px;
+      flex-wrap: wrap;
+      margin-left: 37px;
+      color: #414141;
       position: relative;
-
-      .previewImg {
+      div {
         width: 122px;
-        height: 122px;
-        &:hover {
-          box-shadow: 5px 5px 7px 0 rgba(0, 0, 0, 0.16);
+        margin-right: 32px;
+        cursor: pointer;
+        position: relative;
+
+        .previewImg {
+          width: 122px;
+          height: 122px;
+          &:hover {
+            box-shadow: 5px 5px 7px 0 rgba(0, 0, 0, 0.16);
+          }
         }
-      }
-      .new {
-        margin-right: 0;
-        position: absolute;
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        background-color: #f5ff03;
-        font-size: 9px;
-        line-height: 28px;
-        letter-spacing: 1.08px;
-        right: 0px;
-        top: -14px;
-      }
-      .text {
-        .year {
-          font-size: 12px;
-          font-weight: 300;
-          letter-spacing: 0.72px;
-          margin-top: 4.5px;
+        .new {
+          margin-right: 0;
+          position: absolute;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          background-color: #f5ff03;
+          font-size: 9px;
+          line-height: 28px;
+          letter-spacing: 1.08px;
+          right: 0px;
+          top: -14px;
         }
-        .title {
-          font-size: 13px;
-          font-weight: 500;
-          line-height: 1.54;
-          letter-spacing: 0.78px;
-          color: #414141;
-        }
-        .feat {
-          font-size: 12px;
-          font-weight: 300;
-          margin-top: 6px;
-          letter-spacing: 0.72px;
+        .text {
+          .year {
+            font-size: 12px;
+            font-weight: 300;
+            letter-spacing: 0.72px;
+            margin-top: 4.5px;
+          }
+          .title {
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.54;
+            letter-spacing: 0.78px;
+            color: #414141;
+          }
+          .feat {
+            font-size: 12px;
+            font-weight: 300;
+            margin-top: 6px;
+            letter-spacing: 0.72px;
+          }
         }
       }
     }
-  }
-  .arrowUp {
-    position: absolute;
-    right: 113px;
-    bottom: 80px;
-    width: 18px;
-    margin: 0;
-    cursor: pointer;
-  }
-  .arrowDown {
-    position: absolute;
-    right: 113px;
-    bottom: 30px;
-    width: 18px;
-    margin: 0;
-    cursor: pointer;
-  }
-  .img {
-    position: absolute;
-    top: 0px;
-    right: 47px;
-    cursor: pointer;
-    &:hover + .imgText {
-      animation: show 6.5s infinite;
+    .arrowUp {
+      position: absolute;
+      right: 113px;
+      bottom: 80px;
+      width: 18px;
+      margin: 0;
+      cursor: pointer;
     }
-  }
-  .imgText {
-    position: absolute;
-    top: 0px;
-    right: 18px;
-    opacity: 0;
+    .arrowDown {
+      position: absolute;
+      right: 113px;
+      bottom: 30px;
+      width: 18px;
+      margin: 0;
+      cursor: pointer;
+    }
+    .img {
+      position: absolute;
+      top: 0px;
+      right: 47px;
+      cursor: pointer;
+      &:hover + .imgText {
+        animation: show 6.5s infinite;
+      }
+    }
+    .imgText {
+      position: absolute;
+      top: 0px;
+      right: 18px;
+      opacity: 0;
+    }
   }
 }
+
 @keyframes show {
   0% {
     opacity: 0;

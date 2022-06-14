@@ -6,7 +6,7 @@
     height: 100% !important;
     .block {
       width: 100% !important;
-      height: 295px !important;
+      height: calc(100vh - 67px - 278px) !important;
       top: 278px !important;
     }
     .img {

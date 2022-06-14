@@ -10,7 +10,6 @@ import { useRouter } from "next/router";
 import zh from "../locales/about/zh";
 import en from "../locales/about/en";
 import { useEffect } from "react";
-
 const About = () => {
   const router = useRouter();
   const { locale } = router;

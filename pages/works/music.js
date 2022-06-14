@@ -1,4 +1,5 @@
 import WorksNav from "../../components/WorksNav";
+import WorksNavM from "../../components/WorksNavM";
 import Imusic from "../../assets/works/music/imusic.svg";
 import Spotify from "../../assets/works/music/spotify.svg";
 import Kkbox from "../../assets/works/music/kkbox.svg";
@@ -150,6 +151,8 @@ const Music = () => {
   };
   return (
     <div className={styles.container}>
+      <div className={styles.topic}>作品</div>
+      <WorksNavM></WorksNavM>
       <div className={styles.leftBlock}>
         <div>
           <div className={styles.sImg}>
