@@ -1,5 +1,7 @@
 // @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500&family=Roboto+Slab:wght@300;500&display=swap");
 
+$black: #414141;
+
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -151,6 +153,7 @@ body {
         align-self: end !important;
         font-size: 19px !important;
         font-weight: 500 !important;
+        color: $black !important;
       }
     }
   }
