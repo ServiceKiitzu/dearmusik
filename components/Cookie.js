@@ -16,7 +16,8 @@ const Cookie = () => {
     <Collapse isOpened={isOpened}>
       <div>
         <p>
-          為提供使用者最佳網站體驗，我們蒐集cookies進行網站行為分析，以持續優化網頁內容，若您繼續瀏覽本網站，即表示您已同意線上隱私權聲明。詳細請參閱我們的Cookie政策。
+          為提供使用者最佳網站體驗，我們蒐集cookies進行網站行為分析，以持續優化網頁內容，若您繼續瀏覽本網站，即表示您已同意線上隱私權聲明。詳細請參閱我們的
+          <a href="">Cookie政策</a>。
         </p>
         <button
           onClick={() => {
