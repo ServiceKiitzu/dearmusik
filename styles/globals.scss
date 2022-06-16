@@ -32,7 +32,7 @@ body {
       display: flex;
       padding: 15px 20px 15px 16px;
       background-color: #000;
-      position: relative;
+      position: fixed;
       align-items: center;
       z-index: 55555;
       div {
@@ -174,8 +174,7 @@ body {
     height: auto !important;
     span {
       width: 100% !important;
-      min-height: calc(100vh - 67px) !important;
-      height: auto !important;
+      height: 100vh !important;
       // aspect-ratio: 360/640;
     }
   }

@@ -1,9 +1,14 @@
 import Link from "next/link";
+import { useEffect } from "react";
 import { useState } from "react";
 import styles from "../styles/works/WorksNavM.module.scss";
+import Router from "next/router";
+import { useRouter } from "next/router";
+import Music from "../pages/works/music";
 
 const WorksNavM = () => {
   const [handle, setHandle] = useState(0);
+  const [pageName, setPageName] = useState("音樂");
 
   const switchNavItem = () => {
     if (typeof window !== "undefined") {
@@ -18,11 +23,25 @@ const WorksNavM = () => {
     }
   };
 
+  const router = useRouter();
+  useEffect(() => {
+    const pathName = router.pathname.split("/").pop();
+    if (pathName == "music") {
+      setPageName("音樂");
+    } else if (pathName == "mv") {
+      setPageName("MV");
+    } else {
+      setPageName("退休專案");
+    }
+  }, []);
+
   return (
     <div className={styles.nav}>
       <div className={styles.activeItem} onClick={switchNavItem}>
-        退休專案
+        {pageName}
+        <div className={styles.ddArrow}></div>
       </div>
+      <div className={styles.line}></div>
       <div className={styles.navItem} id="navItem">
         <ul>
           <li>

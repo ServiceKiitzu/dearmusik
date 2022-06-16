@@ -1,24 +1,46 @@
 @media screen and (max-width: 1280px) {
   .nav {
     width: 100%;
+    position: fixed;
+    top: 125px;
+    left: 50%;
+    z-index: 3;
+    transform: translateX(-50%);
     .activeItem {
       text-align: center;
       color: #5eac3a;
       letter-spacing: 3px;
       font-size: 25px;
       font-weight: bold;
-      margin: 25px auto 0;
-      padding-bottom: 6px;
-      border-bottom: 2px solid #fff;
+      margin: 0px auto 0;
       width: 100%;
+      position: relative;
+      .ddArrow {
+        background-image: url("../../assets/works/drop-down-arrow.svg");
+        background-repeat: no-repeat;
+        width: 16px;
+        height: 12px;
+        position: absolute;
+        right: 37px;
+        top: 16px;
+      }
+    }
+    .line {
+      background-image: url("../../assets/works/line.svg");
+      width: 292px;
+      height: 2px;
+      margin: 6px auto 0;
     }
     .navItem {
       display: none;
       position: absolute;
-      width: calc(100% - 68px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 292px;
       box-shadow: inset 0 13px 7px 0 rgba(0, 0, 0, 0.16);
       background-color: #e6e6e6;
       padding: 20px 0 3px;
+      z-index: 2;
 
       ul {
         list-style: none;

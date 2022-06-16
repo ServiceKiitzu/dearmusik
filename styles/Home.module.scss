@@ -18,10 +18,10 @@
   .containerM {
     display: block !important;
     width: 100vw !important;
-    height: calc(100vh - 67px) !important;
+    height: 100vh !important;
     padding: 0 !important;
     margin: 0 auto;
-    overflow-y: hidden;
+    overflow: hidden;
   }
   .p,
   .n {
