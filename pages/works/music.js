@@ -292,7 +292,6 @@ const Music = () => {
     container.style.overflowY = "hidden";
   };
   useEffect(() => {
-    console.log(currentItems);
     const mediaQuery = window.matchMedia("( max-width: 1280px )");
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -308,13 +307,17 @@ const Music = () => {
     if (mediaQuery.matches) {
       observer.observe(document.querySelector("#imgTextM"));
       setIsMobile(1);
+      const innerGear = document.querySelectorAll("#innerGear");
+      innerGear.forEach((gear) => {
+        gear.addEventListener("click", switchInnerPage);
+      });
     }
   }, []);
   return (
     <div className={styles.container} id="container">
       <div className={styles.innerPage} id="innerPage">
         <div className={styles.inText1}>
-          <div className={styles.previous} onClick={switchInnerPage}></div>
+          <div className={styles.previous} id="innerGear"></div>
           2022 SINGLE
         </div>
         <div className={styles.scrollBox1}>
@@ -339,7 +342,7 @@ const Music = () => {
             {musicData.song &&
               musicData.song.map((song, i) => {
                 return (
-                  <div>
+                  <div key={i}>
                     <div className={styles.number}>
                       {i + 1 < 10 ? `0${i + 1}` : i + 1}
                     </div>
@@ -398,7 +401,7 @@ const Music = () => {
               {musicData.song &&
                 musicData.song.map((song, i) => {
                   return (
-                    <div>
+                    <div key={i}>
                       <div className={styles.number}>
                         {i + 1 < 10 ? `0${i + 1}` : i + 1}
                       </div>
@@ -407,7 +410,7 @@ const Music = () => {
                   );
                 })}
             </div>
-            <div className={styles.sImgM} onClick={switchInnerPage}>
+            <div className={styles.sImgM} id="innerGear">
               <Image src={musics[musics.length - 1].sImg}></Image>
             </div>
           </div>
@@ -453,8 +456,8 @@ const Music = () => {
                     onClick={() => {
                       setMusicData(music);
                       setItemIndex(music.id);
-                      switchInnerPage();
                     }}
+                    id="innerGear"
                   >
                     <div className={styles.previewImg}>
                       <Image src={music.sImg}></Image>
