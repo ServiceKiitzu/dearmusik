@@ -176,6 +176,7 @@ const Mv = () => {
                       setOpen(true);
                       return;
                     }
+                    document.getElementById("videoBoxM").requestFullscreen();
                   }}
                 >
                   <div className={styles.title}>黃玠-在一片黑暗之中MV</div>

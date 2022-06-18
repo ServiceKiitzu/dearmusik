@@ -2,7 +2,9 @@
   .container {
     width: 100%;
     height: 100vh;
-    #videoBoxM {
+    overflow: hidden;
+    .arrowBox {
+      display: none;
     }
     .topic {
       color: #e6e6e6;
