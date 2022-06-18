@@ -1,4 +1,5 @@
 import WorksNav from "../../components/WorksNav";
+import WorksNavM from "../../components/WorksNavM";
 import styles from "../../styles/works/Mv.module.scss";
 import Image from "next/image";
 import Close from "../../assets/works/mv/cross.svg";
@@ -19,10 +20,11 @@ import M6 from "../../assets/works/mv/m6.png";
 import M7 from "../../assets/works/mv/m7.png";
 import M8 from "../../assets/works/mv/m8.png";
 import M9 from "../../assets/works/mv/m9.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Mv = () => {
   const [isOpen, setOpen] = useState(false);
+  const [currentMv, setCurrentMv] = useState(null);
   const mvs = [
     {
       id: 1,
@@ -82,6 +84,23 @@ const Mv = () => {
   if (typeof window !== "undefined") {
     Modal.setAppElement(document.getElementById("mv"));
   }
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("( max-width: 1280px )");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const square = entry.target;
+        if (entry.isIntersecting) {
+          square.classList.add("animation");
+          return; // if we added the class, exit the function
+        }
+        // We're not intersecting, so remove the class!
+        square.classList.remove("animation");
+      });
+    });
+    if (mediaQuery.matches) {
+      observer.observe(document.querySelector("#imgTextM"));
+    }
+  }, []);
   return (
     <div className={styles.container} id="mv">
       <Modal
@@ -114,9 +133,10 @@ const Mv = () => {
           </a>
         </div>
         <iframe
+          id="videoBox"
           width="100%"
           height="100%"
-          src="https://www.youtube.com/embed/aR8BSYCvbvo"
+          src={currentMv && currentMv.youtube}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -124,7 +144,20 @@ const Mv = () => {
           style={{ borderRadius: "30px" }}
         ></iframe>
       </Modal>
-      <div>
+      <iframe
+        id="videoBoxM"
+        src={currentMv && (currentMv.youtube += "?autoplay=1")}
+        width="100%"
+        height="100%"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen={true}
+      ></iframe>
+      {/* <video width="" height="" controls></video> */}
+      <div className={styles.topic}>作品</div>
+      <WorksNavM></WorksNavM>
+      <div className={styles.avanav}>
         <div>
           <Image src={Avatar}></Image>
         </div>
@@ -138,23 +171,32 @@ const Mv = () => {
                 <Image src={item.preview}></Image>
                 <a
                   onClick={() => {
-                    setOpen(true);
+                    setCurrentMv(item);
+                    if (window.innerWidth > 1280) {
+                      setOpen(true);
+                      return;
+                    }
                   }}
                 >
                   <div className={styles.title}>黃玠-在一片黑暗之中MV</div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     version="1.1"
-                    className="svg-triangle"
+                    className={`svg-triangle ${styles.triangle}`}
                     width="44"
                     height="53"
                   >
                     <path d="M 40,25 4,45 4,5 z" />
                   </svg>
+                  <div className={styles.play}></div>
                 </a>
               </div>
             );
           })}
+        <div className={styles.imgBox}>
+          <div className={styles.imgTextM} id="imgTextM"></div>
+          <div className={styles.imgM}></div>
+        </div>
       </div>
       <div className={styles.arrowBox}>
         <div>
