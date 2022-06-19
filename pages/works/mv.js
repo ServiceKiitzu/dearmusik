@@ -25,6 +25,7 @@ import { useState, useEffect } from "react";
 const Mv = () => {
   const [isOpen, setOpen] = useState(false);
   const [currentMv, setCurrentMv] = useState(null);
+  const [play, setPlay] = useState(false);
   const mvs = [
     {
       id: 1,
@@ -144,17 +145,7 @@ const Mv = () => {
           style={{ borderRadius: "30px" }}
         ></iframe>
       </Modal>
-      <iframe
-        id="videoBoxM"
-        src={currentMv && (currentMv.youtube += "?autoplay=1")}
-        width="100%"
-        height="100%"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen={true}
-      ></iframe>
-      {/* <video width="" height="" controls></video> */}
+
       <div className={styles.topic}>作品</div>
       <WorksNavM></WorksNavM>
       <div className={styles.avanav}>
@@ -164,6 +155,14 @@ const Mv = () => {
         <WorksNav></WorksNav>
       </div>
       <div className={styles.rightBlock}>
+        <iframe
+          id="videoBoxM"
+          title="YouTube video player"
+          src="https://www.youtube.com/embed/aR8BSYCvbvo?autoplay=1"
+          frameBorder="0"
+          allow="autoplay"
+          allowFullScreen="true"
+        ></iframe>
         {mvs &&
           mvs.map((item) => {
             return (
@@ -172,6 +171,7 @@ const Mv = () => {
                 <a
                   onClick={() => {
                     setCurrentMv(item);
+                    setPlay(true);
                     if (window.innerWidth > 1280) {
                       setOpen(true);
                       return;
