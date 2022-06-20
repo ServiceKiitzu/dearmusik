@@ -37,18 +37,20 @@ const About = () => {
       <div className={styles.avatar}>
         <Image src={Avatar}></Image>
       </div>
-      <div className={styles.avatarM}>
-        <Image src={AvatarM}></Image>
-      </div>
-      <div
-        className={styles.story}
-        dangerouslySetInnerHTML={{ __html: t.text }}
-      ></div>
-      <div className={styles.imgM}>
-        <Image src={FishM}></Image>
-      </div>
-      <div className={styles.imgTextM} id="imgTextM">
-        <Image src={TextM}></Image>
+      <div className={styles.scrollBox}>
+        <div className={styles.avatarM}>
+          <Image src={AvatarM}></Image>
+        </div>
+        <div
+          className={styles.story}
+          dangerouslySetInnerHTML={{ __html: t.text }}
+        ></div>
+        <div className={styles.imgM}>
+          <Image src={FishM}></Image>
+        </div>
+        <div className={styles.imgTextM} id="imgTextM">
+          <Image src={TextM}></Image>
+        </div>
       </div>
       <div className={styles.img}>
         <Image src={Fish}></Image>

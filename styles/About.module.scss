@@ -1,12 +1,25 @@
 @media screen and (max-width: 1280px) {
   .container {
     width: 100vw !important;
-    height: 1200px !important;
+    height: 100vh !important;
     flex-direction: column;
-    padding: 7px 34px 0px !important;
+    padding: 104px 34px 0px !important;
     align-items: center !important;
     background-color: #000;
+    &::after {
+      content: "";
+      top: 0;
+      position: fixed;
+      background-color: #000;
+      height: 104px;
+      width: 100vw;
+    }
     .title {
+      position: fixed;
+      z-index: 2;
+      top: 74px;
+      left: 50%;
+      transform: translateX(-50%);
       display: block !important;
       color: #e6e6e6 !important;
       font-size: 18px;
@@ -17,15 +30,25 @@
     .avatar {
       display: none !important;
     }
+    .scrollBox {
+      height: calc(100vh - 167px);
+      width: 100vw;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      position: relative;
+      padding: 0 34px;
+    }
     .avatarM {
       display: block !important;
       width: 292px;
       height: 174px;
-      margin: 21px 0 25px;
+      margin: 21px auto 25px;
     }
     .story {
+      display: flex;
+      justify-content: center;
       margin-left: 0 !important;
-      width: 300px !important;
+      width: 100% !important;
       height: 769px !important;
       text-align: start !important;
       color: #e6e6e6 !important;
@@ -39,13 +62,13 @@
     .imgM {
       display: block !important;
       position: absolute;
-      top: 1065px;
+      top: 1027px;
       left: -8px;
     }
     .imgTextM {
       display: block !important;
       position: absolute;
-      top: 1065px;
+      top: 1027px;
       left: 126px;
       opacity: 0;
       &.animation {
