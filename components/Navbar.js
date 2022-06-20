@@ -203,19 +203,49 @@ const Navbar = () => {
         </ul>
         <div className="mediaM">
           <div>
-            <Image src={IMusicM}></Image>
+            <a
+              href="https://music.apple.com/tw/artist/%E9%BB%83%E7%8E%A0/656689595"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={IMusicM}></Image>
+            </a>
           </div>
           <div>
-            <Image src={SpotifyM}></Image>
+            <a
+              href="https://open.spotify.com/artist/3C8yUWotyLh2Kjkood3xYN?si=8mwMR0tuQGuufpNdrxSlbA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={SpotifyM}></Image>
+            </a>
           </div>
           <div>
-            <Image src={KkboxM}></Image>
+            <a
+              href="https://www.kkbox.com/tw/tc/artist/WsM__mTku7eU3VH0u1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={KkboxM}></Image>
+            </a>
           </div>
           <div>
-            <Image src={FacebookM}></Image>
+            <a
+              href="https://www.facebook.com/dadado.huang"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={FacebookM}></Image>
+            </a>
           </div>
           <div>
-            <Image src={InstagramM}></Image>
+            <a
+              href="https://www.instagram.com/dadadohuang/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={InstagramM}></Image>
+            </a>
           </div>
         </div>
         <div className="contactM">
