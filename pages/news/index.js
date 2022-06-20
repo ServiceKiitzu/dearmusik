@@ -28,7 +28,7 @@ const News = () => {
       });
     });
     if (mediaQuery.matches) {
-      observer.observe(document.querySelector("#imgText"));
+      observer.observe(document.querySelector("#imgTextM"));
     }
   }, []);
   return (
@@ -77,6 +77,8 @@ const News = () => {
           </div>
           <div className={styles.readM}>.......【繼續閱讀】</div>
         </div>
+        <div className={styles.imgTextM} id="imgTextM"></div>
+        <div className={styles.imgM}></div>
       </div>
       <div className={styles.arrowBox}>
         <div>

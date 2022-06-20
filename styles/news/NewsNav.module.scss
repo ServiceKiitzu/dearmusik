@@ -5,21 +5,36 @@
 
 @media screen and (max-width: 1280px) {
   .type {
+    position: fixed;
+    top: 125px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 292px !important;
     text-align: center;
     margin: 0 auto !important;
     padding-left: 0 !important;
+    z-index: 3;
 
     .all {
       color: #5eac3a !important;
       font: 25px bold !important;
       letter-spacing: 3px;
-      padding: 0 0 6px !important;
+      padding: 0 0 7px !important;
       display: block !important;
+      width: 292px;
       height: 36px;
       border-bottom: 2px solid #fff !important;
+      position: relative;
       .triangle {
         display: none !important;
+      }
+      .triangleM {
+        background: url("../../assets/news/triangle-g.svg") no-repeat;
+        width: 17px;
+        height: 12px;
+        position: absolute;
+        top: 16px;
+        right: 38px;
       }
     }
     .typeItem {
@@ -63,7 +78,7 @@
       width: 20px;
       transform: rotate(180deg);
       margin-bottom: -3px;
-      margin-right: -5px;
+      margin-right: -100px;
     }
   }
   .typeItem {

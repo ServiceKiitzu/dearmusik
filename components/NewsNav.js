@@ -32,6 +32,17 @@ const NewsNave = () => {
     sessionStorage.getItem("type")
       ? setType(sessionStorage.getItem("type"))
       : setType("全部");
+    if (window.innerWidth < 1280) {
+      const links = document.querySelectorAll("#typeItem a");
+      const closeNav = () => {
+        const typeItem = document.getElementById("typeItem");
+        typeItem.style.display = "none";
+        setItemSwitch(0);
+      };
+      links.forEach((link) => {
+        link.addEventListener("click", closeNav);
+      });
+    }
   }, []);
 
   return (
@@ -42,6 +53,7 @@ const NewsNave = () => {
           <div className={styles.triangle}>
             <Image src={Triangle}></Image>
           </div>
+          <div className={styles.triangleM}></div>
         </div>
       </a>
       <div className={styles.typeItem} id="typeItem">
