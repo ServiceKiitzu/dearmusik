@@ -21,69 +21,80 @@ import M7 from "../../assets/works/mv/m7.png";
 import M8 from "../../assets/works/mv/m8.png";
 import M9 from "../../assets/works/mv/m9.png";
 import { useState, useEffect } from "react";
+import Script from "next/script";
+import Youtube from "../../components/Youtube";
+import screenfull from "screenfull";
 
 const Mv = () => {
   const [isOpen, setOpen] = useState(false);
   const [currentMv, setCurrentMv] = useState(null);
+  const [videoId, setVideoId] = useState("");
   const [play, setPlay] = useState(false);
   const mvs = [
     {
       id: 1,
-      title: "黃玠-在一片黑暗之中MV",
-      youtube: "https://www.youtube.com/embed/aR8BSYCvbvo",
+      title: "【我很想念你】官方 MV",
+      youtube: "https://www.youtube.com/embed/7IZ0MVZL6RU",
       preview: M1,
     },
     {
       id: 2,
-      title: "黃玠-在一片黑暗之中MV",
+      title: "【你】官方 MV",
       youtube: "https://www.youtube.com/embed/aR8BSYCvbvo",
       preview: M2,
     },
     {
       id: 3,
-      title: "黃玠-在一片黑暗之中MV",
+      title: "【一路向東 feat.Suming舒米恩】官方 MV",
       youtube: "https://www.youtube.com/embed/aR8BSYCvbvo",
       preview: M3,
     },
     {
       id: 4,
-      title: "黃玠-在一片黑暗之中MV",
+      title: "【你是不是像我一樣 feat.黃小楨】官方 MV",
       youtube: "https://www.youtube.com/embed/aR8BSYCvbvo",
       preview: M4,
     },
     {
       id: 5,
-      title: "黃玠-在一片黑暗之中MV",
+      title: "【因為你 feat.女孩與機器人】官方 MV",
       youtube: "https://www.youtube.com/embed/aR8BSYCvbvo",
       preview: M5,
     },
     {
       id: 6,
-      title: "黃玠-在一片黑暗之中MV",
+      title: "【下雨的晚上】官方 MV",
       youtube: "https://www.youtube.com/embed/aR8BSYCvbvo",
       preview: M6,
     },
     {
       id: 7,
-      title: "黃玠-在一片黑暗之中MV",
+      title: "【Diana】官方 MV",
       youtube: "https://www.youtube.com/embed/aR8BSYCvbvo",
       preview: M7,
     },
     {
       id: 8,
-      title: "黃玠-在一片黑暗之中MV",
+      title: "【我可以】官方 MV",
       youtube: "https://www.youtube.com/embed/aR8BSYCvbvo",
       preview: M8,
     },
     {
       id: 9,
-      title: "黃玠-在一片黑暗之中MV",
+      title: "【夢的距離】官方 MV",
       youtube: "https://www.youtube.com/embed/aR8BSYCvbvo",
       preview: M9,
     },
   ];
   if (typeof window !== "undefined") {
     Modal.setAppElement(document.getElementById("mv"));
+    if (screenfull.isEnabled) {
+      screenfull.on("change", () => {
+        if (!screenfull.isFullscreen) {
+          setPlay(false);
+        }
+      });
+    }
   }
   useEffect(() => {
     const mediaQuery = window.matchMedia("( max-width: 1280px )");
@@ -102,118 +113,119 @@ const Mv = () => {
       observer.observe(document.querySelector("#imgTextM"));
     }
   }, []);
-  return (
-    <div className={styles.container} id="mv">
-      <Modal
-        parentSelector={() => document.querySelector("#mv")}
-        isOpen={isOpen}
-        style={{
-          overlay: {
-            backdropFilter: "blur(11.3px)",
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
-          },
-          content: {
-            transform: "translateX(-50%)",
-            border: "none",
-            padding: "0",
-            inset: "0",
-            width: "966px",
-            height: "462px",
-            backgroundColor: "transparent",
-            overflow: "unset",
-          },
-        }}
-      >
-        <div className={styles.close}>
-          <a
-            onClick={() => {
-              setOpen(false);
-            }}
-          >
-            <Image src={Close}></Image>
-          </a>
-        </div>
-        <iframe
-          id="videoBox"
-          width="100%"
-          height="100%"
-          src={currentMv && currentMv.youtube}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen={true}
-          style={{ borderRadius: "30px" }}
-        ></iframe>
-      </Modal>
 
-      <div className={styles.topic}>作品</div>
-      <WorksNavM></WorksNavM>
-      <div className={styles.avanav}>
-        <div>
-          <Image src={Avatar}></Image>
+  return (
+    <>
+      <div className={styles.container} id="mv">
+        <Modal
+          parentSelector={() => document.querySelector("#mv")}
+          isOpen={isOpen}
+          style={{
+            overlay: {
+              backdropFilter: "blur(11.3px)",
+              backgroundColor: "rgba(0, 0, 0, 0.7)",
+            },
+            content: {
+              transform: "translateX(-50%)",
+              border: "none",
+              padding: "0",
+              inset: "0",
+              width: "966px",
+              height: "462px",
+              backgroundColor: "transparent",
+              overflow: "unset",
+            },
+          }}
+        >
+          <div className={styles.close}>
+            <a
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              <Image src={Close}></Image>
+            </a>
+          </div>
+          <iframe
+            id="videoBox"
+            width="100%"
+            height="100%"
+            src={currentMv && currentMv.youtube}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen={true}
+            style={{ borderRadius: "30px" }}
+          ></iframe>
+        </Modal>
+
+        <div className={styles.topic}>作品</div>
+        <WorksNavM></WorksNavM>
+        <div className={styles.avanav}>
+          <div>
+            <Image src={Avatar}></Image>
+          </div>
+          <WorksNav></WorksNav>
         </div>
-        <WorksNav></WorksNav>
-      </div>
-      <div className={styles.rightBlock}>
-        <iframe
-          id="videoBoxM"
-          title="YouTube video player"
-          src="https://www.youtube.com/embed/aR8BSYCvbvo?autoplay=1"
-          frameBorder="0"
-          allow="autoplay"
-          allowFullScreen="true"
-        ></iframe>
-        {mvs &&
-          mvs.map((item) => {
-            return (
-              <div key={item.id} className={styles.musicBox}>
-                <Image src={item.preview}></Image>
-                <a
-                  onClick={() => {
-                    setCurrentMv(item);
-                    setPlay(true);
-                    if (window.innerWidth > 1280) {
-                      setOpen(true);
-                      return;
-                    }
-                    document.getElementById("videoBoxM").requestFullscreen();
-                  }}
-                >
-                  <div className={styles.title}>黃玠-在一片黑暗之中MV</div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    version="1.1"
-                    className={`svg-triangle ${styles.triangle}`}
-                    width="44"
-                    height="53"
+        {play && (
+          <div style={{ height: "0px" }}>
+            <Youtube videoId={currentMv.youtube.split("/").pop()}></Youtube>
+          </div>
+        )}
+        <div className={styles.rightBlock}>
+          {mvs &&
+            mvs.map((item) => {
+              return (
+                <div key={item.id} className={styles.musicBox}>
+                  <Image src={item.preview}></Image>
+
+                  <a
+                    onClick={() => {
+                      setCurrentMv(item);
+
+                      if (window.innerWidth > 1280) {
+                        setOpen(true);
+                        return;
+                      }
+                      setPlay(true);
+                    }}
                   >
-                    <path d="M 40,25 4,45 4,5 z" />
-                  </svg>
-                  <div className={styles.play}></div>
-                </a>
-              </div>
-            );
-          })}
-        <div className={styles.imgBox}>
-          <div className={styles.imgTextM} id="imgTextM"></div>
-          <div className={styles.imgM}></div>
+                    <div className={styles.title}>{item.title}</div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      version="1.1"
+                      className={`svg-triangle ${styles.triangle}`}
+                      width="44"
+                      height="53"
+                    >
+                      <path d="M 40,25 4,45 4,5 z" />
+                    </svg>
+                    <div className={styles.play}></div>
+                  </a>
+                </div>
+              );
+            })}
+          <div className={styles.imgBox}>
+            <div className={styles.imgTextM} id="imgTextM"></div>
+            <div className={styles.imgM}></div>
+          </div>
+        </div>
+        <div className={styles.arrowBox}>
+          <div>
+            <Image src={AU}></Image>
+          </div>
+          <div>
+            <Image src={ADA}></Image>
+          </div>
+        </div>
+        <div className={styles.img}>
+          <Image src={Img}></Image>
+        </div>
+        <div className={styles.imgText}>
+          <Image src={ImgText}></Image>
         </div>
       </div>
-      <div className={styles.arrowBox}>
-        <div>
-          <Image src={AU}></Image>
-        </div>
-        <div>
-          <Image src={ADA}></Image>
-        </div>
-      </div>
-      <div className={styles.img}>
-        <Image src={Img}></Image>
-      </div>
-      <div className={styles.imgText}>
-        <Image src={ImgText}></Image>
-      </div>
-    </div>
+    </>
   );
 };
 

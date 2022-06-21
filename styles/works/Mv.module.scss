@@ -93,6 +93,9 @@
     margin: 0 auto;
     display: flex;
     position: relative;
+    .topic {
+      display: none;
+    }
     .img {
       position: absolute;
       top: 583px;
