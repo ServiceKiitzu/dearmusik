@@ -96,6 +96,15 @@ const Mv = () => {
       });
     }
   }
+  function playVideo(item) {
+    console.log(item);
+    setCurrentMv(item);
+    if (window.innerWidth > 1280) {
+      setOpen(true);
+      return;
+    }
+    setPlay(true);
+  }
   useEffect(() => {
     const mediaQuery = window.matchMedia("( max-width: 1280px )");
     const observer = new IntersectionObserver((entries) => {
@@ -167,7 +176,7 @@ const Mv = () => {
           </div>
           <WorksNav></WorksNav>
         </div>
-        {play && (
+        {play && currentMv && (
           <div style={{ height: "0px" }}>
             <Youtube videoId={currentMv.youtube.split("/").pop()}></Youtube>
           </div>
@@ -176,32 +185,26 @@ const Mv = () => {
           {mvs &&
             mvs.map((item) => {
               return (
-                <div key={item.id} className={styles.musicBox}>
+                <div
+                  key={item.id}
+                  className={styles.musicBox}
+                  id="mvItem"
+                  onClick={() => {
+                    playVideo(item);
+                  }}
+                >
                   <Image src={item.preview}></Image>
-
-                  <a
-                    onClick={() => {
-                      setCurrentMv(item);
-
-                      if (window.innerWidth > 1280) {
-                        setOpen(true);
-                        return;
-                      }
-                      setPlay(true);
-                    }}
+                  <div className={styles.title}>{item.title}</div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    className={`svg-triangle ${styles.triangle}`}
+                    width="44"
+                    height="53"
                   >
-                    <div className={styles.title}>{item.title}</div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      version="1.1"
-                      className={`svg-triangle ${styles.triangle}`}
-                      width="44"
-                      height="53"
-                    >
-                      <path d="M 40,25 4,45 4,5 z" />
-                    </svg>
-                    <div className={styles.play}></div>
-                  </a>
+                    <path d="M 40,25 4,45 4,5 z" />
+                  </svg>
+                  <div className={styles.play}></div>
                 </div>
               );
             })}
