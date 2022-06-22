@@ -91,15 +91,6 @@ const Mv = () => {
   ];
   if (typeof window !== "undefined") {
     Modal.setAppElement(document.getElementById("mv"));
-    if (screenfull.isEnabled) {
-      screenfull.on("change", () => {
-        if (!screenfull.isFullscreen) {
-          target ? target.target.pauseVideo() : "";
-          console.log("結束全螢幕");
-          setPlay(false);
-        }
-      });
-    }
   }
 
   useEffect(() => {
@@ -144,12 +135,11 @@ const Mv = () => {
   function playVideo(url) {
     // setCurrentMv(item);
     setId(url);
-    target.target.playVideo();
   }
   const _onReady = (event) => {
     // access to player in all event handlers via event.target
-    console.log(event);
     setTarget(event);
+    event.target.playVideo();
   };
   return (
     <>
@@ -205,13 +195,15 @@ const Mv = () => {
           <WorksNav></WorksNav>
         </div>
 
-        <YouTube
-          videoId={id}
-          opts={opts}
-          onPlay={fullScreen}
-          onReady={_onReady}
-          id="youtubeM"
-        />
+        {id !== "" && (
+          <YouTube
+            videoId={id}
+            opts={opts}
+            onPlay={fullScreen}
+            onReady={_onReady}
+            id="youtubeM"
+          />
+        )}
 
         <div className={styles.rightBlock}>
           {mvs &&
