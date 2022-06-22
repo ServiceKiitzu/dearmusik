@@ -115,9 +115,9 @@ const Mv = () => {
     setYTListMobile(YTListMobile);
   }
   function playMobileVideo(index) {
-    setTimeout(() => {
+    if (YTListMobile[index]) {
       YTListMobile[index].target.playVideo();
-    }, 500);
+    }
   }
   function fullScreen(e) {
     const iframe = e.target.getIframe();
@@ -205,6 +205,7 @@ const Mv = () => {
                           playsinline: 0,
                           rel: 0,
                           fs: 1,
+                          enablejsapi: 1,
                         },
                       }}
                       onReady={(e) => storeMobileYoutube(e, index)}
