@@ -115,10 +115,13 @@ const Mv = () => {
     setYTListMobile(YTListMobile);
   }
   function playMobileVideo(index) {
-    YTListMobile[index].target.playVideo();
+    setTimeout(() => {
+      YTListMobile[index].target.playVideo();
+    }, 500);
   }
   function fullScreen(e) {
     const iframe = e.target.getIframe();
+    console.log(iframe);
     if (screenfull.isEnabled) {
       screenfull.request(iframe);
     }
