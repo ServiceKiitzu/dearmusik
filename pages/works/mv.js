@@ -144,13 +144,12 @@ const Mv = () => {
   function playVideo(url) {
     // setCurrentMv(item);
     setId(url);
-    setPlay(true);
+    target.target.playVideo();
   }
   const _onReady = (event) => {
     // access to player in all event handlers via event.target
     console.log(event);
     setTarget(event);
-    event.target.playVideo();
   };
   return (
     <>
@@ -206,15 +205,13 @@ const Mv = () => {
           <WorksNav></WorksNav>
         </div>
 
-        {play && (
-          <YouTube
-            videoId={id}
-            opts={opts}
-            onPlay={fullScreen}
-            onReady={_onReady}
-            id="youtubeM"
-          />
-        )}
+        <YouTube
+          videoId={id}
+          opts={opts}
+          onPlay={fullScreen}
+          onReady={_onReady}
+          id="youtubeM"
+        />
 
         <div className={styles.rightBlock}>
           {mvs &&
