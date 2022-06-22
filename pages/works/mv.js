@@ -29,10 +29,6 @@ import getYouTubeID from "get-youtube-id";
 const Mv = () => {
   const [isOpen, setOpen] = useState(false);
   const [currentMv, setCurrentMv] = useState(null);
-  const [videoId, setVideoId] = useState("");
-  const [play, setPlay] = useState(false);
-  const [target, setTarget] = useState(null);
-  const [id, setId] = useState("");
   const [YTListMobile, setYTListMobile] = useState([]);
   const mvs = [
     {
@@ -193,7 +189,7 @@ const Mv = () => {
                     playMobileVideo(index);
                   }}
                 >
-                  {item.youtube !== "" && (
+                  {item.youtube && (
                     <YouTube
                       videoId={item.youtube}
                       opts={{
@@ -208,8 +204,8 @@ const Mv = () => {
                           fs: 1,
                         },
                       }}
-                      onPlay={fullScreen}
                       onReady={(e) => storeMobileYoutube(e, index)}
+                      onPlay={fullScreen}
                       style={{ height: "0" }}
                     />
                   )}
