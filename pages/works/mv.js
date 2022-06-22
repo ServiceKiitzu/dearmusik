@@ -117,13 +117,12 @@ const Mv = () => {
     width: "0",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-      controls: 1,
       disablekb: 1,
+      playlist: id,
       loop: 0,
       playsinline: 0,
+      rel: 0,
       fs: 1,
-      enablejsapi: 1,
     },
   };
   function fullScreen(e) {
