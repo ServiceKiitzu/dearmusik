@@ -33,17 +33,18 @@ const Mv = () => {
   const [play, setPlay] = useState(false);
   const [target, setTarget] = useState(null);
   const [id, setId] = useState("");
+  const [YTListMobile, setYTListMobile] = useState([]);
   const mvs = [
     {
       id: 1,
       title: "【我很想念你】官方 MV",
-      youtube: "https://www.youtube.com/embed/7IZ0MVZL6RU",
+      youtube: "7IZ0MVZL6RU",
       preview: M1,
     },
     {
       id: 2,
       title: "【你】官方 MV",
-      youtube: "https://www.youtube.com/embed/aR8BSYCvbvo",
+      youtube: "aR8BSYCvbvo",
       preview: M2,
     },
     {
@@ -125,17 +126,22 @@ const Mv = () => {
       fs: 1,
     },
   };
+  function storeMobileYoutube(e, index) {
+    // store all mobile video value
+    YTListMobile[index] = e;
+    setYTListMobile(YTListMobile);
+  }
+  function playMobileVideo(index) {
+    console.log(YTListMobile);
+    YTListMobile[index].target.playVideo();
+  }
   function fullScreen(e) {
     const iframe = e.target.i;
     if (screenfull.isEnabled && iframe) {
       screenfull.request(iframe);
     }
   }
-  const _onReady = (event) => {
-    // access to player in all event handlers via event.target
-    setTarget(event);
-    event.target.playVideo();
-  };
+
   return (
     <>
       <div className={styles.container} id="mv">
@@ -190,30 +196,39 @@ const Mv = () => {
           <WorksNav></WorksNav>
         </div>
 
-        {id !== "" && (
-          <YouTube
-            videoId={id}
-            opts={opts}
-            onPlay={fullScreen}
-            onReady={_onReady}
-            id="youtubeM"
-          />
-        )}
-
         <div className={styles.rightBlock}>
           {mvs &&
-            mvs.map((item) => {
+            mvs.map((item, index) => {
               return (
                 <div
                   key={item.id}
                   className={styles.musicBox}
                   id="mvItem"
                   onClick={() => {
-                    const url = item.youtube.split("/").pop().toString();
-                    console.log(url);
-                    setId(url);
+                    playMobileVideo(index);
                   }}
                 >
+                  {item.youtube !== "" && (
+                    <YouTube
+                      videoId={item.youtube}
+                      opts={{
+                        width: "0",
+                        height: "0",
+                        playerVars: {
+                          disablekb: 1,
+                          playlist: item.youtube,
+                          loop: 0,
+                          playsinline: 0,
+                          rel: 0,
+                          fs: 1,
+                        },
+                      }}
+                      onPlay={fullScreen}
+                      onReady={(e) => storeMobileYoutube(e, index)}
+                      id="youtubeM"
+                      style={{ height: "0" }}
+                    />
+                  )}
                   <Image src={item.preview}></Image>
                   <div className={styles.title}>{item.title}</div>
                   <svg
