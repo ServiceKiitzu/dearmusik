@@ -113,19 +113,6 @@ const Mv = () => {
   }, []);
 
   // youtube播放事件
-  const opts = {
-    height: "0",
-    width: "0",
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      disablekb: 1,
-      playlist: id,
-      loop: 0,
-      playsinline: 0,
-      rel: 0,
-      fs: 1,
-    },
-  };
   function storeMobileYoutube(e, index) {
     // store all mobile video value
     YTListMobile[index] = e;
@@ -135,12 +122,11 @@ const Mv = () => {
     YTListMobile[index].target.playVideo();
   }
   function fullScreen(e) {
-    const iframe = e.target.i;
-    if (screenfull.isEnabled && iframe) {
+    const iframe = e.target.getIframe();
+    if (screenfull.isEnabled) {
       screenfull.request(iframe);
     }
   }
-
   return (
     <>
       <div className={styles.container} id="mv">
