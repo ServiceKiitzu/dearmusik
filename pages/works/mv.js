@@ -22,7 +22,7 @@ import M8 from "../../assets/works/mv/m8.png";
 import M9 from "../../assets/works/mv/m9.png";
 import { useState, useEffect } from "react";
 import Script from "next/script";
-import Youtube from "../../components/Youtube";
+import YouTube from "react-youtube";
 import screenfull from "screenfull";
 
 const Mv = () => {
@@ -99,11 +99,6 @@ const Mv = () => {
   function playVideo(item) {
     console.log(item);
     setCurrentMv(item);
-    if (window.innerWidth > 1280) {
-      setOpen(true);
-      return;
-    }
-    setPlay(true);
   }
   useEffect(() => {
     const mediaQuery = window.matchMedia("( max-width: 1280px )");
@@ -123,6 +118,33 @@ const Mv = () => {
     }
   }, []);
 
+  // youtube播放事件
+  const opts = {
+    height: "0",
+    width: "0",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+      controls: 1,
+      disablekb: 1,
+      loop: 0,
+      playsinline: 0,
+      fs: 1,
+      origin: "http://localhost:3000",
+      enablejsapi: 1,
+    },
+  };
+  function fullScreen(e) {
+    const iframe = e.target.getIframe();
+    if (screenfull.isEnabled && iframe) {
+      screenfull.request(iframe);
+    }
+  }
+
+  const _onReady = (event) => {
+    // access to player in all event handlers via event.target
+    event.target.playVideo();
+  };
   return (
     <>
       <div className={styles.container} id="mv">
@@ -176,11 +198,15 @@ const Mv = () => {
           </div>
           <WorksNav></WorksNav>
         </div>
-        {play && currentMv && (
-          <div style={{ height: "0px" }}>
-            <Youtube videoId={currentMv.youtube.split("/").pop()}></Youtube>
-          </div>
+        {currentMv && (
+          <YouTube
+            videoId={currentMv.youtube.split("/").pop()}
+            opts={opts}
+            onReady={_onReady}
+            onPlay={fullScreen}
+          />
         )}
+
         <div className={styles.rightBlock}>
           {mvs &&
             mvs.map((item) => {

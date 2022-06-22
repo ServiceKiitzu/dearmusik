@@ -12,13 +12,14 @@ const Youtube = ({ videoId }) => {
       disablekb: 1,
       loop: 0,
       playsinline: 0,
-      rel: 0,
       fs: 1,
+      origin: "http://localhost:3000",
+      enablejsapi: 1,
     },
   };
   function fullScreen(e) {
     const iframe = e.target.getIframe();
-    if (screenfull.isEnabled) {
+    if (screenfull.isEnabled && iframe) {
       screenfull.request(iframe);
     }
   }
