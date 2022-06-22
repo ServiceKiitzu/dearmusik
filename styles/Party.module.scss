@@ -5,8 +5,8 @@
     padding: 0 !important;
     height: 100% !important;
     .block {
-      width: 100% !important;
-      height: calc(100vh - 67px - 278px) !important;
+      width: 100vw !important;
+      height: calc(100vh - 278px) !important;
       top: 278px !important;
     }
     .img {

@@ -9,7 +9,6 @@ const Youtube = ({ videoId }) => {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
       controls: 1,
-      enablejsapi: 1,
       disablekb: 1,
       loop: 0,
       playsinline: 0,
@@ -34,7 +33,6 @@ const Youtube = ({ videoId }) => {
       opts={opts}
       onReady={_onReady}
       onPlay={fullScreen}
-      id="ytComps"
     />
   );
 };

@@ -225,6 +225,7 @@ const Music = () => {
         "https://open.spotify.com/track/2XFyo3PL3JnR0cr5eVgKq6?si=9f801b45cb864042",
         "https://kkbox.fm/KsUBLD?utm_source=share&utm_medium=song&utm_campaign=%E6%BF%80%E8%86%9A%E6%A8%82%E5%9C%98+%28My+Skin+Against+Your+Skin%29+-+%E5%83%8F%E6%9C%88%E4%BA%AE%E7%9A%84%E4%BA%BA+%28+feat.%E9%BB%83%E7%8E%A0+%29+%28Can%E2%80%99t+sleep+%28+feat.Dadado+Huang+%29%29",
       ],
+      song: ["像月亮的人"],
     },
     {
       id: 12,
@@ -238,6 +239,7 @@ const Music = () => {
         "https://open.spotify.com/track/0x8999C3GJtJk2UmEdV3SV?si=7a211628c4964ac5",
         "https://kkbox.fm/Wsln03?utm_source=share&utm_medium=song&utm_campaign=PUZZLEMAN+-+%E6%89%93%E6%89%93%E5%A4%9A%E5%A4%9A+feat.+%E9%BB%83%E7%8E%A0",
       ],
+      song: ["打打多多"],
     },
   ];
   const [page, setPage] = useState(0);
@@ -247,7 +249,7 @@ const Music = () => {
   const [musicData, setMusicData] = useState(musics[musics.length - 1]);
   const [itemIndex, setItemIndex] = useState(musics.length);
 
-  const [innerPage, setInnerPage] = useState(0);
+  const [innerPage, setInnerPage] = useState(false);
   const [isMobile, setIsMobile] = useState(0);
 
   const musicReverse = [...musics].reverse();
@@ -258,6 +260,7 @@ const Music = () => {
     setCurrentItems(musicReverse.slice(itemOffset, endOffset));
   }, [itemOffset]);
 
+  // 分頁前後切換
   const handlePagePrev = () => {
     if (page > 0) {
       let num = page;
@@ -267,7 +270,6 @@ const Music = () => {
       setPage(num);
     }
   };
-
   const handlePageNext = () => {
     if (page < totalPage) {
       let num = page;
@@ -277,19 +279,10 @@ const Music = () => {
       setPage(num);
     }
   };
+
+  // 內頁開關
   const switchInnerPage = () => {
-    const innerPageBlock = document.getElementById("innerPage");
-    const container = document.getElementById("container");
-    if (innerPage) {
-      setInnerPage(0);
-      innerPageBlock.style.display = "none";
-      container.style.height = "100%";
-      return;
-    }
-    setInnerPage(1);
-    innerPageBlock.style.display = "block";
-    container.style.height = "100vh";
-    container.style.overflowY = "hidden";
+    setInnerPage(true);
   };
   useEffect(() => {
     const mediaQuery = window.matchMedia("( max-width: 1280px )");
@@ -307,52 +300,55 @@ const Music = () => {
     if (mediaQuery.matches) {
       observer.observe(document.querySelector("#imgTextM"));
       setIsMobile(1);
-      const innerGear = document.querySelectorAll("#innerGear");
-      innerGear.forEach((gear) => {
-        gear.addEventListener("click", switchInnerPage);
-      });
     }
   }, []);
   return (
     <div className={styles.container} id="container">
-      <div className={styles.innerPage} id="innerPage">
-        <div className={styles.inText1}>
-          <div className={styles.previous} id="innerGear"></div>
-          2022 SINGLE
-        </div>
-        <div className={styles.scrollBox1}>
-          <div className={styles.sImgM}>
-            <Image src={musicData.sImg}></Image>
+      {innerPage && (
+        <div className={styles.innerPage} id="innerPage">
+          <div className={styles.inText1}>
+            <div
+              className={`${styles.previous} `}
+              onClick={() => {
+                setInnerPage(false);
+              }}
+            ></div>
+            2022 SINGLE
           </div>
-          <div className={styles.inText2}>十年熟成</div>
-          <div className={styles.inText2}>最佳精選特輯</div>
-          <div className={styles.inText3}>黃玠×NABOWA</div>
-          <div className={styles.mediaM}>
-            <a href={musicData.link[0]}>
-              <div className={styles.imusicM}></div>
-            </a>
-            <a href={musicData.link[1]}>
-              <div className={styles.spotifyM}></div>
-            </a>
-            <a href={musicData.link[2]}>
-              <div className={styles.kkboxM}></div>
-            </a>
-          </div>
-          <div className={styles.listM}>
-            {musicData.song &&
-              musicData.song.map((song, i) => {
-                return (
-                  <div key={i}>
-                    <div className={styles.number}>
-                      {i + 1 < 10 ? `0${i + 1}` : i + 1}
+          <div className={styles.scrollBox1}>
+            <div className={styles.sImgM}>
+              <Image src={musicData.sImg}></Image>
+            </div>
+            <div className={styles.inText2}>十年熟成</div>
+            <div className={styles.inText2}>最佳精選特輯</div>
+            <div className={styles.inText3}>黃玠×NABOWA</div>
+            <div className={styles.mediaM}>
+              <a href={musicData.link[0]}>
+                <div className={styles.imusicM}></div>
+              </a>
+              <a href={musicData.link[1]}>
+                <div className={styles.spotifyM}></div>
+              </a>
+              <a href={musicData.link[2]}>
+                <div className={styles.kkboxM}></div>
+              </a>
+            </div>
+            <div className={styles.listM}>
+              {musicData.song &&
+                musicData.song.map((song, i) => {
+                  return (
+                    <div key={i}>
+                      <div className={styles.number}>
+                        {i + 1 < 10 ? `${i + 1}` : i + 1}
+                      </div>
+                      | {song}
                     </div>
-                    | {song}
-                  </div>
-                );
-              })}
+                  );
+                })}
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       <div className={styles.topic}>作品</div>
       <WorksNavM></WorksNavM>
@@ -410,7 +406,13 @@ const Music = () => {
                   );
                 })}
             </div>
-            <div className={styles.sImgM} id="innerGear">
+            <div
+              className={`${styles.sImgM} innerGear`}
+              onClick={() => {
+                setMusicData(musics[musics.length - 1]);
+                switchInnerPage();
+              }}
+            >
               <Image src={musics[musics.length - 1].sImg}></Image>
             </div>
           </div>
@@ -430,7 +432,7 @@ const Music = () => {
                       setItemIndex(music.id);
                     }}
                   >
-                    <div className={styles.previewImg}>
+                    <div className={styles.previewImg} onClick={() => {}}>
                       <Image src={music.sImg}></Image>
                     </div>
                     {music.id == musics.length && (
@@ -456,8 +458,9 @@ const Music = () => {
                     onClick={() => {
                       setMusicData(music);
                       setItemIndex(music.id);
+                      switchInnerPage();
                     }}
-                    id="innerGear"
+                    className="innerGear"
                   >
                     <div className={styles.previewImg}>
                       <Image src={music.sImg}></Image>
@@ -467,6 +470,8 @@ const Music = () => {
               );
             })}
         </div>
+        <div className={styles.imgM}></div>
+        <div className={styles.imgTextM} id="imgTextM"></div>
       </div>
       <div className={styles.arrowUp}>
         <a
@@ -486,8 +491,7 @@ const Music = () => {
           <Image src={page < totalPage ? ADA : AD}></Image>
         </a>
       </div>
-      <div className={styles.imgM}></div>
-      <div className={styles.imgTextM} id="imgTextM"></div>
+
       <div className={styles.img}>
         <Image src={Img}></Image>
       </div>
