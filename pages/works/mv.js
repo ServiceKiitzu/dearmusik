@@ -132,10 +132,6 @@ const Mv = () => {
       screenfull.request(iframe);
     }
   }
-  function playVideo(url) {
-    // setCurrentMv(item);
-    setId(url);
-  }
   const _onReady = (event) => {
     // access to player in all event handlers via event.target
     setTarget(event);
@@ -214,8 +210,9 @@ const Mv = () => {
                   className={styles.musicBox}
                   id="mvItem"
                   onClick={() => {
-                    const url = item.youtube.split("/").pop();
-                    playVideo(url);
+                    const url = item.youtube.split("/").pop().toString();
+                    console.log(url);
+                    setId(url);
                   }}
                 >
                   <Image src={item.preview}></Image>
