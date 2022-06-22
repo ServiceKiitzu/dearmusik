@@ -132,7 +132,6 @@ const Mv = () => {
     setYTListMobile(YTListMobile);
   }
   function playMobileVideo(index) {
-    console.log(YTListMobile);
     YTListMobile[index].target.playVideo();
   }
   function fullScreen(e) {
@@ -212,8 +211,8 @@ const Mv = () => {
                     <YouTube
                       videoId={item.youtube}
                       opts={{
-                        width: "0",
-                        height: "0",
+                        width: "100%",
+                        height: "100%",
                         playerVars: {
                           disablekb: 1,
                           playlist: item.youtube,
@@ -225,7 +224,6 @@ const Mv = () => {
                       }}
                       onPlay={fullScreen}
                       onReady={(e) => storeMobileYoutube(e, index)}
-                      id="youtubeM"
                       style={{ height: "0" }}
                     />
                   )}
