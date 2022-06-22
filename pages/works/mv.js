@@ -91,14 +91,15 @@ const Mv = () => {
     if (screenfull.isEnabled) {
       screenfull.on("change", () => {
         if (!screenfull.isFullscreen) {
+          console.log("結束全螢幕");
           setPlay(false);
         }
       });
     }
   }
   function playVideo(item) {
-    console.log(item);
     setCurrentMv(item);
+    setPlay(true);
   }
   useEffect(() => {
     const mediaQuery = window.matchMedia("( max-width: 1280px )");
@@ -135,7 +136,8 @@ const Mv = () => {
     },
   };
   function fullScreen(e) {
-    const iframe = e.target.getIframe();
+    console.log(e.target);
+    const iframe = e.target.i;
     if (screenfull.isEnabled && iframe) {
       screenfull.request(iframe);
     }
@@ -143,7 +145,9 @@ const Mv = () => {
 
   const _onReady = (event) => {
     // access to player in all event handlers via event.target
-    event.target.playVideo();
+    setTimeout(() => {
+      event.target.playVideo();
+    }, 1000);
   };
   return (
     <>
@@ -198,12 +202,14 @@ const Mv = () => {
           </div>
           <WorksNav></WorksNav>
         </div>
-        {currentMv && (
+
+        {play && (
           <YouTube
-            videoId={currentMv.youtube.split("/").pop()}
+            videoId={"aR8BSYCvbvo"}
             opts={opts}
-            onReady={_onReady}
             onPlay={fullScreen}
+            onReady={_onReady}
+            id="youtubeM"
           />
         )}
 
