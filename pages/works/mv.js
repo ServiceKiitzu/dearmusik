@@ -40,25 +40,25 @@ const Mv = () => {
     {
       id: 2,
       title: "【你】官方 MV",
-      youtube: "aR8BSYCvbvo",
+      youtube: "ba3vBuvKHk8",
       preview: M2,
     },
     {
       id: 3,
       title: "【一路向東 feat.Suming舒米恩】官方 MV",
-      youtube: "aR8BSYCvbvo",
+      youtube: "NfM2V9pqRgc",
       preview: M3,
     },
     {
       id: 4,
       title: "【你是不是像我一樣 feat.黃小楨】官方 MV",
-      youtube: "aR8BSYCvbvo",
+      youtube: "1TVrd3H8t7c",
       preview: M4,
     },
     {
       id: 5,
       title: "【因為你 feat.女孩與機器人】官方 MV",
-      youtube: "aR8BSYCvbvo",
+      youtube: "tahO1rX-a2w",
       preview: M5,
     },
     {
@@ -70,19 +70,19 @@ const Mv = () => {
     {
       id: 7,
       title: "【Diana】官方 MV",
-      youtube: "aR8BSYCvbvo",
+      youtube: "34HR9z90fss",
       preview: M7,
     },
     {
       id: 8,
       title: "【我可以】官方 MV",
-      youtube: "aR8BSYCvbvo",
+      youtube: "zHGTKwtc3NE",
       preview: M8,
     },
     {
       id: 9,
       title: "【夢的距離】官方 MV",
-      youtube: "aR8BSYCvbvo",
+      youtube: "KudHemvqXLE",
       preview: M9,
     },
   ];
@@ -198,6 +198,15 @@ const Mv = () => {
                       opts={{
                         width: "100%",
                         height: "100%",
+                        playerVars: {
+                          disablekb: 1,
+                          playlist: item.youtube,
+                          loop: 0,
+                          playsinline: 0,
+                          rel: 0,
+                          fs: 1,
+                          enablejsapi: 1,
+                        },
                       }}
                       onReady={(e) => storeMobileYoutube(e, index)}
                       onPlay={fullScreen}
