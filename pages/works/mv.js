@@ -24,12 +24,15 @@ import { useState, useEffect } from "react";
 import Script from "next/script";
 import YouTube from "react-youtube";
 import screenfull from "screenfull";
+import getYouTubeID from "get-youtube-id";
 
 const Mv = () => {
   const [isOpen, setOpen] = useState(false);
   const [currentMv, setCurrentMv] = useState(null);
   const [videoId, setVideoId] = useState("");
   const [play, setPlay] = useState(false);
+  const [target, setTarget] = useState(null);
+  const [id, setId] = useState("");
   const mvs = [
     {
       id: 1,
@@ -91,16 +94,14 @@ const Mv = () => {
     if (screenfull.isEnabled) {
       screenfull.on("change", () => {
         if (!screenfull.isFullscreen) {
+          target ? target.target.pauseVideo() : "";
           console.log("結束全螢幕");
           setPlay(false);
         }
       });
     }
   }
-  function playVideo(item) {
-    setCurrentMv(item);
-    setPlay(true);
-  }
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("( max-width: 1280px )");
     const observer = new IntersectionObserver((entries) => {
@@ -131,23 +132,25 @@ const Mv = () => {
       loop: 0,
       playsinline: 0,
       fs: 1,
-      origin: "http://localhost:3000",
       enablejsapi: 1,
     },
   };
   function fullScreen(e) {
-    console.log(e.target);
     const iframe = e.target.i;
     if (screenfull.isEnabled && iframe) {
       screenfull.request(iframe);
     }
   }
-
+  function playVideo(url) {
+    // setCurrentMv(item);
+    setId(url);
+    setPlay(true);
+  }
   const _onReady = (event) => {
     // access to player in all event handlers via event.target
-    setTimeout(() => {
-      event.target.playVideo();
-    }, 1000);
+    console.log(event);
+    setTarget(event);
+    event.target.playVideo();
   };
   return (
     <>
@@ -205,7 +208,7 @@ const Mv = () => {
 
         {play && (
           <YouTube
-            videoId={"aR8BSYCvbvo"}
+            videoId={id}
             opts={opts}
             onPlay={fullScreen}
             onReady={_onReady}
@@ -222,7 +225,8 @@ const Mv = () => {
                   className={styles.musicBox}
                   id="mvItem"
                   onClick={() => {
-                    playVideo(item);
+                    const url = item.youtube.split("/").pop();
+                    playVideo(url);
                   }}
                 >
                   <Image src={item.preview}></Image>
