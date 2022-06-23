@@ -30,6 +30,7 @@ const Mv = () => {
   const [isOpen, setOpen] = useState(false);
   const [currentMv, setCurrentMv] = useState(null);
   const [YTListMobile, setYTListMobile] = useState([]);
+  const [phone, setPhone] = useState(false);
   const mvs = [
     {
       id: 1,
@@ -105,6 +106,7 @@ const Mv = () => {
     });
     if (mediaQuery.matches) {
       observer.observe(document.querySelector("#imgTextM"));
+      setPhone(true);
     }
   }, []);
 
@@ -162,7 +164,9 @@ const Mv = () => {
             id="videoBox"
             width="100%"
             height="100%"
-            src={currentMv && currentMv.youtube}
+            src={
+              currentMv && `https://www.youtube.com/embed/${currentMv.youtube}`
+            }
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -181,6 +185,7 @@ const Mv = () => {
         </div>
 
         <div className={styles.rightBlock}>
+          {/* mv預覽小圖 */}
           {mvs &&
             mvs.map((item, index) => {
               return (
@@ -189,10 +194,16 @@ const Mv = () => {
                   className={styles.musicBox}
                   id="mvItem"
                   onClick={() => {
-                    playMobileVideo(index);
+                    if (phone) {
+                      playMobileVideo(index);
+                    } else {
+                      setCurrentMv(item);
+                      setOpen(true);
+                    }
                   }}
                 >
-                  {item.youtube && (
+                  {item.id == 1 && phone && <div className={styles.new}></div>}
+                  {phone && item.youtube && (
                     <YouTube
                       videoId={item.youtube}
                       opts={{

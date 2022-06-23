@@ -35,6 +35,17 @@
           width: 100% !important;
           height: 100% !important;
         }
+        .new {
+          background: url("../../assets/works/new-icon.png") no-repeat;
+          background-size: contain;
+          width: 28px;
+          height: 28px;
+          position: absolute;
+          z-index: 3;
+          right: 21px;
+          top: -12px;
+          margin: 0 !important;
+        }
         .title {
           position: absolute;
           color: #e6e6e6;

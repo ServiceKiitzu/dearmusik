@@ -90,9 +90,19 @@
           width: 292px;
           height: 292px;
           margin: 25px auto 71px;
+          position: relative;
           span {
             width: 100% !important;
             height: 100% !important;
+          }
+          .new {
+            background: url("../../assets/works/new-icon.png") no-repeat;
+            background-size: contain;
+            width: 28px;
+            height: 28px;
+            position: absolute;
+            right: -6px;
+            top: -12px;
           }
         }
       }
@@ -161,7 +171,7 @@
           left: 34px;
         }
       }
-      .sImgM {
+      .inImgM {
         width: 140px;
         height: 140px;
         margin: 0 auto 20px;
@@ -252,16 +262,13 @@
         position: relative;
 
         .new {
-          position: absolute;
+          background: url("../../assets/works/new-icon.png") no-repeat;
+          background-size: contain;
           width: 28px;
           height: 28px;
-          border-radius: 50%;
-          background-color: #f5ff03;
-          font-size: 9px;
-          line-height: 28px;
-          letter-spacing: 1.08px;
-          right: 0px;
-          top: -14px;
+          position: absolute;
+          right: -6px;
+          top: -12px;
         }
       }
       .info {
@@ -337,23 +344,22 @@
         .previewImg {
           width: 122px;
           height: 122px;
+          position: relative;
           &:hover {
             box-shadow: 5px 5px 7px 0 rgba(0, 0, 0, 0.16);
           }
+          .new {
+            background: url("../../assets/works/new-icon.png") no-repeat;
+            background-size: contain;
+            width: 28px;
+            height: 28px;
+            position: absolute;
+            right: 0;
+            top: -12px;
+            margin: 0 !important;
+          }
         }
-        .new {
-          margin-right: 0;
-          position: absolute;
-          width: 28px;
-          height: 28px;
-          border-radius: 50%;
-          background-color: #f5ff03;
-          font-size: 9px;
-          line-height: 28px;
-          letter-spacing: 1.08px;
-          right: 0px;
-          top: -14px;
-        }
+
         .text {
           .year {
             font-size: 12px;

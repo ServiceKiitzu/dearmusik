@@ -250,7 +250,7 @@ const Music = () => {
   const [itemIndex, setItemIndex] = useState(musics.length);
 
   const [innerPage, setInnerPage] = useState(false);
-  const [isMobile, setIsMobile] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const musicReverse = [...musics].reverse();
   let totalPage = Math.ceil(musicReverse.length / count) - 1;
@@ -299,7 +299,7 @@ const Music = () => {
     });
     if (mediaQuery.matches) {
       observer.observe(document.querySelector("#imgTextM"));
-      setIsMobile(1);
+      setIsMobile(true);
     }
   }, []);
   return (
@@ -316,7 +316,7 @@ const Music = () => {
             2022 SINGLE
           </div>
           <div className={styles.scrollBox1}>
-            <div className={styles.sImgM}>
+            <div className={styles.inImgM}>
               <Image src={musicData.sImg}></Image>
             </div>
             <div className={styles.inText2}>十年熟成</div>
@@ -357,9 +357,7 @@ const Music = () => {
           <div className={styles.box1}>
             <div className={styles.sImg}>
               <Image src={musicData.sImg}></Image>
-              {itemIndex == musics.length && (
-                <div className={styles.new}>NEW</div>
-              )}
+              {itemIndex == musics.length && <div className={styles.new}></div>}
             </div>
             <WorksNav></WorksNav>
           </div>
@@ -414,12 +412,13 @@ const Music = () => {
               }}
             >
               <Image src={musics[musics.length - 1].sImg}></Image>
+              <div className={styles.new}></div>
             </div>
           </div>
         </div>
         <div className={styles.rightBlock}>
           {currentItems &&
-            isMobile == 0 &&
+            !isMobile &&
             currentItems.map((music) => {
               return (
                 <div key={music.id}>
@@ -434,10 +433,10 @@ const Music = () => {
                   >
                     <div className={styles.previewImg} onClick={() => {}}>
                       <Image src={music.sImg}></Image>
+                      {music.id == musics.length && (
+                        <div className={styles.new}></div>
+                      )}
                     </div>
-                    {music.id == musics.length && (
-                      <div className={styles.new}>NEW</div>
-                    )}
                     <div className={styles.text}>
                       <div className={styles.year}>{music.year}</div>
                       <div className={styles.title}>{music.title1}</div>
