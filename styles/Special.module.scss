@@ -1,132 +1,134 @@
-.container {
-  width: 1280px;
-  height: 650px;
-  padding: 30px 0 0 105px;
-  margin: 0 auto;
-  display: flex;
-  position: relative;
-  .leftBlock {
-    position: relative;
-    .new {
-      position: absolute;
-      top: -14px;
-      right: -10px;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background-color: #f5ff03;
-      font-size: 12px;
-      letter-spacing: 1.08px;
-      padding: 6px 3px 0 0;
-      color: #000000;
-      div {
-        text-align: left;
-        font-weight: 500;
-        margin-left: -1px;
-        transform: scale(0.75);
-        -webkit-transform: scale(0.75);
-      }
-    }
+@media screen and (max-width: 1280px) {
+  .container {
   }
-  .rightBlock {
-    margin-left: 188px;
-    .title {
-      color: #414141;
-      font-size: 30px;
-      font-weight: bold;
-      line-height: 1.33;
-      letter-spacing: 3px;
-      margin-bottom: 14px;
-    }
-    .sessions {
-      display: flex;
-      font-size: 15.5px;
-      font-weight: bold;
-      line-height: 1.61;
-      letter-spacing: 1.86px;
-      color: #414141;
-      margin: 14px 0 4px 0;
-      div {
-        margin-right: 27px;
-        border-bottom: 1px solid #578936;
-        padding-bottom: 5px;
-        cursor: pointer;
-        &:hover {
-          padding-bottom: 0;
-          border-bottom: 6px solid #578936;
-        }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1280px;
+    height: 650px;
+    padding: 30px 0 0 105px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    .leftBlock {
+      width: 389px;
+      .cover {
+        position: relative;
+        box-shadow: 9px 9px 15px 0 rgba(0, 0, 0, 0.16);
+      }
+      .new {
+        background: url("../assets/works/new-icon.png") no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: -14px;
+        right: -10px;
+        width: 28px;
+        height: 28px;
       }
     }
-    .list {
-      margin-top: 38px;
-      .item {
-        margin-bottom: 4px;
-        width: -moz-fit-content;
-        width: fit-content;
-        &:hover {
-          border-bottom: 1px #707070 solid;
-          margin-bottom: 2.5px;
-          padding-bottom: 0.5px;
-        }
-        .aBox {
+    .rightBlock {
+      margin-left: 188px;
+      .title {
+        color: #414141;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 1.33;
+        letter-spacing: 3px;
+      }
+      .sessions {
+        font-size: 15.5px;
+        font-weight: bold;
+        line-height: 1.61;
+        letter-spacing: 1.86px;
+        color: #414141;
+        margin: 28px 0 0;
+        padding-bottom: 1px;
+        .sItem {
+          width: -moz-fit-content;
+          width: fit-content;
           display: flex;
-          color: #a5a5a5;
+          border-bottom: 2px solid #578936;
+          padding-bottom: 5px;
+          margin-bottom: 10px;
           cursor: pointer;
-          flex-wrap: nowrap;
-          &.act {
-            font-weight: bold !important;
-            color: #414141;
+          &:hover {
+            margin-bottom: 6px;
+            border-bottom: 6px solid #578936;
           }
-
-          .fc {
-            width: 51px;
-            font-size: 13px;
-            line-height: 1.92;
-            letter-spacing: 1.56px;
+          .date {
+            width: 53px;
+            margin-right: 8px;
           }
-          .sc {
-            margin-left: 12px;
-            font-size: 15px;
-            // font-weight: 300;
-            line-height: 1.61;
-            letter-spacing: 1.86px;
+          .place {
+            width: 56px;
           }
-          .tc {
+          .mode {
+          }
+        }
+      }
+      .list {
+        margin-top: 38px;
+        .item {
+          margin-bottom: 4px;
+          width: -moz-fit-content;
+          width: fit-content;
+          position: relative;
+          &:hover {
+            border-bottom: 1px #707070 solid;
+            margin-bottom: 2.5px;
+            padding-bottom: 0.5px;
+          }
+          .new {
+            background: url("../assets/works/new-icon.png") no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: -42px;
             width: 28px;
             height: 28px;
-            border-radius: 50%;
-            background-color: #f5ff03;
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 1.08px;
-            padding: 6px 3px 0 0;
-            color: #000000;
-            margin-left: 4px;
-            div {
-              margin-left: -1px;
-              -webkit-transform: scale(0.75);
-              transform: scale(0.75);
+          }
+          .aBox {
+            display: flex;
+            color: #a5a5a5;
+            cursor: pointer;
+            flex-wrap: nowrap;
+            &.act {
+              font-weight: bold !important;
+              color: #414141;
+            }
+
+            .fc {
+              width: 51px;
+              font-size: 13px;
+              line-height: 1.92;
+              letter-spacing: 1.56px;
+            }
+            .sc {
+              margin-left: 12px;
+              font-size: 15px;
+              // font-weight: 300;
+              line-height: 1.61;
+              letter-spacing: 1.86px;
             }
           }
         }
       }
     }
+    .img {
+      position: absolute;
+      right: 0;
+      top: 480px;
+      cursor: pointer;
+      &:hover + .imgText {
+        animation: show 6.5s infinite;
+      }
+    }
+    .imgText {
+      position: absolute;
+      right: 0;
+      top: 430px;
+      opacity: 0;
+    }
   }
-}
-.img {
-  position: absolute;
-  right: 0;
-  top: 480px;
-  cursor: pointer;
-  &:hover + .imgText {
-    animation: show 6.5s infinite;
-  }
-}
-.imgText {
-  position: absolute;
-  right: 0;
-  top: 430px;
-  opacity: 0;
 }
 
 @keyframes show {
