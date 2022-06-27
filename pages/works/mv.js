@@ -109,6 +109,9 @@ const Mv = () => {
       observer.observe(document.querySelector("#imgTextM"));
       setPhone(true);
     }
+    if (window.innerWidth < 1280) {
+      setPhone(true);
+    }
   }, []);
 
   // youtube播放事件
@@ -124,7 +127,6 @@ const Mv = () => {
   }
   function fullScreen(e) {
     const iframe = e.target.getIframe();
-    console.log(iframe);
     if (screenfull.isEnabled) {
       screenfull.request(iframe);
     }
@@ -132,49 +134,52 @@ const Mv = () => {
   return (
     <>
       <div className={styles.container} id="mv">
-        <Modal
-          parentSelector={() => document.querySelector("#mv")}
-          isOpen={isOpen}
-          style={{
-            overlay: {
-              backdropFilter: "blur(11.3px)",
-              backgroundColor: "rgba(0, 0, 0, 0.7)",
-            },
-            content: {
-              transform: "translateX(-50%)",
-              border: "none",
-              padding: "0",
-              inset: "0",
-              width: "966px",
-              height: "462px",
-              backgroundColor: "transparent",
-              overflow: "unset",
-            },
-          }}
-        >
-          <div className={styles.close}>
-            <a
-              onClick={() => {
-                setOpen(false);
-              }}
-            >
-              <Image src={Close}></Image>
-            </a>
-          </div>
-          <iframe
-            id="videoBox"
-            width="100%"
-            height="100%"
-            src={
-              currentMv && `https://www.youtube.com/embed/${currentMv.youtube}`
-            }
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen={true}
-            style={{ borderRadius: "30px" }}
-          ></iframe>
-        </Modal>
+        {!phone && (
+          <Modal
+            parentSelector={() => document.querySelector("#mv")}
+            isOpen={isOpen}
+            style={{
+              overlay: {
+                backdropFilter: "blur(11.3px)",
+                backgroundColor: "rgba(0, 0, 0, 0.7)",
+              },
+              content: {
+                transform: "translateX(-50%)",
+                border: "none",
+                padding: "0",
+                inset: "0",
+                width: "966px",
+                height: "462px",
+                backgroundColor: "transparent",
+                overflow: "unset",
+              },
+            }}
+          >
+            <div className={styles.close}>
+              <a
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                <Image src={Close}></Image>
+              </a>
+            </div>
+            <iframe
+              id="videoBox"
+              width="100%"
+              height="100%"
+              src={
+                currentMv &&
+                `https://www.youtube.com/embed/${currentMv.youtube}`
+              }
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen={true}
+              style={{ borderRadius: "30px" }}
+            ></iframe>
+          </Modal>
+        )}
 
         <div className={styles.topic}>作品</div>
         <WorksNavM></WorksNavM>
