@@ -31,7 +31,7 @@ const Mv = () => {
   const [currentMv, setCurrentMv] = useState(null);
   const [YTListMobile, setYTListMobile] = useState([]);
   const [phone, setPhone] = useState(false);
-  const mvs = [
+  let mvs = [
     {
       id: 1,
       title: "【夢的距離】官方 MV",
