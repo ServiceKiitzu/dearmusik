@@ -34,26 +34,26 @@ const Mv = () => {
   const mvs = [
     {
       id: 1,
-      title: "【我很想念你】官方 MV",
-      youtube: "7IZ0MVZL6RU",
+      title: "【夢的距離】官方 MV",
+      youtube: "KudHemvqXLE",
       preview: M1,
     },
     {
       id: 2,
-      title: "【你】官方 MV",
-      youtube: "ba3vBuvKHk8",
+      title: "【我可以】官方 MV",
+      youtube: "zHGTKwtc3NE",
       preview: M2,
     },
     {
       id: 3,
-      title: "【一路向東 feat.Suming舒米恩】官方 MV",
-      youtube: "NfM2V9pqRgc",
+      title: "【Diana】官方 MV",
+      youtube: "34HR9z90fss",
       preview: M3,
     },
     {
       id: 4,
-      title: "【你是不是像我一樣 feat.黃小楨】官方 MV",
-      youtube: "1TVrd3H8t7c",
+      title: "【下雨的晚上】官方 MV",
+      youtube: "aR8BSYCvbvo",
       preview: M4,
     },
     {
@@ -64,29 +64,30 @@ const Mv = () => {
     },
     {
       id: 6,
-      title: "【下雨的晚上】官方 MV",
-      youtube: "aR8BSYCvbvo",
+      title: "【你是不是像我一樣 feat.黃小楨】官方 MV",
+      youtube: "1TVrd3H8t7c",
       preview: M6,
     },
     {
       id: 7,
-      title: "【Diana】官方 MV",
-      youtube: "34HR9z90fss",
+      title: "【一路向東 feat.Suming舒米恩】官方 MV",
+      youtube: "NfM2V9pqRgc",
       preview: M7,
     },
     {
       id: 8,
-      title: "【我可以】官方 MV",
-      youtube: "zHGTKwtc3NE",
+      title: "【你】官方 MV",
+      youtube: "ba3vBuvKHk8",
       preview: M8,
     },
     {
       id: 9,
-      title: "【夢的距離】官方 MV",
-      youtube: "KudHemvqXLE",
+      title: "【我很想念你】官方 MV",
+      youtube: "7IZ0MVZL6RU",
       preview: M9,
     },
   ];
+  mvs = mvs.reverse();
   if (typeof window !== "undefined") {
     Modal.setAppElement(document.getElementById("mv"));
   }
@@ -202,7 +203,9 @@ const Mv = () => {
                     }
                   }}
                 >
-                  {item.id == 1 && phone && <div className={styles.new}></div>}
+                  {item.id == mvs.length && phone && (
+                    <div className={styles.new}></div>
+                  )}
                   {phone && item.youtube && (
                     <YouTube
                       videoId={item.youtube}
@@ -249,7 +252,7 @@ const Mv = () => {
             <Image src={AU}></Image>
           </div>
           <div>
-            <Image src={ADA}></Image>
+            <Image src={mvs.length > 9 ? ADA : AD}></Image>
           </div>
         </div>
         <div className={styles.img}>

@@ -13,6 +13,16 @@ import C8 from "../assets/special/c8.png";
 import C9 from "../assets/special/c9.png";
 import C10 from "../assets/special/c10.png";
 import C11 from "../assets/special/c11.png";
+import CM1 from "../assets/special/c-m-1.png";
+import CM2 from "../assets/special/c-m-2.png";
+import CM3 from "../assets/special/c-m-3.png";
+import CM4 from "../assets/special/c-m-4.png";
+import CM5 from "../assets/special/c-m-5.png";
+import CM6 from "../assets/special/c-m-6.png";
+import CM7 from "../assets/special/c-m-7.png";
+import CM8 from "../assets/special/c-m-8.png";
+import CM9 from "../assets/special/c-m-9.png";
+import CM10 from "../assets/special/c-m-10.png";
 import { useEffect, useState } from "react";
 
 const Special = () => {
@@ -22,21 +32,29 @@ const Special = () => {
       year: "2013",
       title: "我可以",
       cover: C1,
+      coverM: CM1,
     },
-    { id: 2, year: "2014", title: "大自然三部曲", cover: C2 },
-    { id: 3, year: "2014", title: "冬。 touch", cover: C3 },
-    { id: 4, year: "2015", title: "揪朋友", cover: C4 },
-    { id: 5, year: "2016", title: "關於那些記得的事", cover: C5 },
-    { id: 6, year: "2016", title: "歡迎加入黃玠國", cover: C6 },
-    { id: 7, year: "2017", title: "我們一起", cover: C7 },
-    { id: 8, year: "2018", title: "冬。Love Me", cover: C8 },
-    { id: 9, year: "2018", title: "我的朋友都結婚生小孩了", cover: C9 },
-    { id: 10, year: "2020", title: "國民大會", cover: C10 },
+    { id: 2, year: "2014", title: "大自然三部曲", cover: C2, coverM: CM2 },
+    { id: 3, year: "2014", title: "冬。 touch", cover: C3, coverM: CM3 },
+    { id: 4, year: "2015", title: "揪朋友", cover: C4, coverM: CM4 },
+    { id: 5, year: "2016", title: "關於那些記得的事", cover: C5, coverM: CM5 },
+    { id: 6, year: "2016", title: "歡迎加入黃玠國", cover: C6, coverM: CM6 },
+    { id: 7, year: "2017", title: "我們一起", cover: C7, coverM: CM7 },
+    { id: 8, year: "2018", title: "冬。Love Me", cover: C8, coverM: CM8 },
+    {
+      id: 9,
+      year: "2018",
+      title: "我的朋友都結婚生小孩了",
+      cover: C9,
+      coverM: CM9,
+    },
+    { id: 10, year: "2020", title: "國民大會", cover: C10, coverM: CM10 },
     {
       id: 11,
       year: "2022",
       title: "今年，25歲",
       cover: C11,
+      coverM: CM10,
       date: [
         ["08/20", "高雄", "後台 backstage Live"],
         ["08/26", "台北", "Legacy Taipei"],
@@ -46,6 +64,7 @@ const Special = () => {
   ];
   sessions = sessions.reverse();
   const [nowTopic, setNowTopic] = useState(sessions[0]);
+  const [pop, setPop] = useState(false);
   useEffect(() => {
     const listItems = document.querySelectorAll("div.item a");
     const lastItem = listItems[0];
@@ -63,6 +82,20 @@ const Special = () => {
   }, []);
   return (
     <div className={styles.container}>
+      {pop && (
+        <div className={styles.pop}>
+          <div
+            className={styles.popCross}
+            onClick={() => {
+              setPop(false);
+            }}
+          ></div>
+          <div className={styles.popCover}>
+            <Image src={nowTopic.cover}></Image>
+          </div>
+        </div>
+      )}
+      <div className={styles.topic}>專場</div>
       <div className={styles.leftBlock}>
         <div className={styles.cover}>
           <Image src={nowTopic.cover}></Image>
@@ -70,12 +103,12 @@ const Special = () => {
         </div>
       </div>
       <div className={styles.rightBlock}>
-        <div className={styles.title}>今年，25歲</div>
+        <div className={styles.title}>{nowTopic.title}</div>
         {nowTopic && nowTopic.date && (
           <div className={styles.sessions}>
-            {nowTopic.date.map((item) => {
+            {nowTopic.date.map((item, i) => {
               return (
-                <div key={item.id} className={styles.sItem}>
+                <div key={i} className={styles.sItem}>
                   <div className={styles.date}>{item[0]}</div>
                   <div className={styles.place}>{item[1]}</div>
                   <div className={styles.mode}>{item[2]}</div>
@@ -106,12 +139,32 @@ const Special = () => {
               );
             })}
         </div>
+        <div className={styles.listM}>
+          {sessions &&
+            sessions.map((item, i) => {
+              return (
+                <div
+                  key={i}
+                  className={styles.listMItem}
+                  onClick={() => {
+                    setNowTopic(item);
+                  }}
+                >
+                  <Image src={item.coverM}></Image>
+                </div>
+              );
+            })}
+        </div>
       </div>
       <div className={styles.img}>
         <Image src={Img}></Image>
       </div>
       <div className={styles.imgText}>
         <Image src={ImgText}></Image>
+      </div>
+      <div className={styles.imgMBox}>
+        <div className={styles.imgM}></div>
+        <div className={styles.imgTextM}></div>
       </div>
     </div>
   );
