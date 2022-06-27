@@ -3,7 +3,18 @@
     width: 100%;
     height: 100vh;
     overflow: scroll;
-    padding-top: 179px;
+    padding: 179px 0 65px;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-color: #000;
+      width: 100vw;
+      height: 179px;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
     .arrowBox {
       display: none;
     }
@@ -21,14 +32,10 @@
       display: none;
     }
     .rightBlock {
-      position: absolute;
-      top: 179px;
-      left: 50%;
-      transform: translateX(-50%);
+      margin: 0 auto;
       padding-top: 21px;
-      height: calc(100vh - 230px);
-      overflow-y: scroll;
       .musicBox {
+        margin: 0 auto;
         width: 360px;
         height: 202px;
         position: relative;
