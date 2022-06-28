@@ -119,7 +119,7 @@ const Mv = () => {
     // store all mobile video value
     YTListMobile[index] = e;
     console.log(e, YTListMobile[index]);
-    setYTListMobile(YTListMobile);
+    setYTListMobile([...YTListMobile], e);
   }
   function playMobileVideo(index) {
     console.log(YTListMobile[index]);
@@ -199,22 +199,7 @@ const Mv = () => {
           {mvs &&
             mvs.map((item, index) => {
               return (
-                <div
-                  key={item.id}
-                  className={styles.musicBox}
-                  id="mvItem"
-                  onClick={() => {
-                    if (phone) {
-                      playMobileVideo(index);
-                    } else {
-                      setCurrentMv(item);
-                      setOpen(true);
-                    }
-                  }}
-                >
-                  {item.id == mvs.length && phone && (
-                    <div className={styles.new}></div>
-                  )}
+                <>
                   {phone && item.youtube && (
                     <YouTube
                       videoId={item.youtube}
@@ -238,21 +223,41 @@ const Mv = () => {
                       style={{ height: "0" }}
                     />
                   )}
-                  <Image src={item.preview}></Image>
-                  <div className={styles.title}>{item.title}</div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    version="1.1"
-                    className={`svg-triangle ${styles.triangle}`}
-                    width="44"
-                    height="53"
-                  >
-                    <path d="M 40,25 4,45 4,5 z" />
-                  </svg>
-                  {YTListMobile[index] !== null && (
-                    <div className={styles.play}></div>
+                  {YTListMobile[index] !== undefined && (
+                    <div
+                      key={item.id}
+                      className={styles.musicBox}
+                      id="mvItem"
+                      onClick={() => {
+                        if (phone) {
+                          playMobileVideo(index);
+                        } else {
+                          setCurrentMv(item);
+                          setOpen(true);
+                        }
+                      }}
+                    >
+                      {item.id == mvs.length && phone && (
+                        <div className={styles.new}></div>
+                      )}
+
+                      <Image src={item.preview}></Image>
+                      <div className={styles.title}>{item.title}</div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        version="1.1"
+                        className={`svg-triangle ${styles.triangle}`}
+                        width="44"
+                        height="53"
+                      >
+                        <path d="M 40,25 4,45 4,5 z" />
+                      </svg>
+                      {YTListMobile[index] !== null && (
+                        <div className={styles.play}></div>
+                      )}
+                    </div>
                   )}
-                </div>
+                </>
               );
             })}
           <div className={styles.imgBox}>
