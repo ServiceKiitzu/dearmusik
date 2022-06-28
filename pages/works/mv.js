@@ -219,7 +219,7 @@ const Mv = () => {
                       onReady={(e) => {
                         storeMobileYoutube(e, index);
                       }}
-                      onPlay={fullScreen}
+                      // onPlay={fullScreen}
                       style={{ height: "0" }}
                     />
                   )}
