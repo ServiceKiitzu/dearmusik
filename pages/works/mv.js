@@ -122,12 +122,11 @@ const Mv = () => {
     setYTListMobile([...YTListMobile], e);
   }
   function playMobileVideo(index) {
+    alert("影片開始播囉");
     console.log(YTListMobile[index]);
-    setTimeout(() => {
-      if (YTListMobile[index] !== undefined) {
-        YTListMobile[index].target.playVideo();
-      }
-    }, 1000);
+    if (YTListMobile[index] !== undefined && phone) {
+      YTListMobile[index].target.playVideo();
+    }
   }
   function fullScreen(e) {
     setTimeout(() => {
