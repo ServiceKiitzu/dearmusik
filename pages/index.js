@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import { Navigation, EffectFade, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import OG from "../public/og-img.jpg";
 
 import I1 from "../assets/index/swipe-1.jpg";
 import I2 from "../assets/index/swipe-2.jpg";
@@ -44,7 +45,20 @@ export default function Home() {
   }, []);
   return (
     <>
+      <Head>
+        <title>黃玠 dadadohuang ｜Official Website</title>
+        <meta
+          name="description"
+          content="黃玠，創作男歌手，用真誠的創作向這個世界傳遞溫柔與善良
+          他將持續在不同領域探索各種可能"
+        />
+        <meta
+          property="og:image"
+          content="https://dearmusik.kiitzu.ninja/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fog-img.e87c1000.jpg&w=1200&q=75"
+        />
+      </Head>
       <div className={styles.mask}></div>
+
       <div className={styles.containerM}>
         <Swiper
           modules={[Autoplay, Navigation, EffectFade]}
