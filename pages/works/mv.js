@@ -118,19 +118,24 @@ const Mv = () => {
   function storeMobileYoutube(e, index) {
     // store all mobile video value
     YTListMobile[index] = e;
+    console.log(e, YTListMobile[index]);
     setYTListMobile(YTListMobile);
   }
   function playMobileVideo(index) {
-    if (YTListMobile[index].target) {
+    console.log(YTListMobile[index]);
+    if (YTListMobile[index] !== undefined) {
       YTListMobile[index].target.playVideo();
     }
   }
   function fullScreen(e) {
+    console.log(e.target.i);
+    console.log(e.target.getIframe());
     const iframe = e.target.getIframe();
     if (screenfull.isEnabled) {
       screenfull.request(iframe);
     }
   }
+  console.log(YTListMobile);
   return (
     <>
       <div className={styles.container} id="mv">
@@ -245,7 +250,9 @@ const Mv = () => {
                   >
                     <path d="M 40,25 4,45 4,5 z" />
                   </svg>
-                  <div className={styles.play}></div>
+                  {YTListMobile[index] !== null && (
+                    <div className={styles.play}></div>
+                  )}
                 </div>
               );
             })}
