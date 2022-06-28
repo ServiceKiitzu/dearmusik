@@ -3,10 +3,14 @@ import Navbar from "./Navbar";
 import Cookie from "./Cookie";
 import Image from "next/image";
 import StoreM from "../assets/index/store-m.svg";
+import Head from "next/head";
 
 const Layout = ({ children }) => {
   return (
     <div className="pageContainer">
+      <Head>
+        <link rel="shortcut icon" href="/favicon.ico" />
+      </Head>
       <Navbar></Navbar>
       <div className="content">{children}</div>
       <Cookie></Cookie>
