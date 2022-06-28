@@ -35,55 +35,55 @@ const Mv = () => {
     {
       id: 1,
       title: "【夢的距離】官方 MV",
-      youtube: "KudHemvqXLE",
+      youtube: "SIR5UFuOfKw",
       preview: M1,
     },
     {
       id: 2,
       title: "【我可以】官方 MV",
-      youtube: "zHGTKwtc3NE",
+      youtube: "iQr2PqLMZbw",
       preview: M2,
     },
     {
       id: 3,
       title: "【Diana】官方 MV",
-      youtube: "34HR9z90fss",
+      youtube: "dzRRla6ekl0",
       preview: M3,
     },
     {
       id: 4,
       title: "【下雨的晚上】官方 MV",
-      youtube: "aR8BSYCvbvo",
+      youtube: "966IuoVHU7I",
       preview: M4,
     },
     {
       id: 5,
       title: "【因為你 feat.女孩與機器人】官方 MV",
-      youtube: "tahO1rX-a2w",
+      youtube: "rBQlyMO_ZxM",
       preview: M5,
     },
     {
       id: 6,
       title: "【你是不是像我一樣 feat.黃小楨】官方 MV",
-      youtube: "1TVrd3H8t7c",
+      youtube: "RFJ5YEhNhIQ",
       preview: M6,
     },
     {
       id: 7,
       title: "【一路向東 feat.Suming舒米恩】官方 MV",
-      youtube: "NfM2V9pqRgc",
+      youtube: "a-MFnayF5TE",
       preview: M7,
     },
     {
       id: 8,
       title: "【你】官方 MV",
-      youtube: "ba3vBuvKHk8",
+      youtube: "lCBUKVaTUbU",
       preview: M8,
     },
     {
       id: 9,
       title: "【我很想念你】官方 MV",
-      youtube: "7IZ0MVZL6RU",
+      youtube: "j5oXfkAEbqw",
       preview: M9,
     },
   ];
@@ -121,7 +121,7 @@ const Mv = () => {
     setYTListMobile(YTListMobile);
   }
   function playMobileVideo(index) {
-    if (YTListMobile[index]) {
+    if (YTListMobile[index].target) {
       YTListMobile[index].target.playVideo();
     }
   }
@@ -227,7 +227,9 @@ const Mv = () => {
                           enablejsapi: 1,
                         },
                       }}
-                      onReady={(e) => storeMobileYoutube(e, index)}
+                      onReady={(e) => {
+                        storeMobileYoutube(e, index);
+                      }}
                       onPlay={fullScreen}
                       style={{ height: "0" }}
                     />
