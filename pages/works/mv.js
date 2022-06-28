@@ -210,9 +210,9 @@ const Mv = () => {
                           disablekb: 1,
                           playlist: item.youtube,
                           loop: 0,
-                          playsinline: 0,
+                          playsinline: 1,
                           rel: 0,
-                          fs: 1,
+                          fs: 0,
                           enablejsapi: 1,
                         },
                       }}
