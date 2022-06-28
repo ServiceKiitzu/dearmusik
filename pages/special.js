@@ -63,6 +63,7 @@ const Special = () => {
     },
   ];
   sessions = sessions.reverse();
+  const firstElement = sessions[0];
   const [nowTopic, setNowTopic] = useState(sessions[0]);
   const [pop, setPop] = useState(false);
   const [phone, setPhone] = useState(false);
@@ -80,8 +81,23 @@ const Special = () => {
       });
       e.currentTarget.classList.toggle(styles.act);
     }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const square = entry.target;
+        if (entry.isIntersecting) {
+          square.classList.add("animation");
+          return; // if we added the class, exit the function
+        }
+        // We're not intersecting, so remove the class!
+        square.classList.remove("animation");
+      });
+    });
+    const imgTextM = document.querySelector("#imgTextM");
     if (window.innerWidth < 1280) {
       setPhone(true);
+      if (imgTextM) {
+        observer.observe(imgTextM);
+      }
     }
   }, []);
   return (
@@ -102,7 +118,16 @@ const Special = () => {
       <div className={styles.topic}>專場</div>
       <div className={styles.leftBlock}>
         <div className={styles.cover}>
-          <Image src={phone ? sessions[0].cover : nowTopic.cover}></Image>
+          <Image
+            src={phone ? sessions[0].cover : nowTopic.cover}
+            onClick={() => {
+              if (phone) {
+                setNowTopic(firstElement);
+                setPop(true);
+              }
+            }}
+          ></Image>
+
           <div className={styles.new}></div>
         </div>
       </div>
@@ -186,7 +211,7 @@ const Special = () => {
       </div>
       <div className={styles.imgMBox}>
         <div className={styles.imgM}></div>
-        <div className={styles.imgTextM}></div>
+        <div className={styles.imgTextM} id="imgTextM"></div>
       </div>
     </div>
   );
