@@ -65,6 +65,7 @@ const Special = () => {
   sessions = sessions.reverse();
   const [nowTopic, setNowTopic] = useState(sessions[0]);
   const [pop, setPop] = useState(false);
+  const [phone, setPhone] = useState(false);
   useEffect(() => {
     const listItems = document.querySelectorAll("div.item a");
     const lastItem = listItems[0];
@@ -78,6 +79,9 @@ const Special = () => {
         item.classList.remove(styles.act);
       });
       e.currentTarget.classList.toggle(styles.act);
+    }
+    if (window.innerWidth < 1280) {
+      setPhone(true);
     }
   }, []);
   return (
@@ -98,13 +102,15 @@ const Special = () => {
       <div className={styles.topic}>專場</div>
       <div className={styles.leftBlock}>
         <div className={styles.cover}>
-          <Image src={nowTopic.cover}></Image>
+          <Image src={phone ? sessions[0].cover : nowTopic.cover}></Image>
           <div className={styles.new}></div>
         </div>
       </div>
       <div className={styles.rightBlock}>
-        <div className={styles.title}>{nowTopic.title}</div>
-        {nowTopic && nowTopic.date && (
+        <div className={styles.title}>
+          {phone ? sessions[0].title : nowTopic.title}
+        </div>
+        {!phone && nowTopic && nowTopic.date && (
           <div className={styles.sessions}>
             {nowTopic.date.map((item, i) => {
               return (
@@ -115,6 +121,20 @@ const Special = () => {
                 </div>
               );
             })}
+          </div>
+        )}
+        {phone && sessions && (
+          <div className={styles.sessions}>
+            {sessions[0].date &&
+              sessions[0].date.map((item, i) => {
+                return (
+                  <div key={i} className={styles.sItem}>
+                    <div className={styles.date}>{item[0]}</div>
+                    <div className={styles.place}>{item[1]}</div>
+                    <div className={styles.mode}>{item[2]}</div>
+                  </div>
+                );
+              })}
           </div>
         )}
         <div className={`${styles.list} list`}>
@@ -141,6 +161,7 @@ const Special = () => {
         </div>
         <div className={styles.listM}>
           {sessions &&
+            sessions.shift() &&
             sessions.map((item, i) => {
               return (
                 <div
@@ -148,6 +169,7 @@ const Special = () => {
                   className={styles.listMItem}
                   onClick={() => {
                     setNowTopic(item);
+                    setPop(true);
                   }}
                 >
                   <Image src={item.coverM}></Image>
