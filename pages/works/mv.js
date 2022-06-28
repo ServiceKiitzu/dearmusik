@@ -123,9 +123,11 @@ const Mv = () => {
   }
   function playMobileVideo(index) {
     console.log(YTListMobile[index]);
-    if (YTListMobile[index] !== undefined) {
-      YTListMobile[index].target.playVideo();
-    }
+    setTimeout(() => {
+      if (YTListMobile[index] !== undefined) {
+        YTListMobile[index].target.playVideo();
+      }
+    }, 1000);
   }
   function fullScreen(e) {
     setTimeout(() => {
