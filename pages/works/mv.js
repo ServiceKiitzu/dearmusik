@@ -128,14 +128,13 @@ const Mv = () => {
     }
   }
   function fullScreen(e) {
-    console.log(e.target.i);
-    console.log(e.target.getIframe());
-    const iframe = e.target.getIframe();
-    if (screenfull.isEnabled) {
-      screenfull.request(iframe);
-    }
+    setTimeout(() => {
+      const iframe = e.target.getIframe();
+      if (screenfull.isEnabled) {
+        screenfull.request(iframe);
+      }
+    }, 1000);
   }
-  console.log(YTListMobile);
   return (
     <>
       <div className={styles.container} id="mv">
