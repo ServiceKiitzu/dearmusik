@@ -1,9 +1,9 @@
 @media screen and (max-width: 1280px) {
   .container {
-    width: 100vw !important;
-    height: 100vh !important;
+    width: 100% !important;
+    height: 100% !important;
     flex-direction: column;
-    padding: 104px 34px 65px !important;
+    padding: 104px 0px 65px !important;
     align-items: center !important;
     background-color: #000;
     &::after {
@@ -32,10 +32,9 @@
     }
     .scrollBox {
       height: 100%;
-      width: 100vw;
+      width: 100%;
       overflow-y: scroll;
-      overflow-x: hidden;
-      position: relative;
+      // overflow-x: hidden;
       padding: 0 34px;
     }
     .avatarM {
