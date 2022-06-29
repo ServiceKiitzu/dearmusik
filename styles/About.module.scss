@@ -3,7 +3,7 @@
     width: 100vw !important;
     height: 100vh !important;
     flex-direction: column;
-    padding: 104px 34px 0px !important;
+    padding: 104px 34px 65px !important;
     align-items: center !important;
     background-color: #000;
     &::after {
@@ -37,7 +37,6 @@
       overflow-x: hidden;
       position: relative;
       padding: 0 34px;
-      margin-bottom: 70px;
     }
     .avatarM {
       display: block !important;
@@ -53,6 +52,7 @@
       height: 769px !important;
       text-align: start !important;
       color: #e6e6e6 !important;
+      margin-bottom: 120px;
     }
     .img {
       display: none !important;
