@@ -198,13 +198,7 @@ const Mv = () => {
           opts={{
             width: "100%",
             height: "100%",
-            playerVars: {
-              disablekb: 1,
-              loop: 0,
-              playsinline: 1,
-              rel: 0,
-              fs: 0,
-            },
+            playerVars: {},
           }}
           onReady={(e) => {
             storeMobileYoutube(e, 1);
