@@ -3,7 +3,7 @@
     width: 100% !important;
     height: 100% !important;
     flex-direction: column;
-    padding: 104px 34px 65px !important;
+    padding: 104px 34px 0 !important;
     align-items: center !important;
     background-color: #000;
     overflow-y: scroll;
@@ -53,6 +53,7 @@
       margin-top: 40px;
       display: flex;
       margin-left: -75px;
+      margin-bottom: 65px !important;
       .imgM {
         display: block !important;
       }
