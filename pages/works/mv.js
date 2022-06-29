@@ -204,7 +204,6 @@ const Mv = () => {
               playsinline: 1,
               rel: 0,
               fs: 0,
-              enablejsapi: 1,
             },
           }}
           onReady={(e) => {
