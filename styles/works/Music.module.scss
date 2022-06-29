@@ -35,22 +35,21 @@
       width: 100%;
       overflow-y: scroll;
       position: relative;
-      .imgM {
-        background-image: url("../../assets/works/music/img-m.png");
-        width: 75px;
-        height: 115px;
-        position: absolute;
-        top: 957px;
-        right: 30%;
-      }
-      .imgTextM {
-        background-image: url("../../assets/works/music/img-text-m.png");
-        width: 73px;
-        height: 114px;
-        position: absolute;
-        top: 957px;
-        right: 53%;
-        opacity: 0;
+      .imgBoxM {
+        display: flex;
+        margin-top: 50px;
+        margin-left: 16%;
+        .imgM {
+          background-image: url("../../assets/works/music/img-m.png");
+          width: 75px;
+          height: 115px;
+        }
+        .imgTextM {
+          background-image: url("../../assets/works/music/img-text-m.png");
+          width: 73px;
+          height: 114px;
+          opacity: 0;
+        }
       }
     }
     .leftBlock {
