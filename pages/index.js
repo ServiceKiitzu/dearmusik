@@ -41,7 +41,12 @@ export default function Home() {
   useEffect(() => {
     const iconBox = document.getElementById("iconBox");
     iconBox.style.backgroundColor = "transparent";
-    return () => (iconBox.style.backgroundColor = "#000");
+    const footer = document.getElementById("footer");
+    footer.style.backgroundColor = "transparent";
+    return () => {
+      iconBox.style.backgroundColor = "#000";
+      footer.style.backgroundColor = "#000";
+    };
   }, []);
   return (
     <>
