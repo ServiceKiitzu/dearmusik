@@ -98,8 +98,7 @@ body {
     }
   }
   .pageContainer {
-    height: 100vh !important;
-    // height: calc(100vh - 67px) !important;
+    height: 100% !important;
     background-color: #000;
     overflow: hidden;
     padding-bottom: 65px;
