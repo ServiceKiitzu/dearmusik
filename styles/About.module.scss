@@ -31,12 +31,12 @@
       display: none !important;
     }
     .scrollBox {
-      height: calc(100vh - 167px);
+      height: 100%;
       width: 100vw;
       overflow-y: scroll;
       overflow-x: hidden;
       position: relative;
-      padding: 0 34px 70px;
+      padding: 0 34px;
     }
     .avatarM {
       display: block !important;
