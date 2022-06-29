@@ -185,7 +185,6 @@ const Mv = () => {
             ></iframe>
           </Modal>
         )}
-
         <div className={styles.topic}>作品</div>
         <WorksNavM></WorksNavM>
         <div className={styles.avanav}>
@@ -194,6 +193,26 @@ const Mv = () => {
           </div>
           <WorksNav></WorksNav>
         </div>
+        <YouTube
+          videoId="GVCJUARL9eI"
+          opts={{
+            width: "100%",
+            height: "100%",
+            playerVars: {
+              disablekb: 1,
+              loop: 0,
+              playsinline: 1,
+              rel: 0,
+              fs: 0,
+              enablejsapi: 1,
+            },
+          }}
+          onReady={(e) => {
+            storeMobileYoutube(e, 1);
+          }}
+          // onPlay={fullScreen}
+          style={{ height: "0" }}
+        />
 
         <div className={styles.rightBlock}>
           {/* mv預覽小圖 */}
@@ -201,7 +220,7 @@ const Mv = () => {
             mvs.map((item, index) => {
               return (
                 <>
-                  {phone && item.youtube && (
+                  {/* {phone && item.youtube && (
                     <YouTube
                       videoId="GVCJUARL9eI"
                       opts={{
@@ -222,7 +241,7 @@ const Mv = () => {
                       // onPlay={fullScreen}
                       style={{ height: "0" }}
                     />
-                  )}
+                  )} */}
                   {YTListMobile[index] !== undefined && (
                     <div
                       key={item.id}
