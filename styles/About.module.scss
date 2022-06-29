@@ -2,10 +2,10 @@
   .container {
     width: 100% !important;
     height: 100% !important;
-    flex-direction: column;
-    padding: 104px 34px 0 !important;
-    align-items: center !important;
+    display: block !important;
+    padding: 0 !important;
     background-color: #000;
+    position: relative;
     overflow-y: scroll;
     &::after {
       content: "";
@@ -31,40 +31,49 @@
     .avatar {
       display: none !important;
     }
-    .avatarM {
-      display: block !important;
-      width: 292px;
-      height: 174px;
-      margin: 21px auto 25px;
-    }
-    .story {
-      display: flex;
-      justify-content: center;
-      margin-left: 0 !important;
-      width: 100% !important;
-      height: 676px !important;
-      text-align: start !important;
-      color: #e6e6e6 !important;
-    }
-    .imgBoxM {
-      // position: relative;
-      height: 80px !important;
+    .scrollBox {
+      position: absolute;
       width: 100%;
-      margin-top: 40px;
-      display: flex;
-      margin-left: -75px;
-      margin-bottom: 65px !important;
-      .imgM {
+      height: 1132px;
+      padding: 0 34px;
+      top: 104px;
+
+      .avatarM {
         display: block !important;
+        width: 292px;
+        height: 174px;
+        margin: 21px auto 25px;
       }
-      .imgTextM {
-        display: block !important;
-        opacity: 0;
-        &.animation {
-          animation: show 6.5s infinite;
+      .story {
+        display: flex;
+        justify-content: center;
+        margin-left: 0 !important;
+        width: 100% !important;
+        height: 676px !important;
+        text-align: start !important;
+        color: #e6e6e6 !important;
+      }
+      .imgBoxM {
+        // position: relative;
+        height: 80px !important;
+        width: 100%;
+        margin-top: 40px;
+        margin-left: -37px;
+        display: flex;
+        margin-bottom: 65px !important;
+        .imgM {
+          display: block !important;
+        }
+        .imgTextM {
+          display: block !important;
+          opacity: 0;
+          &.animation {
+            animation: show 6.5s infinite;
+          }
         }
       }
     }
+
     .img {
       display: none !important;
     }
