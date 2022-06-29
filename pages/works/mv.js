@@ -203,13 +203,12 @@ const Mv = () => {
                 <>
                   {phone && item.youtube && (
                     <YouTube
-                      videoId="dzRRla6ekl0"
+                      videoId="GVCJUARL9eI"
                       opts={{
                         width: "100%",
                         height: "100%",
                         playerVars: {
                           disablekb: 1,
-                          playlist: item.youtube,
                           loop: 0,
                           playsinline: 1,
                           rel: 0,
