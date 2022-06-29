@@ -3,9 +3,10 @@
     width: 100% !important;
     height: 100% !important;
     flex-direction: column;
-    padding: 104px 0px 65px !important;
+    padding: 104px 34px 65px !important;
     align-items: center !important;
     background-color: #000;
+    overflow-y: scroll;
     &::after {
       content: "";
       top: 0;
@@ -30,13 +31,6 @@
     .avatar {
       display: none !important;
     }
-    .scrollBox {
-      height: 100%;
-      width: 100%;
-      overflow-y: scroll;
-      // overflow-x: hidden;
-      padding: 0 34px;
-    }
     .avatarM {
       display: block !important;
       width: 292px;
@@ -48,25 +42,22 @@
       justify-content: center;
       margin-left: 0 !important;
       width: 100% !important;
-      height: 769px !important;
+      height: 676px !important;
       text-align: start !important;
       color: #e6e6e6 !important;
     }
     .imgBoxM {
-      position: relative;
-      height: 80px;
+      // position: relative;
+      height: 80px !important;
       width: 100%;
+      margin-top: 40px;
+      display: flex;
+      margin-left: -75px;
       .imgM {
         display: block !important;
-        position: absolute;
-        bottom: 0;
-        left: -38px;
       }
       .imgTextM {
         display: block !important;
-        position: absolute;
-        bottom: 0;
-        left: 92px;
         opacity: 0;
         &.animation {
           animation: show 6.5s infinite;
