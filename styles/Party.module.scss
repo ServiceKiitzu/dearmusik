@@ -3,11 +3,10 @@
     background-color: #000;
     width: 100% !important;
     padding: 0 !important;
-    height: 100% !important;
+    height: 100vh !important;
     .block {
       width: 100vw !important;
       height: calc(100vh - 278px) !important;
-      top: 278px !important;
     }
     .img {
       display: none !important;
