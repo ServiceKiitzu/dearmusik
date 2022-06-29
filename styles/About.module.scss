@@ -52,29 +52,33 @@
       height: 769px !important;
       text-align: start !important;
       color: #e6e6e6 !important;
-      margin-bottom: 120px;
+    }
+    .imgBoxM {
+      position: relative;
+      height: 80px;
+      width: 100%;
+      .imgM {
+        display: block !important;
+        position: absolute;
+        bottom: 0;
+        left: -38px;
+      }
+      .imgTextM {
+        display: block !important;
+        position: absolute;
+        bottom: 0;
+        left: 92px;
+        opacity: 0;
+        &.animation {
+          animation: show 6.5s infinite;
+        }
+      }
     }
     .img {
       display: none !important;
     }
     .imgText {
       display: none !important;
-    }
-    .imgM {
-      display: block !important;
-      position: absolute;
-      top: 1027px;
-      left: -8px;
-    }
-    .imgTextM {
-      display: block !important;
-      position: absolute;
-      top: 1027px;
-      left: 126px;
-      opacity: 0;
-      &.animation {
-        animation: show 6.5s infinite;
-      }
     }
   }
 }

@@ -45,11 +45,13 @@ const About = () => {
           className={styles.story}
           dangerouslySetInnerHTML={{ __html: t.text }}
         ></div>
-        <div className={styles.imgM}>
-          <Image src={FishM}></Image>
-        </div>
-        <div className={styles.imgTextM} id="imgTextM">
-          <Image src={TextM}></Image>
+        <div className={styles.imgBoxM}>
+          <div className={styles.imgM}>
+            <Image src={FishM}></Image>
+          </div>
+          <div className={styles.imgTextM} id="imgTextM">
+            <Image src={TextM}></Image>
+          </div>
         </div>
       </div>
       <div className={styles.img}>
