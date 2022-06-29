@@ -24,7 +24,7 @@ import { useState, useEffect } from "react";
 import Script from "next/script";
 import YouTube from "react-youtube";
 import screenfull from "screenfull";
-import getYouTubeID from "get-youtube-id";
+import { Fragment } from "react";
 
 const Mv = () => {
   const [isOpen, setOpen] = useState(false);
@@ -197,7 +197,7 @@ const Mv = () => {
           {mvs &&
             mvs.map((item, index) => {
               return (
-                <>
+                <Fragment key={index}>
                   {phone && item.youtube && (
                     <YouTube
                       videoId={item.youtube}
@@ -219,43 +219,42 @@ const Mv = () => {
                       }}
                       onPlay={fullScreen}
                       style={{ height: "0" }}
+                      key={index}
                     />
                   )}
-                  {YTListMobile[index] !== undefined && (
-                    <div
-                      key={item.id}
-                      className={styles.musicBox}
-                      id="mvItem"
-                      onClick={() => {
-                        if (phone) {
-                          playMobileVideo(index);
-                        } else {
-                          setCurrentMv(item);
-                          setOpen(true);
-                        }
-                      }}
-                    >
-                      {item.id == mvs.length && phone && (
-                        <div className={styles.new}></div>
-                      )}
+                  <div
+                    key={item.id}
+                    className={styles.musicBox}
+                    id="mvItem"
+                    onClick={() => {
+                      if (phone) {
+                        playMobileVideo(index);
+                      } else {
+                        setCurrentMv(item);
+                        setOpen(true);
+                      }
+                    }}
+                  >
+                    {item.id == mvs.length && phone && (
+                      <div className={styles.new}></div>
+                    )}
 
-                      <Image src={item.preview}></Image>
-                      <div className={styles.title}>{item.title}</div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        version="1.1"
-                        className={`svg-triangle ${styles.triangle}`}
-                        width="44"
-                        height="53"
-                      >
-                        <path d="M 40,25 4,45 4,5 z" />
-                      </svg>
-                      {YTListMobile[index] !== null && (
-                        <div className={styles.play}></div>
-                      )}
-                    </div>
-                  )}
-                </>
+                    <Image src={item.preview}></Image>
+                    <div className={styles.title}>{item.title}</div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      version="1.1"
+                      className={`svg-triangle ${styles.triangle}`}
+                      width="44"
+                      height="53"
+                    >
+                      <path d="M 40,25 4,45 4,5 z" />
+                    </svg>
+                    {YTListMobile[index] !== null && (
+                      <div className={styles.play}></div>
+                    )}
+                  </div>
+                </Fragment>
               );
             })}
           <div className={styles.imgBox}>
