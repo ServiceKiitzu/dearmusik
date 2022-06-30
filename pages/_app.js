@@ -5,7 +5,6 @@ import "@fontsource/roboto-slab";
 import "@fontsource/noto-sans-tc";
 import { useEffect } from "react";
 import Head from "next/head";
-import { Html } from "next/document";
 import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
