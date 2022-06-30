@@ -5,6 +5,7 @@
     padding: 179px 34px 65px;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
     &::before {
       content: "";
       height: 179px;
@@ -31,9 +32,8 @@
     .scrollBox2 {
       margin-top: 10px;
       padding: 21px 0;
-      height: calc(100vh - 244px);
+      height: 1072px;
       width: 100%;
-      overflow-y: scroll;
       position: relative;
       .imgBoxM {
         display: flex;
