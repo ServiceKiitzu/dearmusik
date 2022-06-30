@@ -7,7 +7,7 @@ import Head from "next/head";
 
 const Layout = ({ children }) => {
   return (
-    <div className="pageContainer">
+    <div className="pageContainer" id="pageContainer">
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>

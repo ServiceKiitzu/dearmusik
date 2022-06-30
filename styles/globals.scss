@@ -98,7 +98,7 @@ body {
     }
   }
   .pageContainer {
-    height: 100% !important;
+    height: 100%;
     background-color: #000;
     overflow: hidden;
     padding-bottom: 65px;
@@ -181,10 +181,12 @@ body {
     }
   }
 }
-.pageContainer {
-  position: relative;
-  min-height: 100%;
-  height: 100vh;
+@media screen and (min-width: 1280px) {
+  .pageContainer {
+    position: relative;
+    min-height: 100%;
+    height: 100vh;
+  }
 }
 .content {
   padding-bottom: 50px;

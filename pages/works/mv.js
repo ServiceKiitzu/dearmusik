@@ -119,12 +119,9 @@ const Mv = () => {
   function storeMobileYoutube(e, index) {
     // store all mobile video value
     YTListMobile[index] = e;
-    console.log(e, YTListMobile[index]);
     setYTListMobile([...YTListMobile], e);
   }
   function playMobileVideo(index) {
-    alert("影片開始播囉");
-    console.log(YTListMobile[index]);
     if (YTListMobile[index] !== undefined && phone) {
       YTListMobile[index].target.playVideo();
     }
