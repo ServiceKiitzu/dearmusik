@@ -5,6 +5,8 @@
     overflow-y: auto;
     &::after {
       content: "";
+      top: 0;
+      left: 0;
       background-color: #000;
       width: 100vw;
       height: 179px;
@@ -26,7 +28,7 @@
       display: none;
     }
     .scrollBox {
-      height: 1327px;
+      height: 1100px;
       padding-top: 21px;
       position: relative;
     }
