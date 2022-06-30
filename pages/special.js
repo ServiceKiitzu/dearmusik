@@ -127,8 +127,6 @@ const Special = () => {
               }
             }}
           ></Image>
-
-          <div className={styles.new}></div>
         </div>
       </div>
       <div className={styles.rightBlock}>
