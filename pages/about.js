@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Head from "next/head";
 import Avatar from "../assets/about/about-avatar.jpg";
 import AvatarM from "../assets/about/about-avatar-m.png";
 import Fish from "../assets/about/fish.svg";
@@ -32,37 +33,51 @@ const About = () => {
     }
   }, []);
   return (
-    <div className={styles.container}>
-      <div className={styles.title}>關於</div>
-      <div className={styles.avatar}>
-        <Image src={Avatar}></Image>
-      </div>
-      <div className={styles.scrollBox}>
-        <table></table>
-        <div className={styles.avatarM}>
-          <Image src={AvatarM}></Image>
+    <>
+      <Head>
+        <title>關於 ⎯ 黃玠 dadadohuang</title>
+        <meta
+          name="description"
+          content="「我想用我的音樂改變世界」，黃玠以此為創作初衷
+成為當代流行音樂中，能夠跨越時間篩選的創作男歌手之一"
+        />
+        <meta
+          property="og:image"
+          content="https://dearmusik.kiitzu.ninja/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fog-img.e87c1000.jpg&w=1200&q=75"
+        />
+      </Head>
+      <div className={styles.container}>
+        <div className={styles.title}>關於</div>
+        <div className={styles.avatar}>
+          <Image src={Avatar}></Image>
         </div>
-        <div
-          className={styles.story}
-          dangerouslySetInnerHTML={{ __html: t.text }}
-        ></div>
-        <div className={styles.imgBoxM}>
-          <div className={styles.imgM}>
-            <Image src={FishM}></Image>
+        <div className={styles.scrollBox}>
+          <table></table>
+          <div className={styles.avatarM}>
+            <Image src={AvatarM}></Image>
           </div>
-          <div className={styles.imgTextM} id="imgTextM">
-            <Image src={TextM}></Image>
+          <div
+            className={styles.story}
+            dangerouslySetInnerHTML={{ __html: t.text }}
+          ></div>
+          <div className={styles.imgBoxM}>
+            <div className={styles.imgM}>
+              <Image src={FishM}></Image>
+            </div>
+            <div className={styles.imgTextM} id="imgTextM">
+              <Image src={TextM}></Image>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className={styles.img}>
-        <Image src={Fish}></Image>
+        <div className={styles.img}>
+          <Image src={Fish}></Image>
+        </div>
+        <div className={styles.imgText}>
+          <Image src={Text}></Image>
+        </div>
       </div>
-      <div className={styles.imgText}>
-        <Image src={Text}></Image>
-      </div>
-    </div>
+    </>
   );
 };
 

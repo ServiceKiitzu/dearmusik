@@ -6,6 +6,7 @@ import Kkbox from "../../assets/works/music/kkbox.svg";
 import ImgText from "../../assets/works/music/img-text.svg";
 import Img from "../../assets/works/music/img.svg";
 import Image from "next/image";
+import Head from "next/head";
 import styles from "../../styles/works/Music.module.scss";
 import AU from "../../assets/works/music/arrow-up.svg";
 import AUA from "../../assets/works/music/arrow-up-active.svg";
@@ -303,203 +304,218 @@ const Music = () => {
     }
   }, []);
   return (
-    <div className={styles.container} id="container">
-      {innerPage && (
-        <div className={styles.innerPage} id="innerPage">
-          <div className={styles.inText1}>
-            <div
-              className={`${styles.previous} `}
-              onClick={() => {
-                setInnerPage(false);
-              }}
-            ></div>
-            2022 SINGLE
-          </div>
-          <div className={styles.scrollBox1}>
-            <div className={styles.inImgM}>
-              <Image src={musicData.sImg}></Image>
+    <>
+      <Head>
+        <title>作品 ⎯ 黃玠 dadadohuang</title>
+        <meta
+          name="description"
+          content="歷年作品，從音樂、MV到退休專案，帶你感受黃玠的魅力"
+        />
+        <meta
+          property="og:image"
+          content="https://dearmusik.kiitzu.ninja/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fog-img.e87c1000.jpg&w=1200&q=75"
+        />
+      </Head>
+      <div className={styles.container} id="container">
+        {innerPage && (
+          <div className={styles.innerPage} id="innerPage">
+            <div className={styles.inText1}>
+              <div
+                className={`${styles.previous} `}
+                onClick={() => {
+                  setInnerPage(false);
+                }}
+              ></div>
+              2022 SINGLE
             </div>
-            <div className={styles.inText2}>十年熟成</div>
-            <div className={styles.inText2}>最佳精選特輯</div>
-            <div className={styles.inText3}>黃玠×NABOWA</div>
-            <div className={styles.mediaM}>
-              <a href={musicData.link[0]}>
-                <div className={styles.imusicM}></div>
-              </a>
-              <a href={musicData.link[1]}>
-                <div className={styles.spotifyM}></div>
-              </a>
-              <a href={musicData.link[2]}>
-                <div className={styles.kkboxM}></div>
-              </a>
-            </div>
-            <div className={styles.listM}>
-              {musicData.song &&
-                musicData.song.map((song, i) => {
-                  return (
-                    <div key={i}>
-                      <div className={styles.number}>
-                        {i + 1 < 10 ? `${i + 1}` : i + 1}
-                      </div>
-                      | {song}
-                    </div>
-                  );
-                })}
-            </div>
-          </div>
-        </div>
-      )}
-
-      <div className={styles.topic}>作品</div>
-      <WorksNavM></WorksNavM>
-      <div className={styles.scrollBox2}>
-        <div className={styles.leftBlock}>
-          <div className={styles.box1}>
-            <div className={styles.sImg}>
-              <Image src={musicData.sImg}></Image>
-              {itemIndex == musics.length && <div className={styles.new}></div>}
-            </div>
-            <WorksNav></WorksNav>
-          </div>
-          <div className={styles.info}>
-            <div className={styles.year}>
-              {isMobile ? musics[musics.length - 1].year : musicData.year}
-            </div>
-            <div className={styles.title}>
-              {isMobile ? musics[musics.length - 1].title1 : musicData.title1}
-            </div>
-            <div className={styles.title}>
-              {isMobile ? musics[musics.length - 1].title2 : musicData.title2}
-            </div>
-            <div className={styles.feat}>
-              {isMobile ? musics[musics.length - 1].feat : musicData.feat}
-            </div>
-            <div className={styles.media}>
-              <div>
+            <div className={styles.scrollBox1}>
+              <div className={styles.inImgM}>
+                <Image src={musicData.sImg}></Image>
+              </div>
+              <div className={styles.inText2}>十年熟成</div>
+              <div className={styles.inText2}>最佳精選特輯</div>
+              <div className={styles.inText3}>黃玠×NABOWA</div>
+              <div className={styles.mediaM}>
                 <a href={musicData.link[0]}>
-                  <Image src={Imusic}></Image>
+                  <div className={styles.imusicM}></div>
                 </a>
-              </div>
-              <div>
                 <a href={musicData.link[1]}>
-                  <Image src={Spotify}></Image>
+                  <div className={styles.spotifyM}></div>
                 </a>
-              </div>
-              <div>
                 <a href={musicData.link[2]}>
-                  <Image src={Kkbox}></Image>
+                  <div className={styles.kkboxM}></div>
                 </a>
               </div>
-            </div>
-            <div className={styles.list}>
-              {musicData.song &&
-                musicData.song.map((song, i) => {
-                  return (
-                    <div key={i}>
-                      <div className={styles.number}>
-                        {i + 1 < 10 ? `0${i + 1}` : i + 1}
+              <div className={styles.listM}>
+                {musicData.song &&
+                  musicData.song.map((song, i) => {
+                    return (
+                      <div key={i}>
+                        <div className={styles.number}>
+                          {i + 1 < 10 ? `${i + 1}` : i + 1}
+                        </div>
+                        | {song}
                       </div>
-                      | {song}
-                    </div>
-                  );
-                })}
-            </div>
-            <div
-              className={`${styles.sImgM} innerGear`}
-              onClick={() => {
-                setMusicData(musics[musics.length - 1]);
-                switchInnerPage();
-              }}
-            >
-              <Image src={musics[musics.length - 1].sImg}></Image>
-              <div className={styles.new}></div>
+                    );
+                  })}
+              </div>
             </div>
           </div>
-        </div>
-        <div className={styles.rightBlock}>
-          {currentItems &&
-            !isMobile &&
-            currentItems.map((music) => {
-              return (
-                <div key={music.id}>
-                  <a
-                    onClick={() => {
-                      let data = currentItems.filter((item) => {
-                        return item.id == music.id;
-                      });
-                      setMusicData(data[0]);
-                      setItemIndex(music.id);
-                    }}
-                  >
-                    <div className={styles.previewImg} onClick={() => {}}>
-                      <Image src={music.sImg}></Image>
-                      {music.id == musics.length && (
-                        <div className={styles.new}></div>
-                      )}
-                    </div>
-                    <div className={styles.text}>
-                      <div className={styles.year}>{music.year}</div>
-                      <div className={styles.title}>{music.title1}</div>
-                      <div className={styles.title}>{music.title2}</div>
-                      <div className={styles.feat}>{music.feat}</div>
-                    </div>
-                  </a>
-                </div>
-              );
-            })}
-          {musicReverse &&
-            isMobile &&
-            musicReverse.shift() &&
-            musicReverse.map((music) => {
-              return (
-                <div key={music.id}>
-                  <a
-                    onClick={() => {
-                      setMusicData(music);
-                      setItemIndex(music.id);
-                      switchInnerPage();
-                    }}
-                    className="innerGear"
-                  >
-                    <div className={styles.previewImg}>
-                      <Image src={music.sImg}></Image>
-                    </div>
-                  </a>
-                </div>
-              );
-            })}
-        </div>
-        <div className={styles.imgBoxM}>
-          <div className={styles.imgTextM} id="imgTextM"></div>
-          <div className={styles.imgM}></div>
-        </div>
-      </div>
-      <div className={styles.arrowUp}>
-        <a
-          onClick={() => {
-            handlePagePrev();
-          }}
-        >
-          <Image src={page > 0 ? AUA : AU}></Image>
-        </a>
-      </div>
-      <div className={styles.arrowDown}>
-        <a
-          onClick={() => {
-            handlePageNext();
-          }}
-        >
-          <Image src={page < totalPage ? ADA : AD}></Image>
-        </a>
-      </div>
+        )}
 
-      <div className={styles.img}>
-        <Image src={Img}></Image>
+        <div className={styles.topic}>作品</div>
+        <WorksNavM></WorksNavM>
+        <div className={styles.scrollBox2}>
+          <div className={styles.leftBlock}>
+            <div className={styles.box1}>
+              <div className={styles.sImg}>
+                <Image src={musicData.sImg}></Image>
+                {itemIndex == musics.length && (
+                  <div className={styles.new}></div>
+                )}
+              </div>
+              <WorksNav></WorksNav>
+            </div>
+            <div className={styles.info}>
+              <div className={styles.year}>
+                {isMobile ? musics[musics.length - 1].year : musicData.year}
+              </div>
+              <div className={styles.title}>
+                {isMobile ? musics[musics.length - 1].title1 : musicData.title1}
+              </div>
+              <div className={styles.title}>
+                {isMobile ? musics[musics.length - 1].title2 : musicData.title2}
+              </div>
+              <div className={styles.feat}>
+                {isMobile ? musics[musics.length - 1].feat : musicData.feat}
+              </div>
+              <div className={styles.media}>
+                <div>
+                  <a href={musicData.link[0]}>
+                    <Image src={Imusic}></Image>
+                  </a>
+                </div>
+                <div>
+                  <a href={musicData.link[1]}>
+                    <Image src={Spotify}></Image>
+                  </a>
+                </div>
+                <div>
+                  <a href={musicData.link[2]}>
+                    <Image src={Kkbox}></Image>
+                  </a>
+                </div>
+              </div>
+              <div className={styles.list}>
+                {musicData.song &&
+                  musicData.song.map((song, i) => {
+                    return (
+                      <div key={i}>
+                        <div className={styles.number}>
+                          {i + 1 < 10 ? `0${i + 1}` : i + 1}
+                        </div>
+                        | {song}
+                      </div>
+                    );
+                  })}
+              </div>
+              <div
+                className={`${styles.sImgM} innerGear`}
+                onClick={() => {
+                  setMusicData(musics[musics.length - 1]);
+                  switchInnerPage();
+                }}
+              >
+                <Image src={musics[musics.length - 1].sImg}></Image>
+                <div className={styles.new}></div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.rightBlock}>
+            {currentItems &&
+              !isMobile &&
+              currentItems.map((music) => {
+                return (
+                  <div key={music.id}>
+                    <a
+                      onClick={() => {
+                        let data = currentItems.filter((item) => {
+                          return item.id == music.id;
+                        });
+                        setMusicData(data[0]);
+                        setItemIndex(music.id);
+                      }}
+                    >
+                      <div className={styles.previewImg} onClick={() => {}}>
+                        <Image src={music.sImg}></Image>
+                        {music.id == musics.length && (
+                          <div className={styles.new}></div>
+                        )}
+                      </div>
+                      <div className={styles.text}>
+                        <div className={styles.year}>{music.year}</div>
+                        <div className={styles.title}>{music.title1}</div>
+                        <div className={styles.title}>{music.title2}</div>
+                        <div className={styles.feat}>{music.feat}</div>
+                      </div>
+                    </a>
+                  </div>
+                );
+              })}
+            {musicReverse &&
+              isMobile &&
+              musicReverse.shift() &&
+              musicReverse.map((music) => {
+                return (
+                  <div key={music.id}>
+                    <a
+                      onClick={() => {
+                        setMusicData(music);
+                        setItemIndex(music.id);
+                        switchInnerPage();
+                      }}
+                      className="innerGear"
+                    >
+                      <div className={styles.previewImg}>
+                        <Image src={music.sImg}></Image>
+                      </div>
+                    </a>
+                  </div>
+                );
+              })}
+          </div>
+          <div className={styles.imgBoxM}>
+            <div className={styles.imgTextM} id="imgTextM"></div>
+            <div className={styles.imgM}></div>
+          </div>
+        </div>
+        <div className={styles.arrowUp}>
+          <a
+            onClick={() => {
+              handlePagePrev();
+            }}
+          >
+            <Image src={page > 0 ? AUA : AU}></Image>
+          </a>
+        </div>
+        <div className={styles.arrowDown}>
+          <a
+            onClick={() => {
+              handlePageNext();
+            }}
+          >
+            <Image src={page < totalPage ? ADA : AD}></Image>
+          </a>
+        </div>
+
+        <div className={styles.img}>
+          <Image src={Img}></Image>
+        </div>
+        <div className={styles.imgText}>
+          <Image src={ImgText}></Image>
+        </div>
       </div>
-      <div className={styles.imgText}>
-        <Image src={ImgText}></Image>
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -7,6 +7,14 @@ import Link from "next/link";
 const NewsNave = () => {
   const [type, setType] = useState("");
   const [itemSwitch, setItemSwitch] = useState(0);
+  const sort = [
+    "全部",
+    "演出資訊",
+    "媒體報導",
+    "音樂發行",
+    "網站新增",
+    "退休專案",
+  ];
   if (typeof window !== "undefined") {
     const navItem = document.querySelectorAll("div#typeItem a");
     navItem.forEach((item) => {
@@ -57,26 +65,16 @@ const NewsNave = () => {
         </div>
       </a>
       <div className={styles.typeItem} id="typeItem">
-        <Link href={"/news"}>
-          <a>
-            <div>全部</div>
-          </a>
-        </Link>
-        <Link href={"/news"}>
-          <a>
-            <div>報導</div>
-          </a>
-        </Link>
-        <Link href={"/news"}>
-          <a>
-            <div>演出</div>
-          </a>
-        </Link>
-        <Link href={"/news"}>
-          <a>
-            <div>作品</div>
-          </a>
-        </Link>
+        {sort &&
+          sort.map((item, index) => {
+            return (
+              <Link href={"/news"} key={index}>
+                <a>
+                  <div>{item}</div>
+                </a>
+              </Link>
+            );
+          })}
       </div>
     </div>
   );

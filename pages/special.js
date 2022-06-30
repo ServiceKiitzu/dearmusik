@@ -1,5 +1,6 @@
 import styles from "../styles/Special.module.scss";
 import Image from "next/dist/client/image";
+import Head from "next/head";
 import Img from "../assets/special/img.svg";
 import ImgText from "../assets/special/img-text.svg";
 import C1 from "../assets/special/c1.png";
@@ -101,55 +102,53 @@ const Special = () => {
     }
   }, []);
   return (
-    <div className={styles.container}>
-      {pop && (
-        <div className={styles.pop}>
-          <div
-            className={styles.popCross}
-            onClick={() => {
-              setPop(false);
-            }}
-          ></div>
-          <div className={styles.popCover}>
-            <Image src={nowTopic.cover}></Image>
-          </div>
-        </div>
-      )}
-      <div className={styles.topic}>專場</div>
-      <div className={styles.leftBlock}>
-        <div className={styles.cover}>
-          <Image
-            src={phone ? sessions[0].cover : nowTopic.cover}
-            onClick={() => {
-              if (phone) {
-                setNowTopic(firstElement);
-                setPop(true);
-              }
-            }}
-          ></Image>
-        </div>
-      </div>
-      <div className={styles.rightBlock}>
-        <div className={styles.title}>
-          {phone ? sessions[0].title : nowTopic.title}
-        </div>
-        {!phone && nowTopic && nowTopic.date && (
-          <div className={styles.sessions}>
-            {nowTopic.date.map((item, i) => {
-              return (
-                <div key={i} className={styles.sItem}>
-                  <div className={styles.date}>{item[0]}</div>
-                  <div className={styles.place}>{item[1]}</div>
-                  <div className={styles.mode}>{item[2]}</div>
-                </div>
-              );
-            })}
+    <>
+      <Head>
+        <title>專場 ⎯ 黃玠 dadadohuang</title>
+        <meta
+          name="description"
+          content="整合最新專場資訊，再也不錯過黃玠的每一場演出"
+        />
+        <meta
+          property="og:image"
+          content="https://dearmusik.kiitzu.ninja/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fog-img.e87c1000.jpg&w=1200&q=75"
+        />
+      </Head>
+      <div className={styles.container}>
+        {pop && (
+          <div className={styles.pop}>
+            <div
+              className={styles.popCross}
+              onClick={() => {
+                setPop(false);
+              }}
+            ></div>
+            <div className={styles.popCover}>
+              <Image src={nowTopic.cover}></Image>
+            </div>
           </div>
         )}
-        {phone && sessions && (
-          <div className={styles.sessions}>
-            {sessions[0].date &&
-              sessions[0].date.map((item, i) => {
+        <div className={styles.topic}>專場</div>
+        <div className={styles.leftBlock}>
+          <div className={styles.cover}>
+            <Image
+              src={phone ? sessions[0].cover : nowTopic.cover}
+              onClick={() => {
+                if (phone) {
+                  setNowTopic(firstElement);
+                  setPop(true);
+                }
+              }}
+            ></Image>
+          </div>
+        </div>
+        <div className={styles.rightBlock}>
+          <div className={styles.title}>
+            {phone ? sessions[0].title : nowTopic.title}
+          </div>
+          {!phone && nowTopic && nowTopic.date && (
+            <div className={styles.sessions}>
+              {nowTopic.date.map((item, i) => {
                 return (
                   <div key={i} className={styles.sItem}>
                     <div className={styles.date}>{item[0]}</div>
@@ -158,60 +157,75 @@ const Special = () => {
                   </div>
                 );
               })}
+            </div>
+          )}
+          {phone && sessions && (
+            <div className={styles.sessions}>
+              {sessions[0].date &&
+                sessions[0].date.map((item, i) => {
+                  return (
+                    <div key={i} className={styles.sItem}>
+                      <div className={styles.date}>{item[0]}</div>
+                      <div className={styles.place}>{item[1]}</div>
+                      <div className={styles.mode}>{item[2]}</div>
+                    </div>
+                  );
+                })}
+            </div>
+          )}
+          <div className={`${styles.list} list`}>
+            {sessions &&
+              sessions.map((item) => {
+                return (
+                  <div
+                    className={`${styles.item} item`}
+                    key={item.id}
+                    onClick={() => {
+                      setNowTopic(item);
+                    }}
+                  >
+                    {item.id == sessions.length && (
+                      <div className={styles.new}></div>
+                    )}
+                    <a className={styles.aBox}>
+                      <div className={styles.fc}>‧{item.year}</div>
+                      <div className={styles.sc}>{item.title}</div>
+                    </a>
+                  </div>
+                );
+              })}
           </div>
-        )}
-        <div className={`${styles.list} list`}>
-          {sessions &&
-            sessions.map((item) => {
-              return (
-                <div
-                  className={`${styles.item} item`}
-                  key={item.id}
-                  onClick={() => {
-                    setNowTopic(item);
-                  }}
-                >
-                  {item.id == sessions.length && (
-                    <div className={styles.new}></div>
-                  )}
-                  <a className={styles.aBox}>
-                    <div className={styles.fc}>‧{item.year}</div>
-                    <div className={styles.sc}>{item.title}</div>
-                  </a>
-                </div>
-              );
-            })}
+          <div className={styles.listM}>
+            {sessions &&
+              sessions.shift() &&
+              sessions.map((item, i) => {
+                return (
+                  <div
+                    key={i}
+                    className={styles.listMItem}
+                    onClick={() => {
+                      setNowTopic(item);
+                      setPop(true);
+                    }}
+                  >
+                    <Image src={item.coverM}></Image>
+                  </div>
+                );
+              })}
+          </div>
         </div>
-        <div className={styles.listM}>
-          {sessions &&
-            sessions.shift() &&
-            sessions.map((item, i) => {
-              return (
-                <div
-                  key={i}
-                  className={styles.listMItem}
-                  onClick={() => {
-                    setNowTopic(item);
-                    setPop(true);
-                  }}
-                >
-                  <Image src={item.coverM}></Image>
-                </div>
-              );
-            })}
+        <div className={styles.img}>
+          <Image src={Img}></Image>
+        </div>
+        <div className={styles.imgText}>
+          <Image src={ImgText}></Image>
+        </div>
+        <div className={styles.imgMBox}>
+          <div className={styles.imgM}></div>
+          <div className={styles.imgTextM} id="imgTextM"></div>
         </div>
       </div>
-      <div className={styles.img}>
-        <Image src={Img}></Image>
-      </div>
-      <div className={styles.imgText}>
-        <Image src={ImgText}></Image>
-      </div>
-      <div className={styles.imgMBox}>
-        <div className={styles.imgM}></div>
-        <div className={styles.imgTextM} id="imgTextM"></div>
-      </div>
-    </div>
+    </>
   );
 };
 

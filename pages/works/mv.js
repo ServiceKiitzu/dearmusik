@@ -22,6 +22,7 @@ import M8 from "../../assets/works/mv/m8.png";
 import M9 from "../../assets/works/mv/m9.png";
 import { useState, useEffect } from "react";
 import Script from "next/script";
+import Head from "next/head";
 import YouTube from "react-youtube";
 import screenfull from "screenfull";
 import { Fragment } from "react";
@@ -136,6 +137,17 @@ const Mv = () => {
   }
   return (
     <>
+      <Head>
+        <title>作品 ⎯ 黃玠 dadadohuang</title>
+        <meta
+          name="description"
+          content="歷年作品，從音樂、MV到退休專案，帶你感受黃玠的魅力"
+        />
+        <meta
+          property="og:image"
+          content="https://dearmusik.kiitzu.ninja/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fog-img.e87c1000.jpg&w=1200&q=75"
+        />
+      </Head>
       <div className={styles.container} id="mv">
         {!phone && (
           <Modal
