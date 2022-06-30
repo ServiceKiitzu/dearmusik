@@ -102,11 +102,8 @@ const Special = () => {
     }
   }, []);
   useEffect(() => {
-    console.log("彈跳頁彈出");
     const page = document.getElementById("pageContainer");
-    const popBlock = document.getElementById("pop");
     if (pop) {
-      console.log(popBlock.offsetHeight);
       page.style.height = "100vh";
     }
   }, [pop]);
