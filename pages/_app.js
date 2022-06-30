@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }) {
     <>
       {/* Google Tag Manager */}
       <Script
+        id="google-gtm"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
