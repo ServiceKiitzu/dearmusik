@@ -106,6 +106,9 @@ const Special = () => {
     if (pop) {
       page.style.height = "100vh";
     }
+    return () => {
+      page.style.height = "100%";
+    };
   }, [pop]);
   return (
     <>
