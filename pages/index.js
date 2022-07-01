@@ -46,6 +46,8 @@ export default function Home() {
       footer.style.backgroundColor = "transparent";
       const pageContainer = document.getElementById("pageContainer");
       pageContainer.style.paddingBottom = "0";
+      const containerM = document.getElementById("containerM");
+      containerM.style.height = window.innerHeight;
       return () => {
         iconBox.style.backgroundColor = "#000";
         footer.style.backgroundColor = "#000";
@@ -68,7 +70,7 @@ export default function Home() {
       </Head>
       <div className={styles.mask}></div>
 
-      <div className={styles.containerM}>
+      <div className={styles.containerM} id="containerM">
         <Swiper
           modules={[Autoplay, Navigation, EffectFade]}
           loop={true}

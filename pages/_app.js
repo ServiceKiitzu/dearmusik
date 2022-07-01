@@ -8,6 +8,10 @@ import Head from "next/head";
 import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
+  // useEffect(() => {
+  //   const pageContainer = document.getElementById("pageContainer");
+  //   pageContainer.style.height = window.innerHeight;
+  // });
   return (
     <>
       {/* Google Tag Manager */}
