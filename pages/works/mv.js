@@ -117,17 +117,6 @@ const Mv = () => {
     }
   }, []);
 
-  useEffect(() => {
-    console.log("螢幕模式改變");
-    if (screenfull.isEnabled) {
-      if (!screenfull.isFullscreen) {
-        YTListMobile.forEach((item) => {
-          item.target.pauseVideo();
-        });
-      }
-    }
-  }, [screenfull.isFullscreen]);
-
   // youtube播放事件
   function storeMobileYoutube(e, index) {
     // store all mobile video value
@@ -222,6 +211,9 @@ const Mv = () => {
         <button
           onClick={() => {
             testYT.target.playVideo();
+            if (screenfull.isEnabled) {
+              screenfull.request(testYT.target.getIframe());
+            }
           }}
         ></button>
         <div className={styles.rightBlock}>
