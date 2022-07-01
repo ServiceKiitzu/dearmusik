@@ -203,37 +203,39 @@ const Mv = () => {
           </div>
           <WorksNav></WorksNav>
         </div>
-        <YouTube
-          videoId="ba3vBuvKHk8"
-          opts={{
-            width: "100%",
-            height: "100%",
-            playerVars: {
-              disablekb: 1,
-              loop: 0,
-              playsinline: 0,
-              rel: 0,
-              fs: 1,
-            },
-          }}
-          onReady={(e) => {
-            setTestYT(e);
-          }}
-        ></YouTube>
-        <button
-          onClick={() => {
-            testYT.target.playVideo();
-            if (screenfull.isEnabled) {
-              screenfull.request(testYT.target.getIframe());
-            }
-          }}
-        ></button>
+
         <div className={styles.rightBlock}>
           {/* mv預覽小圖 */}
           {mvs &&
             mvs.map((item, index) => {
               return (
                 <Fragment key={index}>
+                  <YouTube
+                    videoId={item.youtube}
+                    opts={{
+                      width: "100%",
+                      height: "100%",
+                      playerVars: {
+                        disablekb: 1,
+                        loop: 0,
+                        playsinline: 0,
+                        rel: 0,
+                        fs: 1,
+                      },
+                    }}
+                    // onReady={(e) => {
+                    //   storeMobileYoutube(e, index);
+                    // }}
+                  ></YouTube>
+                  <button
+                    onClick={() => {
+                      // testYT.target.playVideo();
+                      // if (screenfull.isEnabled) {
+                      //   screenfull.request(testYT.target.getIframe());
+                      // }
+                      playMobileVideo(index);
+                    }}
+                  ></button>
                   {phone && item.youtube && (
                     <YouTube
                       videoId={item.youtube}
