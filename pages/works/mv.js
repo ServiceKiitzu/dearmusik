@@ -126,6 +126,9 @@ const Mv = () => {
   function playMobileVideo(index) {
     if (YTListMobile[index] !== undefined && phone) {
       YTListMobile[index].target.playVideo();
+      if (screenfull.isEnabled) {
+        screenfull.request(YTListMobile[index].target.getIframe());
+      }
     }
   }
   function fullScreen(e) {
@@ -252,7 +255,6 @@ const Mv = () => {
                         storeMobileYoutube(e, index);
                         // e.target.playVideo();
                       }}
-                      onPlay={fullScreen}
                       style={{ height: "0" }}
                       key={index}
                     />
