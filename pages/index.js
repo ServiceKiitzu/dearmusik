@@ -61,7 +61,7 @@ export default function Home() {
         />
         <meta
           property="og:image:url"
-          content="http://dearmusik.kiitzu.ninja/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fog-img.e87c1000.jpg&w=1200&q=75"
+          content="https://dearmusik.kiitzu.ninja/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fog-img.e87c1000.jpg&w=1200&q=75"
         />
         <meta
           property="og:image:secure_url"
