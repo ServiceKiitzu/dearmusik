@@ -60,7 +60,7 @@ export default function Home() {
           他將持續在不同領域探索各種可能"
         />
         <meta
-          property="og:image:url"
+          property="og:image"
           content="https://dearmusik.kiitzu.ninja/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fog-img.e87c1000.jpg&w=1200&q=75"
         />
       </Head>
