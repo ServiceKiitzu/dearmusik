@@ -61,6 +61,9 @@ const Special = () => {
         ["08/26", "台北", "Legacy Taipei"],
         ["09/03", "台中", "Legacy Taichung"],
       ],
+      link: [
+        "https://dearmusik.kktix.cc/events/mrdadado?fbclid=IwAR0LeRU0nBZEfUtBirsGhdVBvp0PeEMLQe-3mB0FrWo-blvLyC_J5uXOL2Y",
+      ],
     },
   ];
   sessions = sessions.reverse();
@@ -157,21 +160,8 @@ const Special = () => {
           </div>
           {!phone && nowTopic && nowTopic.date && (
             <div className={styles.sessions}>
-              {nowTopic.date.map((item, i) => {
-                return (
-                  <div key={i} className={styles.sItem}>
-                    <div className={styles.date}>{item[0]}</div>
-                    <div className={styles.place}>{item[1]}</div>
-                    <div className={styles.mode}>{item[2]}</div>
-                  </div>
-                );
-              })}
-            </div>
-          )}
-          {phone && sessions && (
-            <div className={styles.sessions}>
-              {sessions[0].date &&
-                sessions[0].date.map((item, i) => {
+              <a href={nowTopic.link[0]}>
+                {nowTopic.date.map((item, i) => {
                   return (
                     <div key={i} className={styles.sItem}>
                       <div className={styles.date}>{item[0]}</div>
@@ -180,6 +170,23 @@ const Special = () => {
                     </div>
                   );
                 })}
+              </a>
+            </div>
+          )}
+          {phone && sessions && (
+            <div className={styles.sessions}>
+              <a href={sessions[0].link[0]}>
+                {sessions[0].date &&
+                  sessions[0].date.map((item, i) => {
+                    return (
+                      <div key={i} className={styles.sItem}>
+                        <div className={styles.date}>{item[0]}</div>
+                        <div className={styles.place}>{item[1]}</div>
+                        <div className={styles.mode}>{item[2]}</div>
+                      </div>
+                    );
+                  })}
+              </a>
             </div>
           )}
           <div className={`${styles.list} list`}>
