@@ -26,6 +26,7 @@ import Head from "next/head";
 import YouTube from "react-youtube";
 import screenfull from "screenfull";
 import { Fragment } from "react";
+import ReactPlayer from "react-player";
 
 const Mv = () => {
   const [isOpen, setOpen] = useState(false);
@@ -116,6 +117,7 @@ const Mv = () => {
   }, []);
 
   useEffect(() => {
+    console.log("螢幕模式改變");
     if (screenfull.isEnabled) {
       if (!screenfull.isFullscreen) {
         YTListMobile.forEach((item) => {
@@ -226,7 +228,7 @@ const Mv = () => {
                         playerVars: {
                           disablekb: 1,
                           loop: 0,
-                          playsinline: 0,
+                          playsinline: 1,
                           rel: 0,
                           fs: 0,
                           enablejsapi: 1,
