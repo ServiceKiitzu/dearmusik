@@ -117,7 +117,7 @@ const Mv = () => {
 
   useEffect(() => {
     if (screenfull.isEnabled) {
-      if (screenfull.isFullscreen) {
+      if (!screenfull.isFullscreen) {
         YTListMobile.forEach((item) => {
           item.target.pauseVideo();
         });
