@@ -157,7 +157,11 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="official">
-            <a href="">
+            <a
+              href="https://shop.fantimate.com/pages/dadadohuang"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image src={Store}></Image>
             </a>
             <Link style={{ marginLeft: "7px" }} className="email" href="/email">

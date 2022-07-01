@@ -16,7 +16,13 @@ const Layout = ({ children }) => {
       <Cookie></Cookie>
       <Footer></Footer>
       <div className="storeM">
-        <Image src={StoreM}></Image>
+        <a
+          href="https://shop.fantimate.com/pages/dadadohuang"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image src={StoreM}></Image>
+        </a>
       </div>
     </div>
   );
