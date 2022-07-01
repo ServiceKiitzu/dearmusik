@@ -204,6 +204,17 @@ const Mv = () => {
         </div>
         <YouTube
           videoId="ba3vBuvKHk8"
+          opts={{
+            width: "100%",
+            height: "100%",
+            playerVars: {
+              disablekb: 1,
+              loop: 0,
+              playsinline: 0,
+              rel: 0,
+              fs: 1,
+            },
+          }}
           onReady={(e) => {
             setTestYT(e);
           }}
