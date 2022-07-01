@@ -33,6 +33,7 @@ const Mv = () => {
   const [currentMv, setCurrentMv] = useState(null);
   const [YTListMobile, setYTListMobile] = useState([]);
   const [phone, setPhone] = useState(false);
+  const [testYT, setTestYT] = useState(null);
   let mvs = [
     {
       id: 1,
@@ -215,10 +216,14 @@ const Mv = () => {
         <YouTube
           videoId="ba3vBuvKHk8"
           onReady={(e) => {
-            e.target.setVolume = 0;
-            e.target.playVideo();
+            setTestYT(e);
           }}
         ></YouTube>
+        <button
+          onClick={() => {
+            testYT.target.playVideo();
+          }}
+        ></button>
         <div className={styles.rightBlock}>
           {/* mv預覽小圖 */}
           {mvs &&
