@@ -212,7 +212,12 @@ const Mv = () => {
           </div>
           <WorksNav></WorksNav>
         </div>
-
+        <YouTube
+          videoId="ba3vBuvKHk8"
+          onReady={(e) => {
+            e.target.playVideo();
+          }}
+        ></YouTube>
         <div className={styles.rightBlock}>
           {/* mv預覽小圖 */}
           {mvs &&
@@ -228,7 +233,7 @@ const Mv = () => {
                         playerVars: {
                           disablekb: 1,
                           loop: 0,
-                          playsinline: 1,
+                          playsinline: 0,
                           rel: 0,
                           fs: 0,
                           enablejsapi: 1,
