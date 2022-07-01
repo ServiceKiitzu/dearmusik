@@ -115,6 +115,16 @@ const Mv = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (screenfull.isEnabled) {
+      if (screenfull.isFullscreen) {
+        YTListMobile.forEach((item) => {
+          item.target.pauseVideo();
+        });
+      }
+    }
+  }, [screenfull.isFullscreen]);
+
   // youtube播放事件
   function storeMobileYoutube(e, index) {
     // store all mobile video value
