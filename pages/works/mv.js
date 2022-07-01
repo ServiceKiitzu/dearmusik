@@ -233,7 +233,12 @@ const Mv = () => {
                       // if (screenfull.isEnabled) {
                       //   screenfull.request(testYT.target.getIframe());
                       // }
-                      playMobileVideo(index);
+                      YTListMobile[index].target.playVideo();
+                      if (screenfull.isEnabled) {
+                        screenfull.request(
+                          YTListMobile[index].target.getIframe()
+                        );
+                      }
                     }}
                   ></button>
                   {phone && item.youtube && (
