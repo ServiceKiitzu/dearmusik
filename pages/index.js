@@ -44,6 +44,8 @@ export default function Home() {
       iconBox.style.backgroundColor = "transparent";
       const footer = document.getElementById("footer");
       footer.style.backgroundColor = "transparent";
+      const pageContainer = document.getElementById("pageContainer");
+      pageContainer.style.paddingBottom = "0";
       return () => {
         iconBox.style.backgroundColor = "#000";
         footer.style.backgroundColor = "#000";
