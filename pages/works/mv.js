@@ -124,11 +124,9 @@ const Mv = () => {
     setYTListMobile([...YTListMobile], e);
   }
   function playMobileVideo(index) {
-    if (YTListMobile[index] !== undefined && phone) {
-      YTListMobile[index].target.playVideo();
-      if (screenfull.isEnabled) {
-        screenfull.request(YTListMobile[index].target.getIframe());
-      }
+    YTListMobile[index].target.playVideo();
+    if (screenfull.isEnabled) {
+      screenfull.request(YTListMobile[index].target.getIframe());
     }
   }
   function fullScreen(e) {
@@ -247,8 +245,7 @@ const Mv = () => {
                           loop: 0,
                           playsinline: 0,
                           rel: 0,
-                          fs: 0,
-                          enablejsapi: 1,
+                          fs: 1,
                         },
                       }}
                       onReady={(e) => {
