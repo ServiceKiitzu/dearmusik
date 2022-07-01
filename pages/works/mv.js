@@ -215,6 +215,7 @@ const Mv = () => {
         <YouTube
           videoId="ba3vBuvKHk8"
           onReady={(e) => {
+            e.target.setVolume = 0;
             e.target.playVideo();
           }}
         ></YouTube>
