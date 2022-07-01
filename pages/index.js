@@ -39,14 +39,16 @@ export default function Home() {
   const carousel = [I1, I2, I3, I4, I5];
   const carouselM = [M1, M2, M3, M4, M5];
   useEffect(() => {
-    const iconBox = document.getElementById("iconBox");
-    iconBox.style.backgroundColor = "transparent";
-    const footer = document.getElementById("footer");
-    footer.style.backgroundColor = "transparent";
-    return () => {
-      iconBox.style.backgroundColor = "#000";
-      footer.style.backgroundColor = "#000";
-    };
+    if (window.innerWidth < 1280) {
+      const iconBox = document.getElementById("iconBox");
+      iconBox.style.backgroundColor = "transparent";
+      const footer = document.getElementById("footer");
+      footer.style.backgroundColor = "transparent";
+      return () => {
+        iconBox.style.backgroundColor = "#000";
+        footer.style.backgroundColor = "#000";
+      };
+    }
   }, []);
   return (
     <>

@@ -242,6 +242,16 @@ const Music = () => {
       ],
       song: ["打打多多"],
     },
+    {
+      id: 13,
+      year: "2022",
+      title1: "【綠色的日子】15週年紀念版",
+      title2: "",
+      feat: "",
+      sImg: S1,
+      link: [],
+      song: ["做朋友（天氣好）", "25歲（2022）"],
+    },
   ];
   const [page, setPage] = useState(0);
   const count = 9;
