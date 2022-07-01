@@ -46,8 +46,7 @@ export default function Home() {
       footer.style.backgroundColor = "transparent";
       const pageContainer = document.getElementById("pageContainer");
       pageContainer.style.paddingBottom = "0";
-      const containerM = document.getElementById("containerM");
-      containerM.style.height = window.innerHeight;
+
       return () => {
         iconBox.style.backgroundColor = "#000";
         footer.style.backgroundColor = "#000";
@@ -94,7 +93,7 @@ export default function Home() {
             carouselM.map((item, i) => {
               return (
                 <SwiperSlide key={i}>
-                  <div className="slideBox">
+                  <div className="slideBox" id="slideBox">
                     <Image src={item}></Image>
                   </div>
                 </SwiperSlide>
