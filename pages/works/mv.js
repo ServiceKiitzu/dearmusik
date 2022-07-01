@@ -259,7 +259,6 @@ const Mv = () => {
                         storeMobileYoutube(e, index);
                         // e.target.playVideo();
                       }}
-                      style={{ height: "0" }}
                       key={index}
                     />
                   )}
