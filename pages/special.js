@@ -160,7 +160,11 @@ const Special = () => {
           </div>
           {!phone && nowTopic && nowTopic.date && (
             <div className={styles.sessions}>
-              <a href={nowTopic.link[0]}>
+              <a
+                href={nowTopic.link[0]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {nowTopic.date.map((item, i) => {
                   return (
                     <div key={i} className={styles.sItem}>
@@ -175,7 +179,11 @@ const Special = () => {
           )}
           {phone && sessions && (
             <div className={styles.sessions}>
-              <a href={sessions[0].link[0]}>
+              <a
+                href={sessions[0].link[0]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {sessions[0].date &&
                   sessions[0].date.map((item, i) => {
                     return (
