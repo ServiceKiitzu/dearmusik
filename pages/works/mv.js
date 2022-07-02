@@ -210,58 +210,6 @@ const Mv = () => {
             mvs.map((item, index) => {
               return (
                 <Fragment key={index}>
-                  <YouTube
-                    videoId={item.youtube}
-                    opts={{
-                      width: "100%",
-                      height: "100%",
-                      playerVars: {
-                        disablekb: 1,
-                        loop: 0,
-                        playsinline: 0,
-                        rel: 0,
-                        fs: 1,
-                      },
-                    }}
-                    // onReady={(e) => {
-                    //   storeMobileYoutube(e, index);
-                    // }}
-                  ></YouTube>
-                  <button
-                    onClick={() => {
-                      // testYT.target.playVideo();
-                      // if (screenfull.isEnabled) {
-                      //   screenfull.request(testYT.target.getIframe());
-                      // }
-                      YTListMobile[index].target.playVideo();
-                      if (screenfull.isEnabled) {
-                        screenfull.request(
-                          YTListMobile[index].target.getIframe()
-                        );
-                      }
-                    }}
-                  ></button>
-                  {phone && item.youtube && (
-                    <YouTube
-                      videoId={item.youtube}
-                      opts={{
-                        width: "100%",
-                        height: "100%",
-                        playerVars: {
-                          disablekb: 1,
-                          loop: 0,
-                          playsinline: 0,
-                          rel: 0,
-                          fs: 1,
-                        },
-                      }}
-                      onReady={(e) => {
-                        storeMobileYoutube(e, index);
-                        // e.target.playVideo();
-                      }}
-                      key={index}
-                    />
-                  )}
                   <div
                     key={item.id}
                     className={styles.musicBox}
@@ -290,6 +238,27 @@ const Mv = () => {
                     >
                       <path d="M 40,25 4,45 4,5 z" />
                     </svg>
+                    {phone && item.youtube && (
+                      <YouTube
+                        videoId={item.youtube}
+                        opts={{
+                          width: "100%",
+                          height: "100%",
+                          playerVars: {
+                            disablekb: 1,
+                            loop: 0,
+                            playsinline: 0,
+                            rel: 0,
+                            fs: 1,
+                          },
+                        }}
+                        onReady={(e) => {
+                          storeMobileYoutube(e, index);
+                        }}
+                        key={index}
+                        className={styles.phonePlayer}
+                      />
+                    )}
                     {YTListMobile[index] !== null && (
                       <div className={styles.play}></div>
                     )}
