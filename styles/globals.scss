@@ -49,57 +49,7 @@ a {
       }
     }
   }
-  .menuM {
-    display: none;
-    background-color: #000;
-    color: #e6e6e6;
-    position: absolute;
-    top: 0;
-    z-index: 666666;
-    width: 100%;
-    // filter: blur(2.2px);
-    opacity: 0.8;
-    padding-top: 76px;
-    -webkit-backdrop-filter: blur(2.2px);
-    backdrop-filter: blur(2.2px);
-    .cross {
-      position: absolute;
-      top: 22px;
-      right: 22px;
-    }
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      li {
-        font-size: 25px;
-        font-weight: bold;
-        margin-bottom: 35px;
-        text-align: center;
-        letter-spacing: 3px;
-        a {
-          text-decoration: none;
-          color: #e6e6e6;
-        }
-      }
-    }
-    .mediaM {
-      display: flex;
-      width: 308px;
-      justify-content: space-between;
-      margin: 70px auto;
-    }
-    .contactM {
-      font-size: 12px;
-      font-weight: bold;
-      line-height: 2.83;
-      letter-spacing: 1.44px;
-      text-align: center;
-      div {
-        margin-bottom: 5px;
-      }
-    }
-  }
+
   .pageContainer {
     height: 100%;
     background-color: #000;
@@ -378,6 +328,69 @@ a {
 .ReactModal__Content {
   top: 78px !important;
   left: 50% !important;
+}
+
+.menuM {
+  display: block;
+  color: #e6e6e6;
+  position: fixed;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 666666 !important;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 79px;
+  -webkit-backdrop-filter: blur(2.2px);
+  backdrop-filter: blur(2.2px);
+  .cross {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 35px;
+      text-align: center;
+      letter-spacing: 3px;
+      a {
+        text-decoration: none;
+        color: #e6e6e6;
+      }
+    }
+  }
+  .mediaM {
+    display: flex;
+    width: 308px;
+    justify-content: space-between;
+    margin: 70px auto;
+  }
+  .contactM {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 2.83;
+    letter-spacing: 1.44px;
+    text-align: center;
+    div {
+      margin-bottom: 5px;
+    }
+  }
+}
+.menuMOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 7777777 !important;
+  opacity: 0.8;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
 }
 
 // 插圖文字閃爍動畫

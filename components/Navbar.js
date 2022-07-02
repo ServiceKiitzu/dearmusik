@@ -22,9 +22,11 @@ import SpotifyM from "../assets/navbar/spotify-m.svg";
 import KkboxM from "../assets/navbar/kkbox-m.svg";
 import FacebookM from "../assets/navbar/facebook-m.svg";
 import InstagramM from "../assets/navbar/instagram-m.svg";
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
+import ReactModal from "react-modal";
 
 const Navbar = () => {
+  const [menuM, setMenuM] = useState(false);
   const rmActive = () => {
     let link = document.querySelectorAll("div.navRight a");
     link.forEach((tab) => {
@@ -35,10 +37,10 @@ const Navbar = () => {
   const { locale } = router;
   const t = locale === "zh" ? zh : en;
   const closeMenu = () => {
-    document.getElementById("menuM").style.display = "none";
+    setMenuM(false);
   };
   const openMenu = () => {
-    document.getElementById("menuM").style.display = "block";
+    setMenuM(true);
   };
   useEffect(() => {
     closeMenu();
@@ -172,91 +174,97 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <div className="menuM" id="menuM">
-        <div className="cross">
-          <a onClick={closeMenu}>
-            <Image src={Cross} width={60} height={60}></Image>
-          </a>
+      <ReactModal
+        isOpen={menuM}
+        className="menuM"
+        overlayClassName="menuMOverlay"
+      >
+        <div className="" id="menuM">
+          <div className="cross">
+            <a onClick={closeMenu}>
+              <Image src={Cross} width={60} height={60}></Image>
+            </a>
+          </div>
+          <ul>
+            <li>
+              <Link href={"/news"}>
+                <a>最新消息</a>
+              </Link>
+            </li>
+            <li>
+              <Link href={"/about"}>
+                <a>關於</a>
+              </Link>
+            </li>
+            <li>
+              <Link href={"/works/music"}>
+                <a>作品</a>
+              </Link>
+            </li>
+            <li>
+              <Link href={"/special"}>
+                <a>專場</a>
+              </Link>
+            </li>
+            <li>
+              <Link href={"/dddParty"}>
+                <a>黃玠國專區</a>
+              </Link>
+            </li>
+          </ul>
+          <div className="mediaM">
+            <div>
+              <a
+                href="https://music.apple.com/tw/artist/%E9%BB%83%E7%8E%A0/656689595"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src={IMusicM}></Image>
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://open.spotify.com/artist/3C8yUWotyLh2Kjkood3xYN?si=8mwMR0tuQGuufpNdrxSlbA"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src={SpotifyM}></Image>
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://www.kkbox.com/tw/tc/artist/WsM__mTku7eU3VH0u1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src={KkboxM}></Image>
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://www.facebook.com/dadado.huang"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src={FacebookM}></Image>
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://www.instagram.com/dadadohuang/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src={InstagramM}></Image>
+              </a>
+            </div>
+          </div>
+          <div className="contactM">
+            <div>合作與工作邀約 請洽</div>
+            <div>親愛的音樂 - dearmusik@gmail.com</div>
+          </div>
         </div>
-        <ul>
-          <li>
-            <Link href={"/news"}>
-              <a>最新消息</a>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/about"}>
-              <a>關於</a>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/works/music"}>
-              <a>作品</a>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/special"}>
-              <a>專場</a>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/dddParty"}>
-              <a>黃玠國專區</a>
-            </Link>
-          </li>
-        </ul>
-        <div className="mediaM">
-          <div>
-            <a
-              href="https://music.apple.com/tw/artist/%E9%BB%83%E7%8E%A0/656689595"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image src={IMusicM}></Image>
-            </a>
-          </div>
-          <div>
-            <a
-              href="https://open.spotify.com/artist/3C8yUWotyLh2Kjkood3xYN?si=8mwMR0tuQGuufpNdrxSlbA"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image src={SpotifyM}></Image>
-            </a>
-          </div>
-          <div>
-            <a
-              href="https://www.kkbox.com/tw/tc/artist/WsM__mTku7eU3VH0u1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image src={KkboxM}></Image>
-            </a>
-          </div>
-          <div>
-            <a
-              href="https://www.facebook.com/dadado.huang"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image src={FacebookM}></Image>
-            </a>
-          </div>
-          <div>
-            <a
-              href="https://www.instagram.com/dadadohuang/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image src={InstagramM}></Image>
-            </a>
-          </div>
-        </div>
-        <div className="contactM">
-          <div>合作與工作邀約 請洽</div>
-          <div>親愛的音樂 - dearmusik@gmail.com</div>
-        </div>
-      </div>
+      </ReactModal>
     </Fragment>
   );
 };
