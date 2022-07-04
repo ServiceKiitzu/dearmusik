@@ -7,11 +7,15 @@ import { useEffect, useState } from "react";
 
 const DDDParty = () => {
   useEffect(() => {
-    const footer = document.getElementById("footer");
-    footer.style.backgroundColor = "transparent";
+    if (window.innerWidth < 1280) {
+      const footer = document.getElementById("footer");
+      footer.style.backgroundColor = "transparent";
+    }
 
     return function cleanUp() {
-      footer.style.backgroundColor = "#000";
+      if (window.innerWidth < 1280) {
+        footer.style.backgroundColor = "#000";
+      }
     };
   }, []);
   return (

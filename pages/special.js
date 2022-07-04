@@ -106,11 +106,13 @@ const Special = () => {
   }, []);
   useEffect(() => {
     const page = document.getElementById("pageContainer");
-    if (pop) {
+    if (pop && window.innerWidth < 1280) {
       page.style.height = "100vh";
     }
     return () => {
-      page.style.height = "100%";
+      if (window.innerWidth < 1280) {
+        page.style.height = "100%";
+      }
     };
   }, [pop]);
   return (
