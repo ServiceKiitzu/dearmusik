@@ -5,7 +5,9 @@ const Cookie = () => {
   const [isOpened, setIsOpened] = useState(false);
   useEffect(() => {
     let timer1 = setTimeout(() => {
-      setIsOpened(true);
+      if (sessionStorage.getItem("notice")) {
+        setIsOpened(true);
+      }
     }, 1000);
     // clean timeout
     return () => {
@@ -29,6 +31,7 @@ const Cookie = () => {
         <button
           onClick={() => {
             setIsOpened(false);
+            sessionStorage.setItem("notice", false);
           }}
         >
           我知道了

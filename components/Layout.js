@@ -4,8 +4,12 @@ import Cookie from "./Cookie";
 import Image from "next/image";
 import StoreM from "../assets/index/store-m.svg";
 import Head from "next/head";
+import { useEffect } from "react";
 
 const Layout = ({ children }) => {
+  useEffect(() => {
+    sessionStorage.setItem("notice", true);
+  }, []);
   return (
     <div className="pageContainer" id="pageContainer">
       <Head>
