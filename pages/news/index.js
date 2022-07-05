@@ -90,7 +90,7 @@ const News = () => {
         setFilterArt(result);
       }
     }
-  }, [sessionStorage.getItem("type")]);
+  }, [typeof window !== "undefined" && sessionStorage.getItem("type")]);
 
   return (
     <>
