@@ -79,8 +79,8 @@ const News = () => {
     }
   }, []);
 
-  if (typeof window !== "undefined") {
-    useEffect(() => {
+  useEffect(() => {
+    if (sessionStorage.getItem("type")) {
       if (sessionStorage.getItem("type") == "全部") {
         setFilterArt(articles);
       } else {
@@ -89,8 +89,9 @@ const News = () => {
         });
         setFilterArt(result);
       }
-    }, [sessionStorage.getItem("type")]);
-  }
+    }
+  }, [sessionStorage.getItem("type")]);
+
   return (
     <>
       <Head>
