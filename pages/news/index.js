@@ -140,7 +140,7 @@ const News = () => {
             <Image src={AU}></Image>
           </div>
           <div>
-            <Image src={ADA}></Image>
+            <Image src={articles.length > 4 ? ADA : AD}></Image>
           </div>
         </div>
         <div className={styles.img}>
