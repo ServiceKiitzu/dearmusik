@@ -17,7 +17,14 @@ const Cookie = () => {
       <div>
         <p>
           為提供使用者最佳網站體驗，我們蒐集cookies進行網站行為分析，以持續優化網頁內容，若您繼續瀏覽本網站，即表示您已同意線上隱私權聲明。詳細請參閱我們的
-          <a href="">Cookie政策</a>。
+          <a
+            href="https://drive.google.com/file/d/1XR8aKn-ZbhZqRM5FGaQ4V94xl2HWivuq/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Cookie政策
+          </a>
+          。
         </p>
         <button
           onClick={() => {
