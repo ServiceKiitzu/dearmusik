@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const NewsNave = () => {
-  const [type, setType] = useState("");
+const NewsNave = ({ type, setType }) => {
+  // const [type, setType] = useState("");
   const [itemSwitch, setItemSwitch] = useState(0);
   const sort = [
     "全部",
@@ -37,9 +37,7 @@ const NewsNave = () => {
     }
   };
   useEffect(() => {
-    sessionStorage.getItem("type")
-      ? setType(sessionStorage.getItem("type"))
-      : setType("全部");
+    setType("全部");
     if (window.innerWidth < 1280) {
       const links = document.querySelectorAll("#typeItem a");
       const closeNav = () => {

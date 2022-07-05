@@ -18,6 +18,7 @@ import { useRouter } from "next/dist/client/router";
 const News = () => {
   const router = useRouter();
   const [filterArt, setFilterArt] = useState([]);
+  const [type, setType] = useState("");
   let articles = [
     {
       id: 1,
@@ -78,19 +79,16 @@ const News = () => {
       observer.observe(document.querySelector("#imgTextM"));
     }
   }, []);
-
   useEffect(() => {
-    if (sessionStorage.getItem("type")) {
-      if (sessionStorage.getItem("type") == "全部") {
-        setFilterArt(articles);
-      } else {
-        let result = articles.filter((article) => {
-          return article.category == sessionStorage.getItem("type");
-        });
-        setFilterArt(result);
-      }
+    if (type == "全部") {
+      setFilterArt(articles);
+    } else {
+      let result = articles.filter((article) => {
+        return article.category == sessionStorage.getItem("type");
+      });
+      setFilterArt(result);
     }
-  }, [typeof window !== "undefined" && sessionStorage.getItem("type")]);
+  }, [type]);
 
   return (
     <>
@@ -107,7 +105,7 @@ const News = () => {
       </Head>
       <div className={styles.container}>
         <div className={styles.topic}>最新消息</div>
-        <NewsNave></NewsNave>
+        <NewsNave type={type} setType={setType}></NewsNave>
         <div className={styles.articleList}>
           {filterArt &&
             filterArt.map((item, index) => {

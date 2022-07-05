@@ -68,6 +68,7 @@
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+    position: relative;
     // &.highlight {
     //   font-size: 16px;
     //   font-weight: bold;
@@ -75,10 +76,11 @@
     //   color: #414141;
     // }
     .triangle {
+      position: absolute;
       width: 20px;
       transform: rotate(180deg);
-      margin-bottom: -3px;
-      margin-right: -100px;
+      right: 0;
+      top: 0;
     }
   }
   .typeItem {
