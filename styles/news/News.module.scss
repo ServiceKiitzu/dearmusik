@@ -134,6 +134,7 @@
         margin-bottom: 25px;
         cursor: pointer;
         color: #414141;
+        position: relative;
         &:hover {
           color: #468b26;
         }
@@ -159,22 +160,22 @@
           font-size: 13px;
           line-height: 1.92;
           letter-spacing: 1.43px;
-          position: relative;
-          .read {
-            width: 401px;
-            height: 17px;
-            background-color: #fff;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            font-size: 12px;
-            font-weight: 300;
-            letter-spacing: 1.44px;
-            line-height: normal;
-            z-index: 2;
-            text-align: right;
-            padding-top: 5px;
-          }
+          overflow: hidden;
+        }
+        .read {
+          width: 401px;
+          height: 17px;
+          background-color: #fff;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          font-size: 12px;
+          font-weight: 300;
+          letter-spacing: 1.44px;
+          line-height: normal;
+          z-index: 2;
+          text-align: right;
+          padding-top: 5px;
         }
         .readM {
           display: none;
