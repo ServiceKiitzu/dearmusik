@@ -11,14 +11,14 @@ import AU from "../../assets/works/music/arrow-up.svg";
 import AUA from "../../assets/works/music/arrow-up-active.svg";
 import AD from "../../assets/works/music/arrow-down.svg";
 import ADA from "../../assets/works/music/arrow-down-active.svg";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { handleBreakpoints } from "@mui/system";
 import { useRouter } from "next/dist/client/router";
+import TypeContext from "../../context/TypeContext";
 
 const News = () => {
-  const router = useRouter();
   const [filterArt, setFilterArt] = useState([]);
-  const [type, setType] = useState("");
+  const context = useContext(TypeContext);
   let articles = [
     {
       id: 1,
@@ -80,15 +80,15 @@ const News = () => {
     }
   }, []);
   useEffect(() => {
-    if (type == "全部") {
+    if (context.type == "全部") {
       setFilterArt(articles);
     } else {
       let result = articles.filter((article) => {
-        return article.category == sessionStorage.getItem("type");
+        return article.category == context.type;
       });
       setFilterArt(result);
     }
-  }, [type]);
+  }, [context.type]);
 
   return (
     <>
@@ -105,7 +105,7 @@ const News = () => {
       </Head>
       <div className={styles.container}>
         <div className={styles.topic}>最新消息</div>
-        <NewsNave type={type} setType={setType}></NewsNave>
+        <NewsNave></NewsNave>
         <div className={styles.articleList}>
           {filterArt &&
             filterArt.map((item, index) => {

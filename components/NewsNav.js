@@ -3,8 +3,11 @@ import styles from "../styles/news/NewsNav.module.scss";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useContext } from "react";
+import TypeContext from "../context/TypeContext";
 
-const NewsNave = ({ type, setType }) => {
+const NewsNave = () => {
+  const context = useContext(TypeContext);
   // const [type, setType] = useState("");
   const [itemSwitch, setItemSwitch] = useState(0);
   const sort = [
@@ -21,8 +24,8 @@ const NewsNave = ({ type, setType }) => {
       item.addEventListener("click", handleActiveSwitch);
     });
     function handleActiveSwitch(e) {
-      sessionStorage.setItem("type", e.currentTarget.innerText);
-      setType(e.currentTarget.innerText);
+      // setType(e.currentTarget.innerText);
+      context.setType(e.currentTarget.innerText);
     }
   }
   const handleItemSwitch = () => {
@@ -37,7 +40,6 @@ const NewsNave = ({ type, setType }) => {
     }
   };
   useEffect(() => {
-    setType("全部");
     if (window.innerWidth < 1280) {
       const links = document.querySelectorAll("#typeItem a");
       const closeNav = () => {
@@ -55,7 +57,7 @@ const NewsNave = ({ type, setType }) => {
     <div className={styles.type} id="type">
       <a onClick={handleItemSwitch}>
         <div className={styles.all} id="all">
-          {type}
+          {context.type}
           <div className={styles.triangle}>
             <Image src={Triangle}></Image>
           </div>

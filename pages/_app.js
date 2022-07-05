@@ -3,15 +3,13 @@ import "../styles/globals.scss";
 import Layout from "../components/Layout";
 import "@fontsource/roboto-slab";
 import "@fontsource/noto-sans-tc";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Script from "next/script";
+import TypeContext from "../context/TypeContext";
 
 function MyApp({ Component, pageProps }) {
-  // useEffect(() => {
-  //   const pageContainer = document.getElementById("pageContainer");
-  //   pageContainer.style.height = window.innerHeight;
-  // });
+  const [type, setType] = useState("全部");
   return (
     <>
       {/* Google Tag Manager */}
@@ -26,10 +24,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WH93B9G');`,
         }}
       />
-
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <TypeContext.Provider value={{ type, setType }}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </TypeContext.Provider>
       <noscript
         dangerouslySetInnerHTML={{
           __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WH93B9G"

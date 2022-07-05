@@ -4,7 +4,7 @@ import Cookie from "./Cookie";
 import Image from "next/image";
 import StoreM from "../assets/index/store-m.svg";
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState, createContext } from "react";
 
 const Layout = ({ children }) => {
   useEffect(() => {
