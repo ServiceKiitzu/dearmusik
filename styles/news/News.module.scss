@@ -1,4 +1,4 @@
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
   .container {
     width: 100% !important;
     height: 100vh !important;
@@ -156,13 +156,12 @@
         .content {
           width: 747px;
           height: 46px;
-          font-size: 15.5px;
-          font-weight: 500;
-          line-height: 1.61;
-          letter-spacing: 1.71px;
+          font-size: 13px;
+          line-height: 1.92;
+          letter-spacing: 1.43px;
           position: relative;
           .read {
-            width: 197px;
+            width: 401px;
             height: 17px;
             background-color: #fff;
             position: absolute;
@@ -170,7 +169,8 @@
             bottom: 0;
             font-size: 12px;
             font-weight: 300;
-            line-height: 1;
+            letter-spacing: 1.44px;
+            line-height: normal;
             z-index: 2;
             text-align: right;
             padding-top: 5px;

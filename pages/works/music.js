@@ -250,7 +250,16 @@ const Music = () => {
       feat: "",
       sImg: S1,
       link: [],
-      song: ["做朋友（天氣好）", "25歲（2022）"],
+      song: [
+        { track: "A1", name: "綠色的日子 / Hard Days" },
+        { track: "A2", name: "存在 / Existence" },
+        { track: "A3", name: "做朋友 / To Be Your Friend" },
+        { track: "A4", name: "25歲 / 25 Years Old" },
+        { track: "B1", name: "Dadadalada / Dadadalada" },
+        { track: "B2", name: "香格里拉 / Shangrila" },
+        { track: "B3", name: "做朋友 （天氣好） / Blue Sky" },
+        { track: "B4", name: "25歲（2022）/ No Change" },
+      ],
     },
   ];
   const [page, setPage] = useState(0);
@@ -362,9 +371,11 @@ const Music = () => {
                     return (
                       <div key={i}>
                         <div className={styles.number}>
-                          {i + 1 < 10 ? `${i + 1}` : i + 1}
+                          {song.track
+                            ? song.track
+                            : (i + 1).toString().padStart(2, 0)}
                         </div>
-                        | {song}
+                        | {song.name ? song.name : song}
                       </div>
                     );
                   })}
@@ -422,9 +433,11 @@ const Music = () => {
                     return (
                       <div key={i}>
                         <div className={styles.number}>
-                          {i + 1 < 10 ? `0${i + 1}` : i + 1}
+                          {song.track
+                            ? song.track
+                            : (i + 1).toString().padStart(2, 0)}
                         </div>
-                        | {song}
+                        | {song.name ? song.name : song}
                       </div>
                     );
                   })}

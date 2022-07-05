@@ -11,8 +11,8 @@ import { Navigation, EffectFade, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import OG from "../public/og-img.jpg";
 
-import I1 from "../assets/index/swipe-1.jpg";
-import I2 from "../assets/index/swipe-2.jpg";
+import I1 from "../assets/index/swipe-1.png";
+import I2 from "../assets/index/swipe-2.png";
 import I3 from "../assets/index/swipe-3.jpg";
 import I4 from "../assets/index/swipe-4.jpg";
 import I5 from "../assets/index/swipe-5.jpg";
@@ -125,7 +125,7 @@ export default function Home() {
             carousel.map((item, i) => {
               return (
                 <SwiperSlide key={i}>
-                  <div>
+                  <div className={styles.slideBox}>
                     <Image src={item}></Image>
                   </div>
                 </SwiperSlide>
