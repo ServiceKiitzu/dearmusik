@@ -1,4 +1,4 @@
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
   .container {
     padding: 139px 34px 65px;
     height: 100%;
@@ -68,9 +68,10 @@
       height: 449px;
       .cover {
         position: relative;
-        span {
+        img {
           height: 449px !important;
           width: 299px !important;
+          object-fit: contain;
         }
         .new {
           background: url("../assets/works/new-icon.png") no-repeat;

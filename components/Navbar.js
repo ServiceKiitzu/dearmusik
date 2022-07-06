@@ -63,23 +63,23 @@ const Navbar = () => {
     <Fragment>
       <nav className="nav1">
         <div className="iconBox" id="iconBox">
-          <div>
+          <div className="iconM">
             <Link href={"/"}>
               <a>
                 <Image src={IconM} width={36} heigh={36}></Image>
               </a>
             </Link>
           </div>
-          <div>
+          <div className="iconMText">
             <Link href={"/"}>
               <a>
                 <Image src={IconMText} width={214} height={36}></Image>
               </a>
             </Link>
           </div>
-          <div className="menu">
+          <div className="hamburger">
             <a onClick={openMenu}>
-              <Image src={Menu} width={31} height={26}></Image>
+              <Image src={Menu}></Image>
             </a>
           </div>
         </div>

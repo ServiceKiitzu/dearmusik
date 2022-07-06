@@ -34,18 +34,37 @@ a {
       width: 100%;
       height: 67px;
       display: flex;
-      padding: 15px 20px 15px 16px;
+      padding: 15px 16px 15px 16px;
       background-color: #000;
       position: fixed;
       align-items: center;
       z-index: 55555;
       div {
-        margin-right: 24px;
       }
-      .menu {
-        position: absolute;
-        right: 20px;
+      .iconM {
+        width: 17vw;
+        max-width: 60px;
+        img {
+          width: 10vw !important;
+          max-width: 36px !important;
+        }
+      }
+      .iconMText {
+        width: 65vw;
+        max-width: 237px;
+        img {
+          width: 60vw !important;
+          max-width: 214px !important;
+        }
+      }
+      .hamburger {
         margin-right: 0 !important;
+        margin-left: auto;
+        img {
+          width: 8.7vw !important;
+          max-width: 31px !important;
+          // max-width: 31px !important;
+        }
       }
     }
   }
