@@ -33,12 +33,12 @@ const DDDParty = () => {
         />
       </Head>
       <div className={styles.container}>
-        <div className={styles.img}>
-          <Image src={Soon}></Image>
-        </div>
         <div className={styles.blackBlock}></div>
 
         <div className={styles.block}>
+          <div className={styles.img}>
+            <Image src={Soon}></Image>
+          </div>
           <div className={styles.imgM}>
             <Image src={SoonM}></Image>
           </div>
