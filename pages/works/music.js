@@ -314,7 +314,7 @@ const Music = () => {
     }
   };
   useEffect(() => {
-    const mediaQuery = window.matchMedia("( max-width: 1280px )");
+    const mediaQuery = window.matchMedia("( max-width: 1279px )");
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const square = entry.target;
