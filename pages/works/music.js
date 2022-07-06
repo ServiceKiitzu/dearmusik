@@ -302,7 +302,16 @@ const Music = () => {
 
   // 內頁開關
   const switchInnerPage = () => {
-    setInnerPage(true);
+    const container = document.getElementById("container");
+    if (innerPage) {
+      setInnerPage(false);
+      container.style.height = "100%";
+      container.style.overflowY = "auto";
+    } else {
+      setInnerPage(true);
+      container.style.height = "100vh";
+      container.style.overflowY = "hidden";
+    }
   };
   useEffect(() => {
     const mediaQuery = window.matchMedia("( max-width: 1280px )");
@@ -342,7 +351,8 @@ const Music = () => {
               <div
                 className={`${styles.previous} `}
                 onClick={() => {
-                  setInnerPage(false);
+                  // setInnerPage(false);
+                  switchInnerPage();
                 }}
               ></div>
               2022 SINGLE
