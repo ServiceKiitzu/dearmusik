@@ -13,7 +13,7 @@ import C7 from "../assets/special/c7.png";
 import C8 from "../assets/special/c8.png";
 import C9 from "../assets/special/c9.png";
 import C10 from "../assets/special/c10.png";
-import C11 from "../assets/special/c11.png";
+import C11 from "../assets/special/c11.jpg";
 import CM1 from "../assets/special/c-m-1.png";
 import CM2 from "../assets/special/c-m-2.png";
 import CM3 from "../assets/special/c-m-3.png";

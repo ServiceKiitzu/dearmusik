@@ -16,7 +16,7 @@ const Details = () => {
   useEffect(() => {
     const nav = document.getElementById("type");
     let widthNow = window.innerWidth;
-    if (widthNow <= 1280) {
+    if (widthNow < 1280) {
       nav.style.display = "none";
     }
   }, []);
