@@ -309,7 +309,7 @@ const Music = () => {
       container.style.overflowY = "auto";
     } else {
       setInnerPage(true);
-      container.style.height = "100vh";
+      container.style.height = "calc(100vh - 67px )";
       container.style.overflowY = "hidden";
     }
   };
