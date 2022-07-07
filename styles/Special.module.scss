@@ -21,14 +21,13 @@
       z-index: 666666;
       top: 0;
       left: 0;
-      padding: 22px 22px;
+      padding: 40px 22px;
       &::before {
         content: "";
         position: absolute;
         -webkit-backdrop-filter: blur(5px);
         backdrop-filter: blur(5px);
-        background-color: #000;
-        opacity: 0.8;
+        background-color: rgba(0, 0, 0, 0.8);
         height: 100%;
         width: 100%;
         top: 0;
