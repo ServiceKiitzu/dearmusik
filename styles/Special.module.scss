@@ -15,8 +15,7 @@
     }
     .pop {
       width: 100vw;
-      max-height: -webkit-fill-available;
-      height: 100vh;
+      height: calc(100vh - calc(100vh - 100%));
       overflow: hidden;
       position: absolute;
       z-index: 666666;
