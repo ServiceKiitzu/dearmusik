@@ -355,15 +355,15 @@ const Music = () => {
                   switchInnerPage();
                 }}
               ></div>
-              2022 SINGLE
+              {musicData.year} {musicData.song.length == 1 ? "SINGLE" : ""}
             </div>
             <div className={styles.scrollBox1}>
               <div className={styles.inImgM}>
                 <Image src={musicData.sImg}></Image>
               </div>
-              <div className={styles.inText2}>十年熟成</div>
-              <div className={styles.inText2}>最佳精選特輯</div>
-              <div className={styles.inText3}>黃玠×NABOWA</div>
+              <div className={styles.inText2}>{musicData.title1}</div>
+              <div className={styles.inText2}>{musicData.title2}</div>
+              <div className={styles.inText3}>{musicData.feat}</div>
               <div className={styles.mediaM}>
                 <a href={musicData.link[0]}>
                   <div className={styles.imusicM}></div>
@@ -469,7 +469,7 @@ const Music = () => {
               !isMobile &&
               currentItems.map((music) => {
                 return (
-                  <div key={music.id}>
+                  <div key={music.id} className={styles.blockItem}>
                     <a
                       onClick={() => {
                         let data = currentItems.filter((item) => {
