@@ -126,6 +126,11 @@ const Mv = () => {
     YTListMobile[index].target.playVideo();
     if (screenfull.isEnabled) {
       screenfull.request(YTListMobile[index].target.getIframe());
+      screenfull.on("change", () => {
+        if (!screenfull.isFullscreen) {
+          YTListMobile[index].target.pauseVideo();
+        }
+      });
     }
   }
   useEffect(() => {
