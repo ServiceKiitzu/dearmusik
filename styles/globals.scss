@@ -143,10 +143,12 @@ a {
   //   height: 100%;
   // }
   .slideBox {
-    width: 100vw !important;
-    height: auto !important;
+    margin: 0;
+    padding: 0;
     img {
+      min-height: 100vh;
       height: calc(100vh - calc(100vh - 100%)) !important;
+      max-height: 100vh;
       width: 100vw !important;
       object-fit: cover !important;
     }
