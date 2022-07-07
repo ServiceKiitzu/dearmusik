@@ -1,9 +1,10 @@
 @media screen and (max-width: 1279px) {
   .container {
     width: 100% !important;
-    height: 100vh !important;
+    height: 100% !important;
     padding: 169px 0 34px !important;
     flex-direction: column !important;
+    overflow-y: auto;
     &::after {
       content: "";
       width: 100vw;
@@ -28,12 +29,11 @@
     }
     .articleList {
       width: 100% !important;
-      height: calc(100vh - 230px);
-      overflow-y: scroll;
+      height: auto;
       position: relative;
       padding: 0 34px;
       .listItem {
-        margin: 31px auto 31px;
+        margin: 31px auto;
         width: 100%;
         .date {
           text-align: center;
@@ -75,36 +75,41 @@
           width: 100%;
           text-align: right;
         }
+      }
+      a:not(:last-of-type) {
         &::after {
-          margin: 31px auto 0;
           content: "";
+          margin: 31px auto 0;
           display: block;
-          width: 215px;
-          border-top: 0.5px dashed #fff;
-        }
-        &:nth-last-child(3) {
-          margin-bottom: 230px !important;
-          &::after {
-            display: none;
-          }
+          width: 252px;
+          height: 1px;
+          background-image: linear-gradient(
+            to right,
+            #fff 0%,
+            #fff 50%,
+            transparent 50%
+          );
+          background-size: 7px 1px;
+          background-repeat: repeat-x;
         }
       }
-      .imgM {
-        background-image: url("../../assets/news/img-m.svg");
-        width: 110px;
+      .imgBoxM {
+        width: 262px;
         height: 113px;
-        position: absolute;
-        top: 927px;
-        right: 49px;
-      }
-      .imgTextM {
-        background-image: url("../../assets/news/img-text-m.svg");
-        width: 146px;
-        height: 113px;
-        position: absolute;
-        top: 927px;
-        right: 165px;
-        opacity: 0;
+        display: flex;
+        padding-top: 15px;
+        margin: 0 auto;
+        .imgM {
+          background-image: url("../../assets/news/img-m.svg");
+          width: 110px;
+          height: 113px;
+        }
+        .imgTextM {
+          background-image: url("../../assets/news/img-text-m.svg");
+          width: 146px;
+          height: 113px;
+          opacity: 0;
+        }
       }
     }
     .arrowBox,

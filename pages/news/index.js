@@ -131,8 +131,10 @@ const News = () => {
                 </Link>
               );
             })}
-          <div className={styles.imgTextM} id="imgTextM"></div>
-          <div className={styles.imgM}></div>
+          <div className={styles.imgBoxM}>
+            <div className={styles.imgTextM} id="imgTextM"></div>
+            <div className={styles.imgM}></div>
+          </div>
         </div>
         <div className={styles.arrowBox}>
           <div>
