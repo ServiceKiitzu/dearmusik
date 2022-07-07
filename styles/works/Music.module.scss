@@ -346,9 +346,10 @@
       color: #414141;
       position: relative;
       align-items: flex-start;
-      // .blockItem {
-      //   height: 202px;
-      // }
+      .blockItem {
+        height: 206px;
+        margin-bottom: 10px;
+      }
       div {
         width: 122px;
         margin-right: 32px;

@@ -14,7 +14,7 @@ import articles from "../../data/article";
 
 export const getServerSideProps = async (context) => {
   let id = context.query.id;
-  let result = articles.filter((item) => {
+  let result = articles?.filter((item) => {
     return item.id == id;
   });
   let preview = result[0].preview;
