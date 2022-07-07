@@ -10,8 +10,24 @@ import { useEffect } from "react";
 import { useRouter } from "next/dist/client/router";
 import { useState } from "react";
 import Router from "next/router";
+import articles from "../../data/article";
 
-const Details = () => {
+export const getServerSideProps = async (context) => {
+  let id = context.query.id;
+  let result = articles.filter((item) => {
+    return item.id == id;
+  });
+  let preview = result[0].preview;
+  let title = result[0].title;
+  return {
+    props: {
+      title: title,
+      preview: preview,
+    },
+  };
+};
+
+const Details = ({ title, preview }) => {
   const router = useRouter();
   const [detail, setDetail] = useState(null);
   useEffect(() => {
@@ -32,8 +48,8 @@ const Details = () => {
   return (
     <>
       <Head>
-        <title>{detail?.title}</title>
-        <meta name="description" content={detail?.preview} />
+        <title>{title}</title>
+        <meta name="description" content={preview} />
         <meta
           property="og:image"
           content="https://dearmusik.kiitzu.ninja/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fog-img.e87c1000.jpg&w=1200&q=75"
