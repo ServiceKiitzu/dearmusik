@@ -340,6 +340,7 @@
     .rightBlock {
       display: flex;
       width: 462px;
+      height: 206px;
       flex-wrap: wrap;
       margin-left: 37px;
       margin-right: 0 !important;
@@ -349,13 +350,10 @@
       .blockItem {
         height: 206px;
         margin-bottom: 10px;
-      }
-      div {
         width: 122px;
         margin-right: 32px;
         cursor: pointer;
         position: relative;
-
         .previewImg {
           width: 122px;
           height: 122px;
