@@ -33,7 +33,6 @@ const Mv = () => {
   const [currentMv, setCurrentMv] = useState(null);
   const [YTListMobile, setYTListMobile] = useState([]);
   const [phone, setPhone] = useState(false);
-  const [testYT, setTestYT] = useState(null);
   let mvs = [
     {
       id: 1,
@@ -129,12 +128,22 @@ const Mv = () => {
       screenfull.request(YTListMobile[index].target.getIframe());
     }
   }
-  function fullScreen(e) {
-    const iframe = e.target.getIframe();
-    if (screenfull.isEnabled) {
-      screenfull.request(iframe);
+  useEffect(() => {
+    if (screenfull.isFullscreen) {
+      YTListMobile.forEach((item) => {
+        item.target.pauseVideo();
+      });
     }
-  }
+  }, [screenfull.isFullscreen]);
+  // function fullScreen(e) {
+  //   const iframe = e.target.getIframe();
+  //   if (screenfull.isEnabled) {
+  //     screenfull.request(iframe);
+  //     screenfull.onchange(() => {
+  //       console.log(screenfull.isFullscreen ? "是" : "否");
+  //     });
+  //   }
+  // }
   return (
     <>
       <Head>
