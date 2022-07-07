@@ -9,6 +9,7 @@ import ImgText from "../../assets/news/img-text.svg";
 import { useEffect } from "react";
 import { useRouter } from "next/dist/client/router";
 import { useState } from "react";
+import Router from "next/router";
 
 const Details = () => {
   const router = useRouter();
@@ -31,8 +32,8 @@ const Details = () => {
   return (
     <>
       <Head>
-        <title>{detail && detail.title}</title>
-        <meta name="description" content={detail && detail.preview} />
+        <title>{detail?.title}</title>
+        <meta name="description" content={detail?.preview} />
         <meta
           property="og:image"
           content="https://dearmusik.kiitzu.ninja/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fog-img.e87c1000.jpg&w=1200&q=75"
