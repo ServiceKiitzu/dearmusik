@@ -47,7 +47,7 @@ const News = () => {
       category: "音樂發行",
       title: "黃玠開設YT頻道：歷年MV & 是玠日語教室一次回味",
       preview:
-        "在官方 Youtube 頻道中，黃玠不僅將歷年來所拍攝的歌曲 MV 重新上傳，如：〈你〉、〈因為你〉、〈下雨的晚上〉等，他也將 2020 年《國民大會》演唱會時拍攝的『是玠日語教室』系列宣傳影片上架頻道，讓國民再度回味國王的創作，當然還有逗趣又好笑的日語教學小短片★黃玠YT頻道上線：https://www.youtube.com/channel/UC3xDtJYO2rNGY92Qgrgy_uA",
+        "在官方 Youtube 頻道中，黃玠不僅將歷年來所拍攝的歌曲 MV 重新上傳，如：〈你〉、〈因為你〉、〈下雨的晚上〉等，他也將 2020 年《國民大會》演唱會時拍攝的『是玠日語教室』系列宣傳影片上架頻道，讓國民再度回味國王的創作，當然還有逗趣又好笑的日語教學小短片★黃玠YT頻道上線：https://www.youtube.com/channel/UC3xDtJYO2rNGY92Qgrgy_uA。",
       content: `<p><span style=" background-color: transparent;">在官方 Youtube 頻道中，黃玠不僅將歷年來所拍攝的歌曲 MV 重新上傳，如：〈你〉、〈因為你〉、〈下雨的晚上〉等，他也將 2020 年《國民大會》演唱會時拍攝的『是玠日語教室』系列宣傳影片上架頻道，讓國民再度回味國王的創作，當然還有逗趣又好笑的日語教學小短片</span></p><p><br></p><p><span style=" background-color: transparent;">★黃玠YT頻道上線：</span><a href="https://www.youtube.com/channel/UC3xDtJYO2rNGY92Qgrgy_uA?fbclid=IwAR3T5u4vKvAO5I0G7E_3Az3xgHV3kUvkfcQ0G0GOZgC5fM2STDQi1AJKfDY" target="_blank" style="color: rgb(17, 85, 204); background-color: transparent;">https://www.youtube.com/channel/UC3xDtJYO2rNGY92Qgrgy_uA</a></p>`,
     },
     {

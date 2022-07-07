@@ -31,11 +31,8 @@ const Details = () => {
   return (
     <>
       <Head>
-        <title>最新消息 ⎯ 黃玠 dadadohuang</title>
-        <meta
-          name="description"
-          content="集結精選文章，深入瞭解黃玠的第一手消息"
-        />
+        <title>{detail && detail.title}</title>
+        <meta name="description" content={detail && detail.preview} />
         <meta
           property="og:image"
           content="https://dearmusik.kiitzu.ninja/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fog-img.e87c1000.jpg&w=1200&q=75"
