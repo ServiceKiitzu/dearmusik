@@ -144,9 +144,9 @@ a {
   // }
   .slideBox {
     width: 100vw !important;
-    height: 100vh !important;
+    height: auto !important;
     img {
-      height: 100vh !important;
+      height: calc(100vh - calc(100vh - 100%)) !important;
       width: 100vw !important;
       object-fit: cover !important;
     }

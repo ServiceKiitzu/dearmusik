@@ -108,9 +108,7 @@ const Special = () => {
     const page = document.getElementById("pageContainer");
     const pop = document.getElementById("pop");
     if (pop && window.innerWidth < 1280) {
-      console.log(pop.offsetHeight);
       page.style.height = `${pop.offsetHeight}px`;
-      console.log(page.offsetHeight);
     }
     return () => {
       if (window.innerWidth < 1280) {

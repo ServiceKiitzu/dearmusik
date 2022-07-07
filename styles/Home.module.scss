@@ -15,10 +15,12 @@
       filter: blur(5px);
     }
   }
+  // 輪播圖照片樣式寫在globals
   .containerM {
     display: block !important;
     width: 100vw !important;
     // height: 100vh !important;
+    height: auto;
     padding: 0 !important;
     margin: 0 auto;
     overflow: hidden;
