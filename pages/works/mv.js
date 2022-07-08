@@ -171,6 +171,7 @@ const Mv = () => {
               overlay: {
                 backdropFilter: "blur(11.3px)",
                 backgroundColor: "rgba(0, 0, 0, 0.7)",
+                zIndex: "3",
               },
               content: {
                 transform: "translateX(-50%)",
