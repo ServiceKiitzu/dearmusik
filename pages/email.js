@@ -23,7 +23,7 @@ const Email = () => {
         <title>聯絡資訊 ⎯ 黃玠 dadadohuang</title>
         <meta
           name="description"
-          content="合作與工作邀約請洽––凱特
+          content="合作與工作邀約，歡迎來信！
                     dearmusik@gmail.com"
         />
         <meta

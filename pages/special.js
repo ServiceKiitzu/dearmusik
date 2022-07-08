@@ -59,10 +59,14 @@ const Special = () => {
       date: [
         ["08/20", "高雄", "後台 backstage Live"],
         ["08/26", "台北", "Legacy Taipei"],
+        ["08/27", "台北", "Legacy Taipei"],
         ["09/03", "台中", "Legacy Taichung"],
       ],
       link: [
-        "https://dearmusik.kktix.cc/events/mrdadado?fbclid=IwAR0LeRU0nBZEfUtBirsGhdVBvp0PeEMLQe-3mB0FrWo-blvLyC_J5uXOL2Y",
+        "https://dearmusik.kktix.cc/events/mrdadado-820",
+        "https://dearmusik.kktix.cc/events/mrdadado-826",
+        "https://dearmusik.kktix.cc/events/mrdadado-plus?fbclid=IwAR2uliKRV0TuOZivBtGX94IfFX656EfosA4TJwBXJOvQFyKoglRl0BFgtKk",
+        "https://dearmusik.kktix.cc/events/mrdadado-903",
       ],
     },
   ];
@@ -163,41 +167,43 @@ const Special = () => {
           </div>
           {!phone && nowTopic && nowTopic.date && (
             <div className={styles.sessions}>
-              <a
-                href={nowTopic.link[0]}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {nowTopic.date.map((item, i) => {
-                  return (
-                    <div key={i} className={styles.sItem}>
+              {nowTopic.date.map((item, i) => {
+                return (
+                  <a
+                    href={nowTopic.link[i]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={i}
+                  >
+                    <div className={styles.sItem}>
                       <div className={styles.date}>{item[0]}</div>
                       <div className={styles.place}>{item[1]}</div>
                       <div className={styles.mode}>{item[2]}</div>
                     </div>
-                  );
-                })}
-              </a>
+                  </a>
+                );
+              })}
             </div>
           )}
           {phone && sessions && (
             <div className={styles.sessions}>
-              <a
-                href={sessions[0].link[0]}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {sessions[0].date &&
-                  sessions[0].date.map((item, i) => {
-                    return (
-                      <div key={i} className={styles.sItem}>
+              {sessions[0].date &&
+                sessions[0].date.map((item, i) => {
+                  return (
+                    <a
+                      href={sessions[0].link[i]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      key={i}
+                    >
+                      <div className={styles.sItem}>
                         <div className={styles.date}>{item[0]}</div>
                         <div className={styles.place}>{item[1]}</div>
                         <div className={styles.mode}>{item[2]}</div>
                       </div>
-                    );
-                  })}
-              </a>
+                    </a>
+                  );
+                })}
             </div>
           )}
           <div className={`${styles.list} list`}>
