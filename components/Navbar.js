@@ -41,6 +41,12 @@ const Navbar = () => {
   };
   const openMenu = () => {
     setMenuM(true);
+
+    // menuMLink.forEach((link) => {
+    //   link.addEventListener("click", () => {
+    //     console.log("關掉");
+    //   });
+    // });
   };
   useEffect(() => {
     closeMenu();
@@ -54,11 +60,12 @@ const Navbar = () => {
       });
       e.currentTarget.classList.toggle("active");
     }
-    let menuLink = document.querySelectorAll("div#menuM a");
-    menuLink.forEach((link) => {
-      link.addEventListener("click", closeMenu);
-    });
   }
+  useEffect(() => {
+    if (menuM) {
+      setMenuM(false);
+    }
+  }, [router.asPath]);
   return (
     <Fragment>
       <nav className="nav1">
@@ -178,6 +185,10 @@ const Navbar = () => {
         isOpen={menuM}
         className="menuM"
         overlayClassName="menuMOverlay"
+        appElement={
+          typeof window !== "undefined" &&
+          document.getElementById("pageContainer")
+        }
       >
         <div className="" id="menuM">
           <div className="cross">
