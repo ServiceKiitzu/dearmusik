@@ -21,11 +21,7 @@ const Email = () => {
     <>
       <Head>
         <title>聯絡資訊 ⎯ 黃玠 dadadohuang</title>
-        <meta
-          name="description"
-          content="合作與工作邀約，歡迎來信！
-                    dearmusik@gmail.com"
-        />
+        <meta name="description" content="合作與工作邀約，歡迎來信！" />
         <meta
           property="og:image"
           content="https://dearmusik.kiitzu.ninja/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fog-img.e87c1000.jpg&w=1200&q=75"
