@@ -60,6 +60,12 @@ const Navbar = () => {
       });
       e.currentTarget.classList.toggle("active");
     }
+    let menuMLinks = document.querySelectorAll("div#menuM a");
+    menuMLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        setMenuM(false);
+      });
+    });
   }
   useEffect(() => {
     if (menuM) {
