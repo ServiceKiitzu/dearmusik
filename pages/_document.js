@@ -3,7 +3,7 @@ import Script from "next/script";
 
 const Document = () => {
   return (
-    <Html>
+    <Html lang="zh">
       <Head>
         <script
           dangerouslySetInnerHTML={{
