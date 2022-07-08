@@ -1,4 +1,4 @@
-const url = "https://dadadoking.com";
+const siteUrl = "https://dadadoking.com";
 
 module.exports = {
   siteUrl,
