@@ -5,9 +5,9 @@ module.exports = {
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [],
-    additionalSitemaps: [
-      `${siteUrl}/sitemap.xml`,
-      `${siteUrl}/server-sitemap.xml`,
-    ],
+    // additionalSitemaps: [
+    //   `${siteUrl}/sitemap.xml`,
+    //   `${siteUrl}/server-sitemap.xml`,
+    // ],
   },
 };
