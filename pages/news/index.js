@@ -63,7 +63,7 @@ const News = () => {
   articles = articles.reverse();
   useEffect(() => {
     sessionStorage.setItem("articles", JSON.stringify(articles));
-    const mediaQuery = window.matchMedia("( max-width: 1280px )");
+    const mediaQuery = window.matchMedia("( max-width: 1279px )");
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const square = entry.target;
@@ -77,6 +77,8 @@ const News = () => {
     });
     if (mediaQuery.matches) {
       observer.observe(document.querySelector("#imgTextM"));
+      const container = document.getElementById("container");
+      // container.style.minHeight = `${window.innerHeight}px`;
     }
   }, []);
   useEffect(() => {
@@ -103,7 +105,7 @@ const News = () => {
           content="https://dearmusik.kiitzu.ninja/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fog-img.e87c1000.jpg&w=1200&q=75"
         />
       </Head>
-      <div className={styles.container}>
+      <div className={styles.container} id="container">
         <div className={styles.topic}>最新消息</div>
         <NewsNave></NewsNave>
         <div className={styles.articleList}>
