@@ -50,6 +50,7 @@ export default function Home() {
       return () => {
         iconBox.style.backgroundColor = "#000";
         footer.style.backgroundColor = "#000";
+        pageContainer.style.paddingBottom = "65px";
       };
     }
   }, []);
