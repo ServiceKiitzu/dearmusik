@@ -6,13 +6,11 @@
     height: 100%;
     position: relative;
     .blackBlock {
-      height: 100vh;
       width: 100vw;
       background-color: #000;
     }
     .block {
       width: 100vw !important;
-      height: 57vh;
       position: fixed;
       bottom: 0;
       left: 0;

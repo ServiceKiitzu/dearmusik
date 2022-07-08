@@ -10,8 +10,11 @@ const DDDParty = () => {
     if (window.innerWidth < 1280) {
       const footer = document.getElementById("footer");
       footer.style.backgroundColor = "transparent";
+      const blackBlock = document.getElementById("blackBlock");
+      blackBlock.style.height = `${window.innerHeight}px`;
+      const greenBlock = document.getElementById("greenBlock");
+      greenBlock.style.height = `${window.innerHeight / 2}px`;
     }
-
     return function cleanUp() {
       if (window.innerWidth < 1280) {
         footer.style.backgroundColor = "#000";
@@ -33,9 +36,9 @@ const DDDParty = () => {
         />
       </Head>
       <div className={styles.container}>
-        <div className={styles.blackBlock}></div>
+        <div className={styles.blackBlock} id="blackBlock"></div>
 
-        <div className={styles.block}>
+        <div className={styles.block} id="greenBlock">
           <div className={styles.img}>
             <Image src={Soon}></Image>
           </div>
