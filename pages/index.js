@@ -85,17 +85,17 @@ export default function Home() {
           }}
         >
           <div className={`${styles.p} prev-img`}>
-            <Image src={LArrow}></Image>
+            <Image src={LArrow} alt=""></Image>
           </div>
           <div className={`${styles.n} next-img`}>
-            <Image src={RArrow}></Image>
+            <Image src={RArrow} alt=""></Image>
           </div>
           {carouselM &&
             carouselM.map((item, i) => {
               return (
                 <SwiperSlide key={i}>
                   <div className="slideBox" id="slideBox">
-                    <Image src={item}></Image>
+                    <Image src={item} alt=""></Image>
                   </div>
                 </SwiperSlide>
               );
@@ -117,17 +117,17 @@ export default function Home() {
           }}
         >
           <div className={`${styles.p} prev-img`}>
-            <Image src={LArrow}></Image>
+            <Image src={LArrow} alt=""></Image>
           </div>
           <div className={`${styles.n} next-img`}>
-            <Image src={RArrow}></Image>
+            <Image src={RArrow} alt=""></Image>
           </div>
           {carousel &&
             carousel.map((item, i) => {
               return (
                 <SwiperSlide key={i}>
                   <div className={styles.slideBox}>
-                    <Image src={item}></Image>
+                    <Image src={item} alt=""></Image>
                   </div>
                 </SwiperSlide>
               );

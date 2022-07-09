@@ -177,11 +177,11 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image src={Store}></Image>
+              <Image src={Store} alt=""></Image>
             </a>
             <Link style={{ marginLeft: "7px" }} className="email" href="/email">
               <a>
-                <Image src={Email}></Image>
+                <Image src={Email} alt=""></Image>
               </a>
             </Link>
           </div>
