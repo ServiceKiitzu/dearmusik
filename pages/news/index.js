@@ -140,17 +140,17 @@ const News = () => {
         </div>
         <div className={styles.arrowBox}>
           <div>
-            <Image src={AU}></Image>
+            <Image src={AU} alt=""></Image>
           </div>
           <div>
-            <Image src={articles.length > 4 ? ADA : AD}></Image>
+            <Image src={articles.length > 4 ? ADA : AD} alt=""></Image>
           </div>
         </div>
         <div className={styles.img}>
-          <Image src={Img}></Image>
+          <Image src={Img} alt=""></Image>
         </div>
         <div className={styles.imgText} id="imgText">
-          <Image src={ImgText}></Image>
+          <Image src={ImgText} alt=""></Image>
         </div>
       </div>
     </>

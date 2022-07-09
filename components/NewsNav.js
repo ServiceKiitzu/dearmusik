@@ -55,15 +55,13 @@ const NewsNave = () => {
 
   return (
     <div className={styles.type} id="type">
-      <a onClick={handleItemSwitch}>
-        <div className={styles.all} id="all">
-          {context.type}
-          <div className={styles.triangle}>
-            <Image src={Triangle}></Image>
-          </div>
-          <div className={styles.triangleM}></div>
+      <div className={styles.all} id="all" onClick={handleItemSwitch}>
+        {context.type}
+        <div className={styles.triangle}>
+          <Image src={Triangle}></Image>
         </div>
-      </a>
+        <div className={styles.triangleM}></div>
+      </div>
       <div className={styles.typeItem} id="typeItem">
         {sort &&
           sort.map((item, index) => {
