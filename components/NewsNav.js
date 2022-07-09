@@ -58,7 +58,7 @@ const NewsNave = () => {
       <div className={styles.all} id="all" onClick={handleItemSwitch}>
         {context.type}
         <div className={styles.triangle}>
-          <Image src={Triangle}></Image>
+          <Image src={Triangle} alt=""></Image>
         </div>
         <div className={styles.triangleM}></div>
       </div>
