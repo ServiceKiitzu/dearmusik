@@ -102,14 +102,14 @@ const Navbar = () => {
           <Link href="/">
             <a onClick={rmActive}>
               <div style={{ marginRight: "18px" }}>
-                <Image src={Icon}></Image>
+                <Image src={Icon} alt=""></Image>
               </div>
             </a>
           </Link>
           <Link href={"/"}>
             <a onClick={rmActive}>
               <div>
-                <Image src={IconName}></Image>
+                <Image src={IconName} alt=""></Image>
               </div>
             </a>
           </Link>
@@ -120,35 +120,35 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image src={IMusic}></Image>
+              <Image src={IMusic} alt=""></Image>
             </a>
             <a
               href="https://open.spotify.com/artist/3C8yUWotyLh2Kjkood3xYN?si=8mwMR0tuQGuufpNdrxSlbA"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image src={Spotify}></Image>
+              <Image src={Spotify} alt=""></Image>
             </a>
             <a
               href="https://www.kkbox.com/tw/tc/artist/WsM__mTku7eU3VH0u1"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image src={Kkbox}></Image>
+              <Image src={Kkbox} alt=""></Image>
             </a>
             <a
               href="https://www.facebook.com/dadado.huang"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image src={Facebook}></Image>
+              <Image src={Facebook} alt=""></Image>
             </a>
             <a
               href="https://www.instagram.com/dadadohuang/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image src={Instagram}></Image>
+              <Image src={Instagram} alt=""></Image>
             </a>
           </div>
         </div>
