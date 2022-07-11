@@ -19,32 +19,35 @@ export const getServerSideProps = async (context) => {
   });
   let preview = result[0].preview;
   let title = result[0].title;
+  let article = result[0];
   return {
     props: {
       title: title,
       preview: preview,
+      article: article,
     },
   };
 };
 
-const Details = ({ title, preview }) => {
+const Details = ({ title, preview, article }) => {
   const router = useRouter();
   const [detail, setDetail] = useState(null);
   useEffect(() => {
+    setDetail(article);
     const nav = document.getElementById("type");
     let widthNow = window.innerWidth;
     if (widthNow < 1280) {
       nav.style.display = "none";
     }
   }, []);
-  useEffect(() => {
-    if (router.isReady) {
-      const articles = JSON.parse(sessionStorage.getItem("articles"));
-      let result = articles.filter((item) => item.id == router.query.id);
-      const filterResult = result[0];
-      setDetail(filterResult);
-    }
-  }, [router.isReady]);
+  // useEffect(() => {
+  //   if (router.isReady) {
+  //     const articles = JSON.parse(sessionStorage.getItem("articles"));
+  //     let result = articles.filter((item) => item.id == router.query.id);
+  //     const filterResult = result[0];
+  //     setDetail(filterResult);
+  //   }
+  // }, [router.isReady]);
   return (
     <>
       <Head>
