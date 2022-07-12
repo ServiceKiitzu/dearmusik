@@ -64,7 +64,8 @@
     position: fixed;
     display: block;
     top: 141px;
-    left: 105px;
+    // left: 20vw;
+    margin-left: -298px;
     z-index: 2;
     .all {
       font-size: 16px;
