@@ -13,17 +13,18 @@ import AUA from "../../assets/works/music/arrow-up-active.svg";
 import AD from "../../assets/works/music/arrow-down.svg";
 import ADA from "../../assets/works/music/arrow-down-active.svg";
 import S1 from "../../assets/works/music/S1.png";
-import S2 from "../../assets/works/music/S2.png";
-import S3 from "../../assets/works/music/S3.png";
-import S4 from "../../assets/works/music/S4.png";
+import S2 from "../../assets/works/music/S2.jpg";
+import S3 from "../../assets/works/music/S3.jpg";
+import S4 from "../../assets/works/music/S4.jpg";
 import S5 from "../../assets/works/music/S5.png";
-import S6 from "../../assets/works/music/S6.png";
-import S7 from "../../assets/works/music/S7.png";
-import S8 from "../../assets/works/music/S8.png";
-import S9 from "../../assets/works/music/S9.png";
-import S10 from "../../assets/works/music/S10.png";
+import S6 from "../../assets/works/music/S6.jpg";
+import S7 from "../../assets/works/music/S7.jpg";
+import S8 from "../../assets/works/music/S8.jpg";
+import S9 from "../../assets/works/music/S9.jpg";
+import S10 from "../../assets/works/music/S10.jpg";
 import S11 from "../../assets/works/music/S11.png";
-import S12 from "../../assets/works/music/S12.png";
+import S12 from "../../assets/works/music/S12.jpg";
+import S13 from "../../assets/works/music/S13.png";
 import { useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 
@@ -248,7 +249,7 @@ const Music = () => {
       title1: "【綠色的日子】15週年紀念版",
       title2: "",
       feat: "",
-      sImg: S1,
+      sImg: S13,
       link: [],
       song: [
         { track: "A1", name: "綠色的日子 / Hard Days" },
