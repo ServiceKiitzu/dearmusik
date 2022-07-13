@@ -208,6 +208,17 @@
         .phonePlayer {
           display: none;
         }
+        .new {
+          background: url("../../assets/works/new-icon.png") no-repeat;
+          background-size: contain;
+          width: 28px;
+          height: 28px;
+          position: absolute;
+          z-index: 2;
+          right: 0;
+          top: -12px;
+          margin: 0 !important;
+        }
       }
     }
   }

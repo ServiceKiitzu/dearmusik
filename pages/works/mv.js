@@ -238,7 +238,7 @@ const Mv = () => {
                       }
                     }}
                   >
-                    {item.id == mvs.length && phone && (
+                    {item.id == mvs.length && (
                       <div className={styles.new}></div>
                     )}
 
