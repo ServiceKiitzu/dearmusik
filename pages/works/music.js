@@ -141,7 +141,7 @@ const Music = () => {
       link: [
         "https://music.apple.com/tw/album/%E5%8D%81%E5%B9%B4%E7%86%9F%E6%88%90%E7%B2%BE%E9%81%B8%E8%BC%AF-single/1054708532",
         "https://open.spotify.com/album/16ylvovloECoZcalxPfDz6?si=pCh_UFL1Sfi5L2Xn4u9P1A",
-        "https://kkbox.fm/ia0tTLL",
+        "https://kkbox.fm/ia0tTL",
       ],
       song: [
         "她的生活 (Diana's Weekend) (feat. 黃玠)",
@@ -250,7 +250,11 @@ const Music = () => {
       title2: "",
       feat: "",
       sImg: S13,
-      link: [],
+      link: [
+        "https://music.apple.com/tw/album/%E7%B6%A0%E8%89%B2%E7%9A%84%E6%97%A5%E5%AD%90-15%E9%80%B1%E5%B9%B4%E7%B4%80%E5%BF%B5%E7%89%88-single/1628239700",
+        "https://open.spotify.com/album/1E35DHRpKMm1n9pmoeOALc?si=ex7VbHItSCueoMCybch9Ag",
+        "https://kkbox.fm/zaBcgf",
+      ],
       song: [
         { track: "A1", name: "綠色的日子 / Hard Days" },
         { track: "A2", name: "存在 / Existence" },
@@ -366,13 +370,25 @@ const Music = () => {
               <div className={styles.inText2}>{musicData.title2}</div>
               <div className={styles.inText3}>{musicData.feat}</div>
               <div className={styles.mediaM}>
-                <a href={musicData.link[0]}>
+                <a
+                  href={musicData.link[0]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div className={styles.imusicM}></div>
                 </a>
-                <a href={musicData.link[1]}>
+                <a
+                  href={musicData.link[1]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div className={styles.spotifyM}></div>
                 </a>
-                <a href={musicData.link[2]}>
+                <a
+                  href={musicData.link[2]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div className={styles.kkboxM}></div>
                 </a>
               </div>
@@ -423,17 +439,29 @@ const Music = () => {
               </div>
               <div className={styles.media}>
                 <div>
-                  <a href={musicData.link[0]}>
+                  <a
+                    href={musicData.link[0]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Image src={Imusic}></Image>
                   </a>
                 </div>
                 <div>
-                  <a href={musicData.link[1]}>
+                  <a
+                    href={musicData.link[1]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Image src={Spotify}></Image>
                   </a>
                 </div>
                 <div>
-                  <a href={musicData.link[2]}>
+                  <a
+                    href={musicData.link[2]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Image src={Kkbox}></Image>
                   </a>
                 </div>
