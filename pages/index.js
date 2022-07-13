@@ -46,11 +46,13 @@ export default function Home() {
       footer.style.backgroundColor = "transparent";
       const pageContainer = document.getElementById("pageContainer");
       pageContainer.style.paddingBottom = "0";
+      pageContainer.style.height = `${window.innerHeight}px`;
 
       return () => {
         iconBox.style.backgroundColor = "#000";
         footer.style.backgroundColor = "#000";
         pageContainer.style.paddingBottom = "65px";
+        pageContainer.style.height = "100%";
       };
     }
   }, []);
