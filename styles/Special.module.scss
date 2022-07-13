@@ -182,13 +182,14 @@
         width: fit-content;
         margin: 0 auto;
         position: relative;
-        img {
-          -webkit-box-shadow: 9px 9px 15px 0 rgba(0, 0, 0, 0.16);
-          -moz-box-shadow: 9px 9px 15px 0 rgba(0, 0, 0, 0.16);
+        span {
+          width: 100%;
           box-shadow: 9px 9px 15px 0 rgba(0, 0, 0, 0.16);
-          width: 389px !important;
-          height: 551px !important;
-          object-fit: contain;
+          img {
+            width: auto !important;
+            height: 551px !important;
+            // object-fit: contain;
+          }
         }
 
         .new {
