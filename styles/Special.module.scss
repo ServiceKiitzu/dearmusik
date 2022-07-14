@@ -187,7 +187,8 @@
           box-shadow: 9px 9px 15px 0 rgba(0, 0, 0, 0.16);
           img {
             width: auto !important;
-            height: 551px !important;
+            height: auto;
+            max-height: 583px !important;
             // object-fit: contain;
           }
         }
