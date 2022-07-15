@@ -47,6 +47,10 @@ export default function Home() {
       const pageContainer = document.getElementById("pageContainer");
       pageContainer.style.paddingBottom = "0";
       pageContainer.style.height = `${window.innerHeight}px`;
+      const swiperPhoto = document.querySelectorAll("div#slideBox img");
+      swiperPhoto.forEach((item) => {
+        item.style.height = `${window.innerHeight}px`;
+      });
 
       return () => {
         iconBox.style.backgroundColor = "#000";
