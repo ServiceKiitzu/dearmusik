@@ -147,8 +147,7 @@ a {
     padding: 0;
     img {
       min-height: 100vh;
-      height: calc(100vh - calc(100vh - 100%)) !important;
-      max-height: 100vh;
+      height: 100%;
       width: 100vw !important;
       object-fit: cover !important;
     }
