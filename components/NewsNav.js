@@ -30,7 +30,6 @@ const NewsNave = () => {
   //   }
   // }
   const switchType = (index) => {
-    console.log(index);
     context.setType(sort[index]);
   };
   const handleItemSwitch = () => {
