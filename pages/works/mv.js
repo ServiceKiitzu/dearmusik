@@ -238,9 +238,9 @@ const Mv = () => {
                       }
                     }}
                   >
-                    {item.id == mvs.length && (
+                    {/* {item.id == mvs.length && (
                       <div className={styles.new}></div>
-                    )}
+                    )} */}
 
                     <Image src={item.preview}></Image>
                     <div className={styles.title}>{item.title}</div>
