@@ -7,9 +7,6 @@ import Head from "next/head";
 import { useEffect, useState, createContext } from "react";
 
 const Layout = ({ children }) => {
-  useEffect(() => {
-    sessionStorage.setItem("notice", true);
-  }, []);
   return (
     <div className="pageContainer" id="pageContainer">
       <Head>
