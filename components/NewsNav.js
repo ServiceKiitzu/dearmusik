@@ -18,16 +18,20 @@ const NewsNave = () => {
     "網站新增",
     "退休專案",
   ];
-  if (typeof window !== "undefined") {
-    const navItem = document.querySelectorAll("div#typeItem a");
-    navItem.forEach((item) => {
-      item.addEventListener("click", handleActiveSwitch);
-    });
-    function handleActiveSwitch(e) {
-      // setType(e.currentTarget.innerText);
-      context.setType(e.currentTarget.innerText);
-    }
-  }
+
+  // if (typeof window !== "undefined") {
+  //   const navItem = document.querySelectorAll("div#typeItem a");
+  //   navItem.forEach((item) => {
+  //     item.addEventListener("click", handleActiveSwitch);
+  //   });
+  //   function handleActiveSwitch(e) {
+  //     // setType(e.currentTarget.innerText);
+  //     context.setType(e.currentTarget.innerText);
+  //   }
+  // }
+  const switchType = (index) => {
+    context.setType(sort[index]);
+  };
   const handleItemSwitch = () => {
     const typeItem = document.getElementById("typeItem");
 
@@ -68,7 +72,13 @@ const NewsNave = () => {
             return (
               <Link href={"/news"} key={index}>
                 <a>
-                  <div>{item}</div>
+                  <div
+                    onClick={() => {
+                      switchType(index);
+                    }}
+                  >
+                    {item}
+                  </div>
                 </a>
               </Link>
             );

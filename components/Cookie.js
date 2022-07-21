@@ -5,7 +5,7 @@ const Cookie = () => {
   const [isOpened, setIsOpened] = useState(false);
   useEffect(() => {
     let timer1 = setTimeout(() => {
-      if (sessionStorage.getItem("notice")) {
+      if (!localStorage.getItem("notice")) {
         setIsOpened(true);
       }
     }, 1000);
@@ -31,7 +31,7 @@ const Cookie = () => {
         <button
           onClick={() => {
             setIsOpened(false);
-            sessionStorage.setItem("notice", false);
+            localStorage.setItem("notice", true);
           }}
         >
           我知道了

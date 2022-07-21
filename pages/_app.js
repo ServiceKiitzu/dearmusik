@@ -12,6 +12,12 @@ function MyApp({ Component, pageProps }) {
   const [type, setType] = useState("全部");
   return (
     <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        ></meta>
+      </Head>
       <TypeContext.Provider value={{ type, setType }}>
         <Layout>
           <Component {...pageProps} />
