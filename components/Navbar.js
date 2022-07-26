@@ -206,7 +206,9 @@ const Navbar = () => {
             <li className="news">
               <Link href={"/news"}>
                 <a>
-                  {process.env.NEWS && <div className="newIcon"></div>}
+                  {process.env.NEXT_PUBLIC_NEWS == "true" && (
+                    <div className="newIcon"></div>
+                  )}
                   最新消息
                 </a>
               </Link>
@@ -224,7 +226,10 @@ const Navbar = () => {
             <li className="special">
               <Link href={"/special"}>
                 <a>
-                  {process.env.SPECIAL && <div className="newIcon"></div>}專場
+                  {process.env.NEXT_PUBLIC_SPECIAL == "true" && (
+                    <div className="newIcon"></div>
+                  )}
+                  專場
                 </a>
               </Link>
             </li>
