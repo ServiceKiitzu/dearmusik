@@ -203,9 +203,12 @@ const Navbar = () => {
             </a>
           </div>
           <ul>
-            <li>
+            <li className="news">
               <Link href={"/news"}>
-                <a>最新消息</a>
+                <a>
+                  {process.env.NEWS && <div className="newIcon"></div>}
+                  最新消息
+                </a>
               </Link>
             </li>
             <li>
@@ -218,9 +221,11 @@ const Navbar = () => {
                 <a>作品</a>
               </Link>
             </li>
-            <li>
+            <li className="special">
               <Link href={"/special"}>
-                <a>專場</a>
+                <a>
+                  {process.env.SPECIAL && <div className="newIcon"></div>}專場
+                </a>
               </Link>
             </li>
             <li>
