@@ -109,16 +109,19 @@ const Special = () => {
     }
   }, []);
   useEffect(() => {
-    const page = document.getElementById("pageContainer");
-    const pop = document.getElementById("pop");
+    const container = document.getElementById("container");
+    const pageContainer = document.getElementById("pageContainer");
+    const popElement = document.getElementById("pop");
+    const scrollYNow = window.scrollY;
     if (pop && window.innerWidth < 1280) {
-      page.style.height = `${pop.offsetHeight}px`;
+      popElement.style.height = `${window.innerHeight}px`;
+      pageContainer.style.height = `${window.innerHeight}px`;
+    } else {
+      // const scrollY = document.body.style.top;
+      // document.body.style.position = "";
+      // document.body.style.top = "";
+      // window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
-    return () => {
-      if (window.innerWidth < 1280) {
-        page.style.height = "100%";
-      }
-    };
   }, [pop]);
   return (
     <>
