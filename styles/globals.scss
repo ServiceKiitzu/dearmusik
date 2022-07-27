@@ -367,6 +367,7 @@ a {
   width: 100vw;
   height: 100vh;
   padding-top: 79px;
+  overflow-y: scroll;
   .cross {
     position: absolute;
     top: 22px;
@@ -402,7 +403,14 @@ a {
     display: flex;
     width: 308px;
     justify-content: space-between;
-    margin: 70px auto;
+    margin: 70px auto 37px;
+  }
+  .store-menuM {
+    background: url("../assets/navbar/store_menu.svg") no-repeat;
+    background-size: cover;
+    width: 47px;
+    height: 47px;
+    margin: 0 auto 33px;
   }
   .contactM {
     font-size: 12px;

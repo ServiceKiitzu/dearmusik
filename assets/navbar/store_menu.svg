@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 65 65">
+    <defs>
+        <filter id="4kcnb09ava" x="0" y="0" width="65" height="65" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g style="filter:url(#4kcnb09ava)">
+        <g data-name="Path 194" style="fill:#fff">
+            <path d="M23.5 46.5a22.924 22.924 0 0 1-16.263-6.737A22.924 22.924 0 0 1 .5 23.5 22.924 22.924 0 0 1 7.237 7.237 22.924 22.924 0 0 1 23.5.5a22.924 22.924 0 0 1 16.263 6.737A22.924 22.924 0 0 1 46.5 23.5a22.924 22.924 0 0 1-6.737 16.263A22.924 22.924 0 0 1 23.5 46.5z" style="stroke:none" transform="translate(9 6)"/>
+            <path d="M23.5 1A22.426 22.426 0 0 0 7.59 7.59 22.426 22.426 0 0 0 1 23.5a22.426 22.426 0 0 0 6.59 15.91A22.426 22.426 0 0 0 23.5 46a22.426 22.426 0 0 0 15.91-6.59A22.426 22.426 0 0 0 46 23.5a22.426 22.426 0 0 0-6.59-15.91A22.426 22.426 0 0 0 23.5 1m0-1C36.479 0 47 10.521 47 23.5S36.479 47 23.5 47 0 36.479 0 23.5 10.521 0 23.5 0z" style="fill:#71aa4b;stroke:none" transform="translate(9 6)"/>
+        </g>
+    </g>
+    <g data-name="Group 184">
+        <g data-name="Group 180">
+            <path data-name="Path 64" d="M8.449 3 4.5 8.265v18.426a2.632 2.632 0 0 0 2.632 2.632h18.427a2.632 2.632 0 0 0 2.632-2.632V8.265L24.243 3z" transform="translate(16.154 13.338)" style="fill:#fff"/>
+            <path data-name="Path 65" d="M4.5 9h23.691" transform="translate(16.154 12.603)" style="fill:#fff"/>
+            <path data-name="Path 66" d="M22.53 15A5.265 5.265 0 1 1 12 15" transform="translate(15.235 11.868)" style="fill:#fff"/>
+        </g>
+        <g data-name="Group 181">
+            <path data-name="Path 64" d="M8.449 3 4.5 8.265v18.426a2.632 2.632 0 0 0 2.632 2.632h18.427a2.632 2.632 0 0 0 2.632-2.632V8.265L24.243 3z" transform="translate(16.154 13.338)" style="fill:none;stroke:#61ab41;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5px"/>
+            <path data-name="Path 65" d="M4.5 9h23.691" transform="translate(16.154 12.603)" style="fill:none;stroke:#61ab41;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5px"/>
+            <path data-name="Path 66" d="M22.53 15A5.265 5.265 0 1 1 12 15" transform="translate(15.235 11.868)" style="fill:none;stroke:#61ab41;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.5px"/>
+        </g>
+    </g>
+</svg>
