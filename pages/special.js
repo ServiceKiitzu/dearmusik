@@ -109,18 +109,11 @@ const Special = () => {
     }
   }, []);
   useEffect(() => {
-    const container = document.getElementById("container");
     const pageContainer = document.getElementById("pageContainer");
     const popElement = document.getElementById("pop");
-    const scrollYNow = window.scrollY;
     if (pop && window.innerWidth < 1280) {
       popElement.style.height = `${window.innerHeight}px`;
       pageContainer.style.height = `${window.innerHeight}px`;
-    } else {
-      // const scrollY = document.body.style.top;
-      // document.body.style.position = "";
-      // document.body.style.top = "";
-      // window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
   }, [pop]);
   return (
