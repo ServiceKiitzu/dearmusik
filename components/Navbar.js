@@ -203,9 +203,14 @@ const Navbar = () => {
             </a>
           </div>
           <ul>
-            <li>
+            <li className="news">
               <Link href={"/news"}>
-                <a>最新消息</a>
+                <a>
+                  {process.env.NEXT_PUBLIC_NEWS == "true" && (
+                    <div className="newIcon"></div>
+                  )}
+                  最新消息
+                </a>
               </Link>
             </li>
             <li>
@@ -218,9 +223,14 @@ const Navbar = () => {
                 <a>作品</a>
               </Link>
             </li>
-            <li>
+            <li className="special">
               <Link href={"/special"}>
-                <a>專場</a>
+                <a>
+                  {process.env.NEXT_PUBLIC_SPECIAL == "true" && (
+                    <div className="newIcon"></div>
+                  )}
+                  專場
+                </a>
               </Link>
             </li>
             <li>
