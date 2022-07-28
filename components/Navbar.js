@@ -286,6 +286,15 @@ const Navbar = () => {
               </a>
             </div>
           </div>
+          {process.env.NEXT_PUBLIC_STORE == "false" && (
+            <a
+              href="https://shop.fantimate.com/pages/dadadohuang"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="store-menuM"></div>
+            </a>
+          )}
           <div className="contactM">
             <div>合作與工作邀約 請洽</div>
             <div>親愛的音樂 - dearmusik@gmail.com</div>

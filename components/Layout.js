@@ -16,15 +16,17 @@ const Layout = ({ children }) => {
       <div className="content">{children}</div>
       <Cookie></Cookie>
       <Footer></Footer>
-      <div className="storeM">
-        <a
-          href="https://shop.fantimate.com/pages/dadadohuang"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image src={StoreM}></Image>
-        </a>
-      </div>
+      {process.env.NEXT_PUBLIC_STORE == "true" && (
+        <div className="storeM">
+          <a
+            href="https://shop.fantimate.com/pages/dadadohuang"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image src={StoreM}></Image>
+          </a>
+        </div>
+      )}
     </div>
   );
 };

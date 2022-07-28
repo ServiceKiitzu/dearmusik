@@ -109,16 +109,12 @@ const Special = () => {
     }
   }, []);
   useEffect(() => {
-    const page = document.getElementById("pageContainer");
-    const pop = document.getElementById("pop");
+    const pageContainer = document.getElementById("pageContainer");
+    const popElement = document.getElementById("pop");
     if (pop && window.innerWidth < 1280) {
-      page.style.height = `${pop.offsetHeight}px`;
+      popElement.style.height = `${window.innerHeight}px`;
+      pageContainer.style.height = `${window.innerHeight}px`;
     }
-    return () => {
-      if (window.innerWidth < 1280) {
-        page.style.height = "100%";
-      }
-    };
   }, [pop]);
   return (
     <>
